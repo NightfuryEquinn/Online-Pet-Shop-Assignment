@@ -264,7 +264,8 @@ h1 {
 .pet-imagebox {
     height: auto;
     width: 350px;
-    position: relative;
+    display: flex;
+    align-content: center;
 }
 
 .pet-imagebox img {
