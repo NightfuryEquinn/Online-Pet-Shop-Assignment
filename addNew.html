@@ -17,7 +17,7 @@
         <link rel = "stylesheet" href = "css/addNew.css">
 
         <!--Link to JavaScript-->
-        <script src = "console.js"></script>
+        <script src = "console.js" defer></script>
 
         <!--Link to Font Awesome v4 and v5-->
         <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.15.4/css/all.css">
@@ -71,17 +71,19 @@
         <!--Admin Edit Form-->
         <div class='main-container'>
             <div class='item-flex-container'>
-                <form method="post">
+                <form id='addForm' action="php/addNewPet.php" method="post">
                     <h1>WHAT DO YOU WANT TO ADD?</h1>
 
                     <div class='radio-container'>
-                        <input type="radio" name="adding" value="newpet"><label>NEW PETS!</label>
-                        <input type="radio" name="adding" value="newfood"><label>NEW FOOD!</label>
-                        <input type="radio" name="adding" value="newfashion"><label>NEW ITEMS/FASHION!</label>
+                        <input onclick="document.getElementById('addForm').action = 'php/addNewPet.php'" id='addPet' type="radio" name="adding"><label>NEW PETS!</label>
+                        <input onclick="document.getElementById('addForm').action = 'php/addNewFood.php'" id='addFood' type="radio" name="adding"><label>NEW FOOD!</label>
+                        <input onclick="document.getElementById('addForm').action = 'php/addNewAccessory.php'" id='addAccessory' type="radio" name="adding"><label>NEW ITEMS/FASHION!</label>
                     </div>
 
                     <div class="addnew">
-                        <label>Display Image: </label><input type="file" name="image" accept="image/*"  required>
+                        <label>Display Image: </label><input type="file" name="image" accept="image/*" required>
+                        <hr>
+                        <label>Name: </label><input type='text' name='name' required>
                         <hr>
                         <label>Description: </label><textarea name="description" rows="10" cols="10" required></textarea>
                         <hr>

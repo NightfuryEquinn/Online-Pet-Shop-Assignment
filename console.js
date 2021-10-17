@@ -90,9 +90,6 @@ function scroll2Top() {
     document.documentElement.scrollTop = 0;
 }
 
-// Change Location according to Radio Value
-
-
 // Switch Tab
 function opentab(tab_no){
     if (tab_no==1){

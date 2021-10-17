@@ -277,12 +277,12 @@ body {
     resize: none;
 }
 
-.item-flex-container .addnew input[type=number] {
+.item-flex-container .addnew input[type=number], input[type=text] {
     padding: 10px;
     font-size: 20px;
 }
 
-.item-flex-container .addnew textarea:focus, input[type=number]:focus {
+.item-flex-container .addnew textarea:focus, input[type=number]:focus, input[type=text]:focus {
     animation-name: color-fill;
     animation-duration: 1s;
     animation-fill-mode: forwards;
