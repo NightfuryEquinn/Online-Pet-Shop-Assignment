@@ -26,70 +26,83 @@
     <script src="console.js"></script>
 
 </head>
-<body style="background-color: #eee2dcc7;">
+<body style="background-color: #eee2dcc7;margin:10px 50px;">
     <h1>Manage Account</h1>
     <hr>
     <div class="manage-account">
-        <div class="accountEdit">
         <div class="tab-container">
             <div class="change-pfp">
                 <img src="art/profile_cat.png" alt="profile picture" id="account-profile-picture">
-                <p><i class="material-icons">edit</i>Change profile picture</p>
+                <p onclick="change_pfp()"><i class="material-icons">edit</i>Change profile picture</p>
+                <div class="dropdown-pfp">
+                    <img src="art/profile_cat.png" alt="cat profile picture"  onclick="change_pfp(cat)">
+                    <img src="art/profile_dog.jpg" alt="dog profile picture" onclick="change_pfp(dog)">
+                </div>
             </div>
-            <div class="tab active" id="tab1" onclick="opentab(1)">Account</div>
-            <div class="tab" id="tab2" onclick="opentab(2)">Bank & cards</div>
+            <div class="tab active" id="tab1" onclick="opentab(1)">Account Information</div>
+            <div class="tab" id="tab2" onclick="opentab(2)">Account Security</div>
         </div>
 
-            <form class="content" id="personal-info-form">
-                <div class="form-left">
-                    <h2>Modify Personal Details</h2>
-                    <div><label>Username:</label></div>
-                    <input type="text" name="user_username">
-                    <div><label>Name:</label></div>
-                    <input type="text" name="user_name">
-                    <div><label>Contact number:</label></div>
-                    <input type="text" name="user_contact_number">
-                    <div><label>Address:</label></div>
-                    <textarea name="user_address" form="personal-info-form">Enter text here...</textarea>
-                </div>
-                <div class="form-right">
-                    <h2></h2>
-                    <div><label>E-mail:</label></div>
-                    <input type="text" name="user_email">
-                    <div><label>Current password:</label></div>
-                    <input type="text" name="user_currentpassword">
-                    <div><label>New password:</label></div>
-                    <input type="text" name="user_newpassword">
-                    <div><label>Confirm your password again:</label></div>
-                    <input type="text" name="user_confirmpassword">
-                    <br><br><br><br>
-                    <div><input type="submit" value="submit" name="submit"></div>
-                </div>  
-            </form>
-            
-            <form class="content" id="bank-card-form">
-                <div class="form-left">
-                    <h2>Add Credit Card</h3>
-                    <div><label>Name on card:</label></div>
-                    <input type="text" name="card_name">
-                    <div><label>Card number:</label></div>
-                    <input type="text" name="card_number">
-                    <div><label>Expiry Date(MM/YY):</label></div>
-                    <input type="number" name="card_expirydate">
-                    <div><label>CVV:</label></div>
-                    <input type="text" name="card_CVV">
-                </div>
-                <div class="form-right">
-                    <div><label>Billing address:</label></div>
-                    <textarea name="card_address" form="bank-card-form">Enter text here...</textarea>
-                    <p><b>Your card details are protected.</b><br>Les Pet Shop will not access to your card information <br>and we will keep it secure from third parties.</p>
-                    <div><input type="submit" value="submit" name="submit"></div>
-                </div>  
-            </form>
-        </div>
+        <form class="content" id="personal-info-form" onsubmit="modify_details()">
+            <div class="form-left">
+                <h2>Modify Account Information</h2>
+                <h3>Personal details</h3>
+                <div>Username:</div>
+                <input type="text" name="user_username" required="required">
+                <div>Name:</div>
+                <input type="text" name="user_name" required="required">
+                <div>Contact number:</div>
+                <input type="text" name="user_contact_number" required="required" pattern="[0][1][0-9]-[0-9]{4}[0-9]{4}|[0][1][0-9]-[0-9]{3}[0-9]{4}">
+                <div>E-mail:</div>
+                <input type="email" name="user_email" required="required">
+            </div>
+            <div class="form-right">
+                <h2>&nbsp</h2>
+                <h3>Delivery Address</h3>
+                <div>Address:</div>
+                <input type="text" name="user_address" required="required">
+                <div>City:</div>
+                <input type="text" name="user_city" required="required">
+                <div>Postal code:</div>
+                <input type="text" name="user_postcode" required="required">
+                <div>State:</div>
+                <Select name="user_state">
+                    <option value="Johor">Johor</option>
+                    <option value="Kedah">Kedah</option>
+                    <option value="Kelantan">Kelantan</option>
+                    <option value="Melacca">Melacca</option>
+                    <option value="Negeri Sembilan">Negeri Sembilan</option>
+                    <option value="Pahang">Pahang</option>
+                    <option value="Penang">Penang</option>
+                    <option value="Perak">Perak</option>
+                    <option value="Perlis">Perlis</option>
+                    <option value="Sabah">Sabah</option>
+                    <option value="Sarawak">Sarawak</option>
+                    <option value="Selangor">Selangor</option>
+                    <option value="Terengganu">Terengganu</option>
+                    <option value="Kuala Lumpur">Kuala Lumpur</option>
+                    <option value="Labuan">Labuan</option>
+                    <option value="Putrajaya">Putrajaya</option>
+                </Select>
+                <br><br>
+                <div><input type="submit" value="submit" name="submit"></div>
+            </div>  
+        </form>
+        
+        <form class="content" id="change-password-form" onsubmit="password_change()">
+                <h2>Change account password</h2><br><br>
+                <div>Current password:</div>
+                <input type="password" name="user_currentpassword" required="required">
+                <div>New password:</div>
+                <input type="password" name="user_newpassword" required="required">
+                <div>Confirm your password again:</div>
+                <input type="password" name="user_confirmpassword" required="required">
+                <br><br><br><br>
+                <div><input type="submit" value="submit" name="submit"></div>
+        </form>
     </div>
-    
-<footer style="background-color:#EDC7B7;padding-bottom: 5px;height: 500px;" class="footer">
+    <br><br>
+<footer class="footer">
     <div class="footer-flex-container">
         <div class="footer-content"><h3>Home</h3>
             <p>Les Pet Shop is always here for you and your pets. You can find yourself a companion and high quality pet product here!</p>
@@ -113,6 +126,6 @@
             <p>Phone no: <a href="tel:0312345678">03-12345678</a></p>
         </div>
     </div>
-    <p id="copyright"><b>&#169 2021 Les Pet Shop (Team Name)AAAAAAA</b></p>
+    <p id="copyright"><b>&#169 2021 Les Pet Shop (Team Name)</b></p>
 </footer>
 </body>
