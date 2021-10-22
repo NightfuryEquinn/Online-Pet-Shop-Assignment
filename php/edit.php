@@ -109,7 +109,7 @@ while ($row = mysqli_fetch_array($result)) {
                         <label>Price Tag: </label><input type="number" name="price" value="<?php echo $row[2] ?>" min="0" required>
                         <hr>
                         <div class="button-container">
-                            <button id='submit' type="submit">NEW STUFF OUT!!!</button>
+                            <button id='submit' type="submit" name="editBtn">EDIT</button>
                             <button id='reset' type="reset">RESET</button>
                         </div>
                     </div>
@@ -121,5 +121,41 @@ while ($row = mysqli_fetch_array($result)) {
 
 <?php
 }
+
+$updateNAME = $_POST['name'];
+$updatePRICE = $_POST['price'];
+$updateDES = $_POST['description'];
+$updateIMG = file_get_contents($_FILES['image']['tmp_name']);
+
+if (isset($_POST['editBtn'])) {
+    if ($petid != NULL) {
+        $update = "UPDATE pet SET Pet_Name='$updateNAME', Pet_Price='$updatePRICE', Pet_Description='$updateDES', Image_Source='$updateIMG' WHERE Pet_ID='$petid'";
+        if (mysqli_query($con, $update)) {
+            echo "<script> alert ('Data edited!');
+            window.location.href= 'homepage.html';
+            </script>";
+        }
+
+    } elseif ($foodid != NULL) {
+        $update = "UPDATE food SET Food_Brand='$updateNAME', Food_Price='$updatePRICE', Food_Description='$updateDES', Image_Source='$updateIMG' WHERE Food_ID='$foodid'";
+        if (mysqli_query($con, $update)) {
+            echo "<script> alert ('Data edited!');
+            window.location.href= 'homepage.html';
+            </script>";
+        }
+    } elseif ($accessoryid != NULL) {
+        $update = "UPDATE accessory SET Accessory_Name='$updateNAME', Accessory_Price='$updatePRICE', Accessory_Description='$updateDES', Image_Source='$updateIMG' WHERE Accessory_ID='$accessoryid'";
+        if (mysqli_query($con, $update)) {
+            echo "<script> alert ('Data edited!');
+            window.location.href= 'homepage.html';
+            </script>";
+        }
+    } else {
+        echo "<script> alert ('Error occured while updating.');
+        window.location.href= 'homepage.html';
+        </script>";
+    };
+};
+
 mysqli_close($con);
 ?>
