@@ -4,7 +4,7 @@
         <!--How code being decoded-->
         <meta charset = "utf-8">
 
-        <!--How page being display based on viewport-->
+        <!--How page being display based on viewport--
         <meta name = "viewport" content = "width = device-width, initial-scale = 1 shrink-to-fit = no">
 
         <!--Add author, web description, keywords for search engine, and copyright-->
@@ -14,7 +14,7 @@
         <meta name = "copyright" content = "Copyright 2021 Yip Zi Xian, Neong Yee Kay, Wong Xie Ling">
 
         <!--Link to CSS-->
-        <link rel = "stylesheet" href = "css/loginpage.css">
+        <link rel = "stylesheet" href = "/css/loginpage.css">
 
         <!--Link to JavaScript-->
         <script src = "console.js" defer></script>
@@ -29,96 +29,100 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Rubik:wght@300&display=swap" rel="stylesheet">
         
         <!--Link to Pictures file-->
-        <link rel = "icon" type = image/png href = Art/logo.png>
+        <link rel = "icon" type = image/png href = art/logo.png>
 
         <!--Title-->
             <title>Login</title>
-            <body>
                 <body style = "background-color:#b4a59dd3;">
                     <center>
-                        <img src="Art/Logo.png" alt="Logo" height="110" width= "125">
-                        <br>
-                        <h1 style="color:#F76C6C;">Les Pet Shop Login Page</h1>
-                        <div id="logincontainer">
-                            <div class="tablerow">
-                                <div class="tablecolumn">
-                                 <form>
-                                  <table>
-                                    <h2>Have an existing account?<br>Login here!</h2>
-                                    <form action="signupdb.php" method="post">                                        
-                                            <td>Email</td>
-                                            <td>:</td>
-                                            <td><input type="email" name="email_address" required="required"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Password</td>
-                                            <td>:</td>
-                                            <td><input type="password" name="password" required="required"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td><input type="submit" value="Login"> <input type="reset" value="Reset"></td>
-                                        </tr>
-                                  </table>
-                                </div>
-                                <div class="tablecolumn">
-                                  <table>
-                                    <h2>Wish to create an account?<br>Sign Up here!</h2>
-                                    <form action="signupdb.php" method="post">
-                                        <tr>
-                                            <td>Email</td>
-                                            <td>:</td>
-                                            <td><input type="email" name="email_address" required="required"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Username</td>
-                                            <td>:</td>
-                                            <td><input type="text" name="username" required="required"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Password</td>
-                                            <td>:</td>
-                                            <td><input type="password" name="password" required="required"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Re-Confirm Password</td>
-                                            <td>:</td>
-                                            <td><input type="password" name="password" required="required"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td>
-                                            <input type="submit" value="Sign Up" name="SignUp">
-                                            <input type="reset" value="Reset" name="Reset">
-                                            </td>
-                                        </tr>
-                                  </table>
-                                </form>
-                                </div>
+                            <div class="selectcont">
+                            <div class="align">
+                            <div class="loginbar">
+                              <ul class="nav-list">
+                                <li>
+                                <i class="fas fa-sign-in-alt" onclick="loginopen();">&nbsp&nbspLog In</i>
+                                <div class="formtext">
+                                <div id="loginform" class="sidebar">
+                                  <a href="javascript:void(0)" onclick="closeNav()">CLOSE</a>
+                                  <div id="loginform">
+                                    <form>
+                                      <table>
+                                        <h2>Have an existing account?<br>Login here!</h2>
+                                        <form action="signupdb.php" method="post">
+                                                <td>Email</td>
+                                                <td>:</td>
+                                                <td><input type="email" name="email_address" required="required"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Password</td>
+                                                <td>:</td>
+                                                <td><input type="password" name="password" required="required"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td><input type="submit" value="Login"> <input type="reset" value="Reset"></td>
+                                            </tr>
+                                          </div>
+                                      </table>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <i class="fas fa-user-plus" onclick="signupopen()">&nbsp&nbspSign Up</i>
+                                    <div class="formtext">
+                                    <div id="signupform" class="sidebar">
+                                      <a href="javascript:void(0)" onclick="closeNav()">CLOSE</a>
+                                    <div id="signupform">
+                                      <table>
+                                        <h2>Wish to create an account?<br>Sign Up here!</h2>
+                                        <form action="signupdb.php" method="post">
+                                            <tr>
+                                                <td>Email</td>
+                                                <td>:</td>
+                                                <td><input type="email" name="email_address" required="required"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Username</td>
+                                                <td>:</td>
+                                                <td><input type="text" name="username" required="required"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Password</td>
+                                                <td>:</td>
+                                                <td><input type="password" name="password" required="required"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Re-Confirm Password</td>
+                                                <td>:</td>
+                                                <td><input type="password" name="password" required="required"></td>
+                                            </tr>
+                                                <td>
+                                                <input type="submit" value="Sign Up" name="SignUp">
+                                                <input type="reset" value="Reset" name="Reset">
+                                                </td>
+                                            </tr>
+                                          </form>
+                                      </table>
+                                    </div>
+                                    </div>
+                                    </div>
+                              </li>
+                              <li>
+                                    <i class="fas fa-crown">&nbspAdmin Access</i> 
+                              </li>
+                              
+                              <div id="mySidebar" class="sidebar">
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                               
                               </div>
-                            </body>
-                        </div>
+                              
+                            </div>
+                            </div> 
+                            </div>
+                          </body>                       
                     </center>
+                </body>
         </html>
+        
+        
