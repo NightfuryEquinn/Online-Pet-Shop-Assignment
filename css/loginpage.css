@@ -1,0 +1,99 @@
+.align{
+    margin: 0;
+    padding: 0; 
+  }
+  .loginbar{
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    height: 100%;
+    width: 35%;
+    background: #11101D;
+    padding: 6px 10px;
+    border-radius: 0px 20px 20px 0px;
+    transition: 7 ease-in-out;
+    overflow: visible; /*whb*/
+  }
+  
+  .loginbar i{
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+    word-spacing: 5px;
+    cursor: pointer;
+    position: static;
+  }
+  .loginbar i:hover {
+    color: black;
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    transition: 7 ease-in;
+  }
+  .loginbar .nav-list{
+    margin-top: 20px;
+    height: 100%;
+  }
+  .loginbar li{
+    position: relative;
+    margin: 8px 0;
+    list-style: none;
+  }
+  
+  .selectcont{
+    background-image:linear-gradient(#ffeeda, #ffe9d0, #ffe6c9, #fcddb9) ;
+    z-index: 10;
+    top: 10%;
+    bottom: 10%;
+    left: 15%;
+    height: 80%;
+    width: 70%;
+    position: fixed;
+    padding: 6px 14px;
+    z-index: 10;
+    box-shadow: #818181 10px 10px;
+  }
+  
+  /*already have*/
+  /*already have*/
+  /*already have*/
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  /*already have*/
+  /*already have*/
+  /*already have*/
+
+  .sidebar {
+    left: 15%;
+    top: 10%;
+    bottom: 10%;
+    height: 80%;
+    position: fixed;
+    z-index: -10;
+    background-color:#AC3B61;
+    transition: 0.7s ease-in;
+    padding: 6px 14px;
+    border-radius: 0px 20px 20px 0px;
+
+  }
+  .formtext {
+    color: wheat;
+    display: block; 
+    position:fixed;
+    top:50%;
+    left:50%;
+    width:250%;
+    z-index: -1;
+  }
+  
+  
+  
