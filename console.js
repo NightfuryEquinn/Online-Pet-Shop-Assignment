@@ -94,13 +94,28 @@ function scroll2Top() {
 function opentab(tab_no){
     if (tab_no==1){
         document.getElementById("personal-info-form").style.display="flex";
-        document.getElementById("bank-card-form").style.display="none";
+        document.getElementById("change-password-form").style.display="none";
     }
     else if (tab_no==2){
         document.getElementById("personal-info-form").style.display="none";
-        document.getElementById("bank-card-form").style.display="flex";
+        document.getElementById("change-password-form").style.display="block";
 
     }
+}
+
+//payment completion alert and redirect back to previous page
+function payment_done() {
+    alert("Payment is done successfully.")
+    window.location.replace("homepage.html")
+}
+//password changed alert
+function password_change(){
+    alert("Password changed successfully.")
+}
+
+//personal information changed alert
+function modify_details(){
+    alert("Your personal information has been updated successfully.")
 }
 
 //xl//
