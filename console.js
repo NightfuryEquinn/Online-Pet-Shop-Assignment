@@ -136,3 +136,32 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("navbar");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+//login//
+function loginopen() {
+    document.getElementById("loginform").style.width = "67%";
+  }
+  
+  function closeNav() {
+    document.getElementById("loginform").style.width = "0%";
+  }
+
+  function signupopen() {
+    document.getElementById("signupform").style.width = "67%";
+  }
+  
+  function closeNav() {
+    document.getElementById("signupform").style.width = "0%";
+  }
+//xl//
