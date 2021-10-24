@@ -1,3 +1,4 @@
+// Add new accessory data from addNew.html
 <?php
 include("conn.php");
 

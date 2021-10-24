@@ -172,6 +172,8 @@ body {
 
 .hamburger-nbc:hover .hamburger-content {
     display: flex;
+    position: relative;
+    z-index: 1;
 }
 
 /* Admin Edit Form */

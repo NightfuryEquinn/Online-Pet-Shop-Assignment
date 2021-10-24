@@ -1,3 +1,4 @@
+// Add new food data from addNew.html
 <?php
 include("conn.php");
 
