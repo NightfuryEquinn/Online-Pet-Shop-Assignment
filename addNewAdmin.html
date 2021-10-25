@@ -75,9 +75,9 @@
                     <h1>WHAT DO YOU WANT TO ADD?</h1>
 
                     <div class='radio-container'>
-                        <input onclick="document.getElementById('addForm').action = 'php/addNewPet.php'" id='addPet' type="radio" name="adding"><label>NEW PETS!</label>
-                        <input onclick="document.getElementById('addForm').action = 'php/addNewFood.php'" id='addFood' type="radio" name="adding"><label>NEW FOOD!</label>
-                        <input onclick="document.getElementById('addForm').action = 'php/addNewAccessory.php'" id='addAccessory' type="radio" name="adding"><label>NEW ITEMS/FASHION!</label>
+                        <input value='pet' type="radio" name="adding"><label>NEW PETS!</label>
+                        <input value='food' type="radio" name="adding"><label>NEW FOOD!</label>
+                        <input value='accessory' type="radio" name="adding"><label>NEW ITEMS/FASHION!</label>
                     </div>
 
                     <div class="addnew">
@@ -88,6 +88,8 @@
                         <label>Description: </label><textarea name="description" rows="10" cols="10" required></textarea>
                         <hr>
                         <label>Price Tag: </label><input type="number" name="price" min="0" required>
+                        <hr>
+                        <label>Quantity / Available Stock: </label><input type="number" name="stock" min="0" required>
                         <hr>
                         <div class="button-container">
                             <button id='submit' type="submit">NEW STUFF OUT!!!</button>
