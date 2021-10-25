@@ -193,43 +193,57 @@ h1 {
     color: #AC3B61;
 }
 
-/* Category Filter */
-.category-container {
-    height: 100px;
+/* Seacrh Bar */
+.search-bar {
+    margin: 400px 50px 75px 50px;
+    height: 50px;
     width: auto;
-    margin: 450px 150px 50px 150px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
+    flex-direction: column;
 }
 
-.category-container button {
-    font-size: 22px;
-    font-weight: bolder;
+.search-bar input {
+    padding: 10px;
+    width: 25%;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    border: none;
+    transition: width 1.75s;
+    transition-timing-function: ease-out;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    font-size: 14px;
     font-family: 'Montserrat', sans-serif;
-    letter-spacing: 2px;
-    background-color: #E98074;
-    border: 5px solid #E98074;
-    border-radius: 50px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    color: #24305E;
+    background-color: #EAE7DC;
+    border-radius: 25px;
+    border: none;
     cursor: pointer;
 }
 
-.category-container button:hover {
-    animation-name: color-change-cc;
-    animation-duration: 0.3s;
+.search-bar input:focus {
+    animation-name: color-fill;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
+    background-color: transparent;
+    width: 60%;
 }
 
-@keyframes color-change-cc {
+@keyframes color-fill {
     from {
-        background-color: #E98074;
-        border: 5px solid #E98074;
+        background-color: #ffffff;
     }
     to {
-        color: #D8C3A5;
-        background-color: #E85A4F;
-        border: 5px solid #E85A4F;
+        background-color: #A8D0E6;
     }
 }
 
@@ -251,9 +265,6 @@ h1 {
     height: auto;
     width: 350px;
     background-color: #EEE2DC;
-}
-
-.furry, .feathery, .others {
     display: flex;
     align-content: center;
     align-items: center;
@@ -533,14 +544,6 @@ li i {
 
 #bank-card-form {
     display:none;
-}
-
-/* Screen less than 1080px width */
-@media screen and (max-width: 1080px) {
-    /* Category Filter */
-    .category-container {
-        flex-direction: column;
-    }
 }
 
 /* Screen less than 1200px width */ 

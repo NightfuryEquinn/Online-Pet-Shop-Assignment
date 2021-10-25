@@ -14,66 +14,6 @@ function changeFunction() {
     }
 }
 
-// Category Filter
-function filter(f) {
-    if (f == 'all') {
-        var i = document.getElementsByClassName('furry');
-        for (var x = 0; x < i.length; x++) {
-            i[x].style.display = 'flex';
-        }
-        var j = document.getElementsByClassName('feathery');
-        for (var y = 0; y < j.length; y++) {
-            j[y].style.display = 'flex';
-        }
-        var k = document.getElementsByClassName('others');
-        for (var z = 0; z < k.length; z++) {
-            k[z].style.display = 'flex';
-        }
-
-    } else if (f == 'furry') {
-        var i = document.getElementsByClassName('furry');
-        for (var x = 0; x < i.length; x++) {
-            i[x].style.display = 'flex';
-        }
-        var j = document.getElementsByClassName('feathery');
-        for (var y = 0; y < j.length; y++) {
-            j[y].style.display = 'none';
-        }
-        var k = document.getElementsByClassName('others');
-        for (var z = 0; z < k.length; z++) {
-            k[z].style.display = 'none';
-        }
-
-    } else if (f == 'feathery') {
-        var i = document.getElementsByClassName('furry');
-        for (var x = 0; x < i.length; x++) {
-            i[x].style.display = 'none';
-        }
-        var j = document.getElementsByClassName('feathery');
-        for (var y = 0; y < j.length; y++) {
-            j[y].style.display = 'flex';
-        }
-        var k = document.getElementsByClassName('others');
-        for (var z = 0; z < k.length; z++) {
-            k[z].style.display = 'none';
-        }
-
-    } else if (f == 'others') {
-        var i = document.getElementsByClassName('furry');
-        for (var x = 0; x < i.length; x++) {
-            i[x].style.display = 'none';
-        }
-        var j = document.getElementsByClassName('feathery');
-        for (var y = 0; y < j.length; y++) {
-            j[y].style.display = 'none';
-        }
-        var k = document.getElementsByClassName('others');
-        for (var z = 0; z < k.length; z++) {
-            k[z].style.display = 'flex';
-        }
-    }
-}
-
 // Back to Top Button
 window.onscroll = function() {back2topFunction()};
 
