@@ -1,4 +1,4 @@
-// Add new pet data from addNew.html
+<!--Add new pet data from addNew.html-->
 <?php
 include("conn.php");
 

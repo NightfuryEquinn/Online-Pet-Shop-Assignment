@@ -1,4 +1,4 @@
-// Connect to PHPmyAdmin MySQL database
+<!--Connect to PHPmyAdmin MySQL database-->
 <?php
 $con = mysqli_connect("localhost", "root", "", "assignment");
 
