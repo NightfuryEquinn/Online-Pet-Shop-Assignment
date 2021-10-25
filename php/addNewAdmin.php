@@ -6,11 +6,11 @@ $image = $_FILES['image']['tmp_name'];
 
 $img = file_get_contents($image);
 
-$sql="INSERT INTO pet (Pet_Name, Pet_Price, Pet_Description, Image_Source) 
+$sql="INSERT INTO product (Product_Name, Product_Price, Product_Description, Product_Category, Product_Stock, ?) 
 
 VALUES 
 
-('$_POST[name]', '$_POST[price]', '$_POST[description]', ?)";
+('$_POST[name]', '$_POST[price]', '$_POST[description]', '$_POST[adding]', '$_POST[stock]', ?)";
 
 $stmt = mysqli_prepare($con,$sql);
 
