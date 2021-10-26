@@ -83,7 +83,7 @@
             <button name="search">SEARCH</button>
         </div>
 
-        // Search activation
+        <!--Search activation-->
         <?php
             include("conn.php");
 
@@ -121,11 +121,11 @@
 
                     <p>'.$row['Product_Price'].'</p>
 
-                    <button>EDIT</button>
+                    <button><a href=\"edit.php?id='.$row['Product_ID'].'\" onclick=\"return confirm("Edit '.$row['Product_Name'].' details?");\">EDIT</a></button>
                     
                     <br>
                     
-                    <button>DELETE</button>
+                    <button><a href=\"delete.php?id='.$row['Product_ID'].'\" onclick=\"return confirm("Delete '.$row['Product_Name'].' details? This cannot be undone!");\">DELETE</a></button>
 
                     </div>
 

@@ -22,7 +22,7 @@ $check = mysqli_stmt_affected_rows($stmt);
 
 if($check == 1) {
     echo '<script> alert ("1 record added! Image sucessfully uploaded!");
-    window.location.href= "homepage.html";
+    window.location.href= "../homepage.html";
     </script>';
 
 } else {
