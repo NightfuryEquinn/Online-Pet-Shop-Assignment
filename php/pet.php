@@ -33,7 +33,7 @@
         <link rel = "icon" type = image/png href = ../art/logo.png>
 
         <!--Title-->
-        <title>Les Pet Shop - Accessories</title>
+        <title>Les Pet Shop - Pets</title>
     </head>
 
     <body>
@@ -71,10 +71,10 @@
         </header>
 
         <!--Cat Curved Bottom Background-->
-        <img class='cat-background' src='../art/luxury.jpg'>
+        <img class='cat-background' src='../art/cutecat.jpg'>
 
         <!--Title Quote-->
-        <h1>LUXURIOUS PET LIFE</h1>
+        <h1>YOUR DESIRED COMPANION</h1>
 
         <!--Search Bar-->
         <div class="search-bar">
@@ -90,10 +90,10 @@
             $searchText = "";
 
             if(isset($_POST["search"])) {
-                $searchText = $_POST['search'];
+                $searchText = $_POST["searchText"];
             }
 
-            $searchResult = mysqli_query($con, "SELECT * FROM product WHERE Product_Category='pet' LIKE '%$searchText%' ORDER BY Product_Name");
+            $searchResult = mysqli_query($con, "SELECT * FROM product WHERE Product_Category='pet' AND Product_Name LIKE '%$searchText%' ORDER BY Product_Name");
         ?>
 
         <!--Pet Flexboxes-->
@@ -103,13 +103,11 @@
                 // Get and display data
                 while ($row = mysqli_fetch_array($searchResult)){
                     
-                    $display = '
+                    $display = '<div class="pet-card">
                     
-                    <div class="pet-card">
+                    <div class="pet-imagebox">
                     
-                    <div class="pet-imagebox"
-                    
-                    <img src="data:image/jpg;base64, '.base64_encode($row['Product_Image']).'"
+                    <img src="data:image/jpg;base64, '.base64_encode($row['Product_Image']).'">
 
                     </div>
 
@@ -129,7 +127,7 @@
 
                     ';
 
-                    echo $display;
+                echo $display;
                 }
 
                 // Close connection to database

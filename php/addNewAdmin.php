@@ -2,15 +2,15 @@
 <?php
 include("conn.php");
 
-$image = $_FILES['image']['tmp_name'];
+$uploadImage = $_FILES['image']['tmp_name'];
 
-$img = file_get_contents($image);
+$img = file_get_contents($uploadImage);
 
-$sql="INSERT INTO product (Product_Name, Product_Price, Product_Description, Product_Category, Product_Stock, ?) 
+$sql="INSERT INTO product (Product_Name, Product_Price, Product_Description, Product_Category, Product_Stock, Product_Image) 
 
 VALUES 
 
-('$_POST[name]', '$_POST[price]', '$_POST[description]', '$_POST[adding]', '$_POST[stock]', ?)";
+('$_POST[name]', '$_POST[price]', '$_POST[description]', '$_POST[adding]', '$_POST[stock]', ?);";
 
 $stmt = mysqli_prepare($con,$sql);
 

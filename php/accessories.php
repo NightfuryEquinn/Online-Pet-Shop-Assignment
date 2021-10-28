@@ -93,7 +93,7 @@
                 $searchText = $_POST['search'];
             }
 
-            $searchResult = mysqli_query($con, "SELECT * FROM product WHERE Product_Category='accessory' LIKE '%$searchText%' ORDER BY Product_Name");
+            $searchResult = mysqli_query($con, "SELECT * FROM product WHERE Product_Category='accessory' AND Product_Name LIKE '%$searchText%' ORDER BY Product_Name");
         ?>
 
         <!--Pet Flexboxes-->
@@ -107,9 +107,9 @@
                     
                     <div class="pet-card">
                     
-                    <div class="pet-imagebox"
+                    <div class="pet-imagebox">
                     
-                    <img src="data:image/jpg;base64, '.base64_encode($row['Product_Image']).'"
+                    <img src="data:image/jpg;base64, '.base64_encode($row['Product_Image']).'">
 
                     </div>
 

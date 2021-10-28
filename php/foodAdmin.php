@@ -33,12 +33,15 @@
         <link rel = "icon" type = image/png href = ../art/logo.png>
 
         <!--Title-->
-        <title>Les Pet Shop - Accessories</title>
+        <title>Les Pet Shop - Food</title>
     </head>
 
     <body>
         <!--Back to Top Button-->
         <button id='back2top-btn' onclick='scroll2Top()' title='Purr back 2 top!~'><i class="fas fa-arrow-alt-circle-up fa-4x"></i></button>
+
+        <!--Add New Button-->
+        <button id='add-new-btn' onclick="document.location='addNewAdmin.html'" title='Add new stuffs!~'><i class="fas fa-plus-circle fa-2x"></i></button>
 
         <!--Navigation Bar & Hamburger-->
         <header>
@@ -71,10 +74,10 @@
         </header>
 
         <!--Cat Curved Bottom Background-->
-        <img class='cat-background' src='../art/luxury.jpg'>
+        <img class='cat-background' src='../art/foodimage.jpg'>
 
         <!--Title Quote-->
-        <h1>LUXURIOUS PET LIFE</h1>
+        <h1>COMPANION ENERGY SOURCE</h1>
 
         <!--Search Bar-->
         <div class="search-bar">
@@ -93,7 +96,7 @@
                 $searchText = $_POST['search'];
             }
 
-            $searchResult = mysqli_query($con, "SELECT * FROM product WHERE Product_Category='food' LIKE '%$searchText%' ORDER BY Product_Name");
+            $searchResult = mysqli_query($con, "SELECT * FROM product WHERE Product_Category='food' AND Product_Name LIKE '%$searchText%' ORDER BY Product_Name");
         ?>
 
         <!--Pet Flexboxes-->
@@ -107,9 +110,9 @@
                     
                     <div class="pet-card">
                     
-                    <div class="pet-imagebox"
+                    <div class="pet-imagebox">
                     
-                    <img src="data:image/jpg;base64, '.base64_encode($row['Product_Image']).'"
+                    <img src="data:image/jpg;base64, '.base64_encode($row['Product_Image']).'">
 
                     </div>
 
@@ -121,11 +124,11 @@
 
                     <p>'.$row['Product_Price'].'</p>
 
-                    <button><a href=\"edit.php?id='.$row['Product_ID'].'\" onclick=\"return confirm("Edit '.$row['Product_Name'].' details?");\">EDIT</a></button>
+                    <a href=\"edit.php?id='.$row['Product_ID'].'\" onclick=\"return confirm("Edit '.$row['Product_Name'].' details?");\"><button>EDIT</button></a>
                     
                     <br>
                     
-                    <button><a href=\"delete.php?id='.$row['Product_ID'].'\" onclick=\"return confirm("Delete '.$row['Product_Name'].' details? This cannot be undone!");\">DELETE</a></button>
+                    <a href=\"delete.php?id='.$row['Product_ID'].'\" onclick=\"return confirm("Delete '.$row['Product_Name'].' details? This cannot be undone!");\"><button>DELETE</button></a>
 
                     </div>
 
