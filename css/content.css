@@ -55,6 +55,25 @@ body {
     color: #AC3B61;
 }
 
+/* Add New Button */
+#add-new-btn {
+    padding: 10px;
+    position: fixed;
+    z-index: 100;
+    bottom: 20px;
+    left: 20px;
+    border: none;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    color: #A8D0E6;
+    background-color: #55ACEE;
+    cursor: pointer;
+}
+
+#add-new-btn:hover {
+    color: #123C69;
+}
+
 /* Navigation Bar */
 .nav-bar {
    height: 225px;
