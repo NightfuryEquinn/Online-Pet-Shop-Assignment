@@ -126,12 +126,12 @@
 
                     <p>'.$row['Product_Price'].'</p>
 
-                    <a href=\"edit.php?id='.$row['Product_ID'].'\" onclick=\"return confirm("Edit '.$row['Product_Name'].' details?");\"><button>EDIT</button></a>
+                    <a href=\'edit.php?Product_ID='.$row['Product_ID'].'\' onclick="return confirm(\'Edit '.$row['Product_Name'].' details?\');"><button>EDIT</button></a>
                     
                     <br>
                     
-                    <a href=\"delete.php?id='.$row['Product_ID'].'\" onclick=\"return confirm("Delete '.$row['Product_Name'].' details? This cannot be undone!");\"><button>DELETE</button></a>
-
+                    <a href=\'delete.php?Product_ID='.$row['Product_ID'].'\' onclick="return confirm(\'Delete '.$row['Product_Name'].' details? This cannot be undone!\');"><button>DELETE</button></a>
+                    
                     </div>
 
                     </div>

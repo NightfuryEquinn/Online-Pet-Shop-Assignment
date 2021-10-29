@@ -31,9 +31,8 @@ if ($check == 1) {
 } else {
     echo '<script>
     alert ("Failed to update relevant files.");
-    window.location.href= "../homepage.html";
     </script>';
 }
 
-$mysqli_close($con);
+mysqli_close($con);
 ?>
