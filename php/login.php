@@ -19,7 +19,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             echo '"Login Succesful. Welcome back.";
             window.location.href = "homepage.html";' 
             ;}
-            //header("location: view.php");
         else {
             $error=printf("Invalid credentials, please try again.<br/><br/>");
             }
