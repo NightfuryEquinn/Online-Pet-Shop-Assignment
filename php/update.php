@@ -12,12 +12,12 @@ Product_Price='$_POST[price]',
 Product_Description='$_POST[description]',
 Product_Category='$_POST[adding]',
 Product_Stock='$_POST[stock]',
-Product_Image=?
+
 WHERE Product_ID='$_POST[id]';";
 
 $stmt = mysqli_prepare($con, $updateQuery);
 
-mysqli_stmt_bind_param($stmt, "s", $updateImg);
+//mysqli_stmt_bind_param($stmt, "s", $updateImg);
 
 mysqli_stmt_execute($stmt);
 
