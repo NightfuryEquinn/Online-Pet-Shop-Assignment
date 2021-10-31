@@ -1,6 +1,4 @@
-<!--Same structure like addNewAdmin.html--> 
-<!--Access after admin select "Edit"-->
-
+<!--Retrieve data to display-->
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,10 +15,10 @@
         <meta name = "copyright" content = "Copyright 2021 Yip Zi Xian, Neong Yee Kay, Wong Xie Ling">
 
         <!--Link to CSS-->
-        <link rel = "stylesheet" href = "../css/addNew.css">
+        <link rel = "stylesheet" href = "../css/content.css">
 
         <!--Link to JavaScript-->
-        <script src = "../console.js" defer></script>
+        <script src = "../console.js"></script>
 
         <!--Link to Font Awesome v4 and v5-->
         <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.15.4/css/all.css">
@@ -35,8 +33,9 @@
         <link rel = "icon" type = image/png href = ../art/logo.png>
 
         <!--Title-->
-        <title>Les Pet Shop - Admin</title>
+        <title>Les Pet Shop - Food</title>
     </head>
+
     <body>
         <!--Back to Top Button-->
         <button id='back2top-btn' onclick='scroll2Top()' title='Purr back 2 top!~'><i class="fas fa-arrow-alt-circle-up fa-4x"></i></button>
@@ -70,73 +69,101 @@
                 </div>
             </div>
         </header>
-        
-        <!--Admin Edit Form-->
-        <div class='main-container'>
-            <div class='item-flex-container'>
 
-                <?php
-                    include("conn.php");
-                    $editID = intval($_GET["Product_ID"]);
-                    $editData = mysqli_query($con, "SELECT * FROM product WHERE Product_ID=$editID");
-                    while($displayEdit = mysqli_fetch_array($editData)) {
-                ?>
+        <!--Cat Curved Bottom Background-->
+        <img class='cat-background' src='../art/foodimage.jpg'>
 
-                <form id='addForm' action="update.php" method="post" enctype="multipart/form-data">
-                    <h1>WHAT DO YOU WANT TO ADD?</h1>
+        <!--Title Quote-->
+        <h1>COMPANION ENERGY SOURCE</h1>
 
-                    <input type="hidden" name="id" value="<?php echo $displayEdit['Product_ID']?>">
-                    
-                    <div class='radio-container'>
-                        <input value='pet' type="radio" name="adding" 
-
-                        <?php if ($displayEdit['Product_Category'] == 'pet'){ ?> 
-                        checked="checked"    
-                        <?php } ?>>
-
-                        <label>PETS</label>
-
-                        <input value='food' type="radio" name="adding"
-
-                        <?php if ($displayEdit['Product_Category'] == 'food'){ ?> 
-                        checked="checked"    
-                        <?php } ?>>
-
-                        <label>FOOD</label>
-                        
-                        <input value='accessory' type="radio" name="adding"
-
-                        <?php if ($displayEdit['Product_Category'] == 'accessory'){ ?> 
-                        checked="checked"    
-                        <?php } ?>>
-
-                        <label>ITEMS/FASHION</label>
-                    </div>
-
-                    <div class="addnew">
-                        <label>Display Image: </label><input type="file" name="image" accept="image/*" required>
-                        <hr>
-                        <label>Name: </label><input type='text' name='name' value="<?php echo $displayEdit['Product_Name']?>" required>
-                        <hr>
-                        <label>Description: </label><textarea name="description" rows="10" cols="10" value="<?php echo $displayEdit['Product_Description']?>" required></textarea>
-                        <hr>
-                        <label>Price Tag: </label><input type="number" name="price" min="0" value="<?php echo $displayEdit['Product_Price']?>" required>
-                        <hr>
-                        <label>Quantity / Available Stock: </label><input type="number" name="stock" min="0" value="<?php echo $displayEdit['Product_Stock']?>" required>
-                        <hr>
-                        <div class="button-container">
-                            <button id='submit' type="submit">UPDATE</button>
-                            <button id='reset' type="reset">RESET</button>
-                        </div>
-                    </div>
-                </form>
-
-                <?php
-                    }
-                    mysqli_close($con);
-                ?>
-
+        <!--Search Bar-->
+        <form method="POST">
+            <div class="search-bar">
+                <input type='text' placeholder="What'cha wanna find here?" name="searchText">
+                <br><br>
+                <button name="search">SEARCH</button>
             </div>
-        </div>
+        </form>
+
+        <!--Search activation-->
+        <?php
+            include("conn.php");
+
+            $searchText = "";
+
+            if(isset($_POST["search"])) {
+                $searchText = $_POST['search'];
+            }
+
+            $searchResult = mysqli_query($con, "SELECT * FROM product WHERE Product_Category='food' AND Product_Name LIKE '%$searchText%' ORDER BY Product_Name");
+        ?>
+
+        <!--Pet Flexboxes-->
+        <div class='pet-flexbox-container'>
+
+            <?php
+                // Get and display data
+                while ($row = mysqli_fetch_array($searchResult)){
+                    
+                    $display = '
+                    
+                    <div class="pet-card">
+                    
+                    <div class="pet-imagebox">
+                    
+                    <img src="data:image/jpg;base64, '.base64_encode($row['Product_Image']).'">
+
+                    </div>
+
+                    <div class="pet-descriptionbox">
+
+                    <h2>'.$row['Product_Name'].'</h2>
+
+                    <h6>'.$row['Product_Description'].'</h6>
+
+                    <p>'.$row['Product_Price'].'</p>
+
+                    <button>TAKE IT HOME!</button>
+
+                    </div>
+
+                    </div>
+
+                    ';
+
+                    echo $display;
+                }
+
+                // Close connection to database
+                mysqli_close($con); 
+            ?>
+
+        <!--Footer-->
+        <footer class="footer">
+            <div class="footer-flex-container">
+                <div class="footer-content"><h3>Home</h3>
+                    <p>Les Pet Shop is always here for you and your pets. You can find yourself a companion and high quality pet product here!</p>
+                </div>
+                <div class="footer-content"><h3>Our services</h3>
+                    <ul>
+                        <li><i class="fas fa-paw"></i><a href="../pet.html">Pets</a></li>
+                        <li><i class="fas fa-paw"></i><a href="../food.html">Pets Food</a></li>
+                        <li><i class="fas fa-paw"></i><a href="../accessories.html">Pets Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-content"><h3>Social media</h3>
+                    <p>Find us on social media<br><br>
+                    <a href="www.facebook.com" class="fa fa-facebook"></a>
+                    <a href="www.twitter.com" class="fa fa-twitter"></a>
+                    <a href="www.instagram.com" class="fa fa-instagram"></a></p>
+                </div>
+                <div class="footer-content contact"><h3>Contact us</h3>
+                    <p>2, Jalan Besar 5,<br>50000 Kuala Lumpur, <br>Malaysia</p>
+                    <p>Email: <a href="mailto:lespetshopt@gmail.com">lespetshopt@gmail.com</a></p>
+                    <p>Phone no: <a href="tel:0312345678">03-12345678</a></p>
+                </div>
+            </div>
+            <p id="copyright"><b>&#169 2021 Les Pet Shop (Team Name)</b></p>
+        </footer>
     </body>
 </html>
