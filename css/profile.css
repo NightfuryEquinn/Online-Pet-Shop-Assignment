@@ -50,7 +50,7 @@ hr{
 .nav-bar {
    height: 225px;
    width: auto;
-   background-color: #EAE7DC;
+   background-color: #EDC7B7;
    display: flex;
    align-content: center;
    justify-content: space-between;
@@ -112,10 +112,10 @@ hr{
 @keyframes color-change-navbar {
     from {
         color: #24305E;
-        background-color: #EAE7DC;
+        background-color: #EDC7B7;
     }
     to {
-        color: #EAE7DC;
+        color: #EDC7B7;
         background-color: #24305E;
     }
 }
