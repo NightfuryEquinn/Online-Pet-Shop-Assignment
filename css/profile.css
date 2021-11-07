@@ -6,10 +6,10 @@ body{
     margin:0;
     padding:0;
 }
+
 h1,h2,h3{
     font-family:'Montserrat', sans-serif;
     color:#E85A4F;
-    font-weight: bolder;
 }
 
 p, div{
