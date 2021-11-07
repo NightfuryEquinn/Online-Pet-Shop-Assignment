@@ -199,7 +199,7 @@ body {
   .selectcont{
     background-image:linear-gradient(#ffeeda, #ffe9d0, #ffe6c9, #fcddb9) ;
     z-index: 10;
-    top:  300px;
+    /*top:  300px;*/
     bottom: 10%;
     left: 15%;
     height: 80%;
@@ -242,7 +242,7 @@ body {
 
   .sidebar {
     left: 15%;
-    top: 300px;
+    /*top: 300px;*/
     bottom: 10%;
     height: 80%;
     position: fixed;
