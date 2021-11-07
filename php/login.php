@@ -16,10 +16,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         if($rowcount==1) {
             session_start();
             $_SESSION['mySession']=$username;
-            echo '"Login Succesful. Welcome back.";
-            window.location.href = "homepage.html";' 
-            ;}
+            echo "Login Succesful. Welcome back.";
             //header("location: view.php");
+            }
         else {
             $error=printf("Invalid credentials, please try again.<br/><br/>");
             }
