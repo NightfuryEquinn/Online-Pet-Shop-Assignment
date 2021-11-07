@@ -18,8 +18,9 @@ $username= "Box";
     <script src="https://kit.fontawesome.com/c8bccee41a.js" crossorigin="anonymous"></script>
 
     <!--Add font library-->
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Rubik:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--link css-->
@@ -46,7 +47,7 @@ $username= "Box";
             <button onclick="document.location='../.html'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
             <button onclick="document.location='../food.html'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
             <button onclick="document.location='../accessories.html'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
-            <button onclick="document.location='../userprofile.html'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
+            <button onclick="document.location='../userprofile.php'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
             <button onclick="document.location='../login.html'"><span><i class="fas fa-sign-in-alt fa-2x"></i></span>LOGIN</button>
         </div>
 
@@ -57,7 +58,7 @@ $username= "Box";
                 <button onclick="document.location='../pet.html'"><i class="fas fa-paw fa-2x"></i><br>PETS</button>
                 <button onclick="document.location='../food.html'"><i class="fas fa-fish fa-2x"></i><br>FOOD</button>
                 <button onclick="document.location='../accessories.html'"><i class="fas fa-gift fa-2x"></i><br>ACCESSORIES</button>
-                <button onclick="document.location='../userprofile.html'"><i class="fas fa-user-circle fa-2x"></i><br>PROFILE</button>
+                <button onclick="document.location='../userprofile.php'"><i class="fas fa-user-circle fa-2x"></i><br>PROFILE</button>
                 <button onclick="document.location='../login.html'"><i class="fas fa-sign-in-alt fa-2x"></i><br>LOGIN</button>
             </div>
         </div>
@@ -141,7 +142,7 @@ $username= "Box";
 
                     $result = mysqli_query($con,"SELECT o.*,sp.*,s.*,p.*, c.*(sp.Quantity * p.Product_Price) AS Total 
                     FROM customerorder o, shopping_product sp, shoppingcart s, product p, customer c 
-                    WHERE c.Customer_ID = s.Customer_ID, sp.Shopping_ID = s.Shopping_ID, p.Product_ID = sp.Product_ID,  o.Shopping_ID = s.Shopping_ID, c.Username=$username
+                    WHERE c.Customer_ID = s.Customer_ID, sp.Shopping_ID = s.Shopping_ID, p.Product_ID = sp.Product_ID,  o.Shopping_ID = s.Shopping_ID, c.Username='".$username."'
                     LIMIT $offset, $limit_row");
                 ?>
 
