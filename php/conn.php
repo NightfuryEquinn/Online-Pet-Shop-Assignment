@@ -1,6 +1,6 @@
 <!--Connect to PHPmyAdmin MySQL database-->
 <?php
-$con = mysqli_connect("localhost", "root", "", "lespetshop");
+$con = mysqli_connect("localhost", "root", "", "assignment");
 
 // Check connection
 if (mysqli_connect_errno()) {
