@@ -386,7 +386,10 @@ li i {
 
 /*accountEdit page*/
 .manage-account{
-    margin:50px auto 600px;
+    height: auto;
+    width: auto;
+    background-color:inherit;
+    margin:0px;
     margin-left:150px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
