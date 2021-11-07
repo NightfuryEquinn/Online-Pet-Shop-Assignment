@@ -30,118 +30,165 @@
         
         <!--Link to Pictures file-->
         <link rel = "icon" type = image/png href = art/logo.png>
+<!--Title-->
+<title>Login</title>
 
-        <!--Title-->
-            <title>Login</title>
-                <body style = "background-color:#b4a59dd3;">
-                    <center>
-                            <div class="selectcont">
-                            <div class="align">
-                            <div class="loginbar">
-                              <ul class="nav-list">
-                                <li>
-                                <i class="fas fa-sign-in-alt" onmouseenter="loginopen()" onmouseleave="loginclose()">&nbsp&nbspLog In</i>
-                                <div class="formtext"  onmouseenter="loginopen()" onmouseleave="loginclose()">
-                                <div id="loginform" class="sidebar">
-                                <div id="loginform" style="float: right; padding: 17%;">
-                                  <table>
-                                    <h2>Have an existing account?<br>Login here!</h2>
-                                    <form action="login.php" method="post">
-                                            <td>Email</td>
-                                            <td>:</td>
-                                            <td><input type="email" name="email" required="required"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Password</td>
-                                            <td>:</td>
-                                            <td><input type="password" name="password" required="required"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>&nbsp;</td>
-                                            <td>&nbsp;</td>
-                                            <td><input type="submit" value="Login">
-                                            <input type="reset" value="Reset"></td>
-                                        </tr>
-                                      </div>
-                                    </form>
+<!--Navigation Bar & Hamburger-->
+  <header>
+    <div class='nav-bar'>
+        <img class='logo' src='art/logo.png'>
+
+        <div class='name'>Les   Pet   Shop</div>
+
+        <div class='nav-btn-container'>
+            <button onclick="document.location='homepage.html'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
+            <button onclick="document.location='pet.html'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
+            <button onclick="document.location='food.html'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
+            <button onclick="document.location='accessories.html'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
+            <button onclick="document.location='userprofile.html'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
+            <button onclick="document.location='login.html'"><span><i class="fas fa-sign-in-alt fa-2x"></i></span>LOGIN</button>
+        </div>
+
+        <div class='hamburger-nbc'>
+            <button id='hamburger-bar'><i class='fa fa-bars fa-3x'></i></button>
+            <div class='hamburger-content'>
+                <button onclick="document.location='homepage.html'"><i class="fas fa-home fa-2x"></i><br>HOME</button>
+                <button onclick="document.location='pet.html'"><i class="fas fa-paw fa-2x"></i><br>PETS</button>
+                <button onclick="document.location='food.html'"><i class="fas fa-fish fa-2x"></i><br>FOOD</button>
+                <button onclick="document.location='accessories.html'"><i class="fas fa-gift fa-2x"></i><br>ACCESSORIES</button>
+                <button onclick="document.location='userprofile.html'"><i class="fas fa-user-circle fa-2x"></i><br>PROFILE</button>
+                <button onclick="document.location='login.html'"><i class="fas fa-sign-in-alt fa-2x"></i><br>LOGIN</button>
+            </div>
+        </div>
+    </div>
+</header> 
+        <body style = "background-color:#b4a59dd3;">
+            <center>
+                    <div class="selectcont">
+                    <div class="align">
+                    <div class="loginbar">
+                      <ul class="nav-list">
+                        <li>
+                        <i class="fas fa-sign-in-alt" onclick="loginopen()">&nbsp&nbspLog In</i>
+                        <div class="formtext">
+                        <div id="loginform" class="sidebar">
+                        <div id="loginform" style="float: right; padding: 17%;">
+                        <div class="exit" onclick="loginclose()">x</div>
+                          <table>
+                            <h2>Have an existing account?<br>Login here!</h2>
+                            <form action="login.php" method="post">
+                                    <td>Email</td>
+                                    <td>:</td>
+                                    <td><input type="email" name="email" required="required" placeholder="Enter your email"></td>
+                                </tr>
+                                <tr>
+                                    <td>Password</td>
+                                    <td>:</td>
+                                    <td><input type="password" name="password" required="required" placeholder="Enter your password"></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td><input type="submit" value="Login">
+                                    <input type="reset" value="Reset"></td>
+                                </tr>
+                              </div>
+                            </form>
+                          </table>
+                          <a href="resetpassword.html">Forgot your password? Click here!</a>
+                          </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-user-plus" onclick="signupopen()">&nbsp&nbspSign Up</i>
+                            <div class="formtext">
+                            <div id="signupform" class="sidebar">
+                            <div id="signupform" style="float: right; padding: 17%;">
+                            <div class="exit" onclick="signupclose()">x</div>
+                              <table>
+                                <h2>Wish to create an account?<br>Sign Up here!</h2>
+                                <form method="post" action="signup.php">    
+                                   <tr>
+                                    <td>Username :</td>
+                                    <td>
+                                      <input type="text" name="username" required placeholder="Choose a username">
+                                    </td>
+                                   </tr>
+                                   <tr>
+                                    <td>Name :</td>
+                                    <td>
+                                      <input type="text" name="name" required placeholder="Enter your name">
+                                    </td>
+                                   </tr>
+                                   <tr>
+                                    <td>Email :</td>
+                                    <td>
+                                     <input type="email" name="email" required placeholder="Enter your email">
+                                    </td>
+                                   </tr>
+                                   <tr>
+                                    <td>Password :</td>
+                                    <td><input type="password" name="password" required placeholder="Enter a password"></td>
+                                   </tr> 
+                                   <tr>
+                                    <td>Confirm Password :</td>
+                                    <td><input type="password" name="checkpassword" required placeholder="Re-enter your pasword"></td>
+                                   </tr> 
+                                    <td>
+                                        <input type="submit" value="Submit" name="submitinput">
+                                        <input type="reset" value="Reset" name="resetinput">
+                                    </td>
+                                   </tr>
                                   </table>
-                                    </div>
+                                 </form>
+                            </div>
+                            </div>
+                            </div>
+                      </li>
+                      <li>
+                            <i class="fas fa-crown" onclick="adminopen()">&nbspAdmin Access</i>
+                            <div class="formtext">
+                              <div id="adminform" class="sidebar">
+                              <div id="adminfor" style="float: right; padding: 17%;">
+                              <div class="exit" onclick="adminclose()">x</div>
+                                <table>
+                                  <h2>Admin Only Access Form</h2>
+                                  <form action="adminlogin.php" method="post">
+                                      <tr>
+                                        <td>Admin ID</td>
+                                        <td>:</td>
+                                        <td>
+                                          <input type="text" name="admin_ID" required="required" placeholder="Enter the AdminID">
+                                        </td>
+                                      <tr>
+                                        <td>Username</td>
+                                        <td>:</td>
+                                        <td>
+                                          <input type="text" name="username" required="required" placeholder="Enter your username">
+                                        </td>
+                                      </tr>                                 
+                                        <td>Password</td>
+                                        <td>:</td>
+                                        <td>
+                                          <input type="password" name="password" required="required" placeholder="Enter your password">
+                                        </td>
+                                      </tr>                                           
+                                        <td>
+                                        <input type="submit" value="Sign In" name="SignUp">
+                                        <input type="reset" value="Reset" name="Reset">
+                                        </td>
+                                      </tr>
+                                    </form>
+                                </table>
+                              </div>
+                              </div>
+                              </div>
+                      </li>                           
+                      </div>                            
+                    </div>
+                    </div> 
+                    </div>
+                  </body>                       
+            </center>
+        </body>
+</html>
 
-                                </li>
-                                <li>
-                                    <i class="fas fa-user-plus" onmouseenter="signupopen()" onmouseleave="signupclose()">&nbsp&nbspSign Up</i>
-                                    <div class="formtext" onmouseenter="signupopen()" onmouseleave="signupclose()">
-                                    <div id="signupform" class="sidebar">
-                                    <div id="signupform" style="float: right; padding: 17%;">
-                                      <table>
-                                        <h2>Wish to create an account?<br>Sign Up here!</h2>
-                                        <form method="post" action="connect.php">
-                                          <table>
-                                              <h2>Wish to create an account?<br>Sign Up here!</h2>
-                                           <tr>
-                                            <td>Username :</td>
-                                            <td><input type="text" name="username" required></td>
-                                           </tr>
-                                           <tr>
-                                            <td>Name :</td>
-                                            <td><input type="text" name="name" required></td>
-                                           </tr>
-                                           <tr>
-                                            <td>Email :</td>
-                                            <td>
-                                             <input type="email" name="email" required>
-                                            </td>
-                                           </tr>
-                                           <tr>
-                                            <td>Password :</td>
-                                            <td><input type="password" name="password" required></td>
-                                           </tr> 
-                                           <tr>
-                                            <td>
-                                                <input type="submit" value="Submit" name="submitinput">
-                                                <input type="reset" value="Reset" name="resetinput">
-                                            </td>
-                                           </tr>
-                                          </table>
-                                         </form>
-                                    </div>
-                                    </div>
-                                    </div>
-                              </li>
-                              <li>
-                                    <i class="fas fa-crown" onmouseenter="adminopen()" onmouseleave="adminclose()">&nbspAdmin Access</i>
-                                    <div class="formtext"  onmouseenter="adminopen()" onmouseleave="adminclose()">
-                                      <div id="adminform" class="sidebar">
-                                      <div id="adminfor" style="float: right; padding: 17%;">
-                                        <table>
-                                          <form action="php/signup.php" method="post">
-                                              <tr>
-                                                <td>Admin ID</td>
-                                                <td>:</td>
-                                                <td><input type="text" name="admin_ID" required="required"></td>
-                                              <tr>                             
-                                                <td>Password</td>
-                                                <td>:</td>
-                                                <td><input type="password" name="password" required="required"></td>
-                                              </tr>                                           
-                                                <td>
-                                                <input type="submit" value="Sign In" name="SignUp">
-                                                <input type="reset" value="Reset" name="Reset">
-                                                </td>
-                                              </tr>
-                                            </form>
-                                        </table>
-                                      </div>
-                                      </div>
-                                      </div>
-                              </li>                           
-                              </div>                            
-                            </div>
-                            </div> 
-                            </div>
-                          </body>                       
-                    </center>
-                </body>
-        </html>
-        
-        
