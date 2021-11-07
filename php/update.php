@@ -2,22 +2,15 @@
 <?php
 include("conn.php");
 
-$updateImage = $_FILES['image']['tmp_name'];
+$uImage = $_FILES['image']['tmp_name'];
 
-$updateImg = file_get_contents($updateImage);
+$uImg = file_get_contents($uImage);
 
-$updateQuery = "UPDATE products SET 
-Product_Name='$_POST[name]',
-Product_Price='$_POST[price]',
-Product_Description='$_POST[description]',
-Product_Category='$_POST[adding]',
-Product_Stock='$_POST[stock]',
-Product_Image=?
-WHERE Product_ID='$_POST[id]';";
+$updateQuery = "UPDATE product SET Product_Name='$_POST[name]', Product_Price='$_POST[price]', Product_Description='$_POST[description]', Product_Category='$_POST[adding]', Product_Stock='$_POST[stock]', Product_Image=? WHERE Product_ID='$_POST[id]';";
 
-$stmt = mysqli_prepare($con, $updateQuery);
+$stmt = mysqli_prepare($con,$updateQuery);
 
-mysqli_stmt_bind_param($stmt, "s", $updateImg);
+mysqli_stmt_bind_param($stmt,"s",$uImg);
 
 mysqli_stmt_execute($stmt);
 
@@ -31,9 +24,8 @@ if ($check == 1) {
 } else {
     echo '<script>
     alert ("Failed to update relevant files.");
-    window.location.href= "../homepage.html";
     </script>';
 }
 
-$mysqli_close($con);
+mysqli_close($con);
 ?>

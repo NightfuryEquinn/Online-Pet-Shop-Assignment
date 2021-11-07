@@ -77,11 +77,13 @@
         <h1>COMPANION ENERGY SOURCE</h1>
 
         <!--Search Bar-->
-        <div class="search-bar">
-            <input type='text' placeholder="What'cha wanna find here?" name="searchText">
-            <br><br>
-            <button name="search">SEARCH</button>
-        </div>
+        <form method="POST">
+            <div class="search-bar">
+                <input type='text' placeholder="What'cha wanna find here?" name="searchText">
+                <br><br>
+                <button name="search">SEARCH</button>
+            </div>
+        </form>
 
         <!--Search activation-->
         <?php
