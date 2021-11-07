@@ -370,83 +370,95 @@ a {
 
 /*EK Footer*/
 /*footer*/
-.footer {
-background-color:#EDC7B7;
-padding-bottom: 5px;
-height: 500px;
+footer {
+  margin: 0px;
+  width: auto;
+  height: auto;
+  background-color:#EDC7B7;
 }
 
-.footer-flex-container{
-display:flex;
-width:100%;
-height:350px;
-justify-content: space-around;      
-gap:50px;
+.footer-flexbox {
+  margin: 25px;
+  padding: 25px;
+  height: auto;
+  width: auto;
+  display: flex;
+  align-content: space-between;
+  justify-content: space-between;
+  flex-direction: row;
 }
-.footer-flex-container>div{
-width:100%;
 
-}
-.footer-content{
-font-family:'Rubik', sans-serif;
-padding:40px;
+.footer-flexbox-item {
+  margin: 10px;
+  padding: 10px;
+  height: auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
 }
 
 h3 {
-font-family:'Montserrat', sans-serif;
-font-weight:bold;
-}
-
-.contact a:visited, ul a:visited{
-color:#AC3B61;
-}
-
-.contact a:link, ul a:link{
-color:#123C69;
-}
-
-#copyright {
-font-family:'Montserrat', sans-serif;
-text-align: center;
-color:#E85A4F;
-}
-
-.fa{
-padding:20px;
-font-size: 25px;
-width: 25px;
-text-align: center;
-text-decoration: none;
-border-radius: 50%;
-}
-
-.fa:hover {
-opacity: 0.6;
-cursor:pointer;
-}
-
-.fa-facebook {
-background: #3B5998;
-color: white;
-}
-
-.fa-instagram {
-background: #8f1ea5;
-color: white;
-}
-
-.fa-twitter {
-background: #55ACEE;
-color: white;
+  font-family:'Montserrat', sans-serif;
+  font-weight:bold;
 }
 
 ul {
-list-style-type:none;
-padding-left:0;
+  list-style-type: none;
+  padding-left: 0;
 }
 
-li i{
-padding-right:5px;
+ul a:visited, a:link {
+  text-decoration: none;
+}
+
+li i {
+  margin: 10px;
+  padding-right: 5px;
+}
+
+.media a {
+  margin: 10px;
+}
+
+.fa {
+  padding:20px;
+  font-size: 25px;
+  width: 25px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+.fa:hover {
+  opacity: 0.75;
+  cursor:pointer;
+}
+
+.fa-facebook {
+  background: linear-gradient(#3B5998, #2c59bb);
+  color: white;
+}
+
+.fa-instagram {
+  background: radial-gradient(at bottom left, #fccc63, #fbad50, #e95950, #e95950, #cd486b, #bc2a8d, #8a3ab9, #4c68d7);
+  color: white;
+}
+
+.fa-twitter {
+  background: linear-gradient(#55ACEE, #6db7f0);
+  color: white;
+}
+
+#copyright {
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  color: #E85A4F;
 }
 
 /*accountEdit page*/
