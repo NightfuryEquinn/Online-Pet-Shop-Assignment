@@ -103,12 +103,21 @@ function myFunction() {
     header.classList.remove("sticky");
   }
 }
+
+
+
+
+
+
+
+
+
 //login//
 function loginopen() {
     document.getElementById("loginform").style.width = "67%";
   }
   
-  function closeNav() {
+  function loginclose() {
     document.getElementById("loginform").style.width = "0%";
   }
 
@@ -116,7 +125,15 @@ function loginopen() {
     document.getElementById("signupform").style.width = "67%";
   }
   
-  function closeNav() {
+  function signupclose() {
     document.getElementById("signupform").style.width = "0%";
+  }
+
+  function adminopen() {
+    document.getElementById("adminform").style.width = "67%";
+  }
+  
+  function adminclose() {
+    document.getElementById("adminform").style.width = "0%";
   }
 //xl//

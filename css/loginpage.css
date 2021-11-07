@@ -1,10 +1,165 @@
-.align{
+/*
+Color Palettes
+
+Elegant Yet Approachable
+#EDC7B7
+#EEE2DC
+#BAB2B5
+#123C69
+#AC3B61
+
+Minimal Yet Warm
+#EAE7DC
+#D8C3A5
+#8E8D8A
+#E98074
+#E85A4F
+
+Vibrant and Elegant
+#F8E9A1
+#F76C6C
+#A8D0E6
+#374785
+#24305E
+*/
+html {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+}
+
+/* Navigation Bar */
+.nav-bar {
+  height: 225px;
+  width: auto;
+  background-color: #EAE7DC;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+ }
+ 
+ .logo {
+   margin: 12.5px;
+   padding-left: 100px;
+   height: 200px;
+   width: 212.5px;
+ }
+ 
+ .name {
+   font-size: 45px;
+   font-weight: 1000;
+   font-family: 'Montserrat', sans-serif;
+   letter-spacing: 10px;
+   color: #24305E;
+   display: none;
+ }
+ 
+ .nav-btn-container {
+   padding-right: 50px;
+   height: 225px;
+   width: 850px;
+   overflow: hidden;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+ 
+ .nav-btn-container button {
+   padding: 99px 20px;
+   font-size: 22px;
+   font-weight: bolder;
+   font-family: 'Montserrat', sans-serif;
+   letter-spacing: 2px;
+   color: #24305E;
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+ }
+ 
+ .nav-btn-container span {
+   display: none;
+ }
+ 
+ .nav-btn-container button:hover {
+   animation-name: color-change-navbar;
+   animation-duration: 0.5s;
+   animation-fill-mode: forwards;
+ }
+ 
+ .nav-btn-container button:hover span {
+   display: block;
+ }
+ 
+ @keyframes color-change-navbar {
+   from {
+       color: #24305E;
+       background-color: #EAE7DC;
+   }
+   to {
+       color: #EAE7DC;
+       background-color: #24305E;
+   }
+ }
+ 
+ /* Hamburger NBC */
+ .hamburger-nbc {
+   margin-right: 50px;
+   padding: 0px;
+   display: none;
+ }
+ 
+ #hamburger-bar {
+   border: none;
+   cursor: pointer;
+   color: #24305E;
+   background-color: transparent;
+   display: block;
+ }
+ 
+ .hamburger-content {
+   margin-top: 652px;
+   display: none;
+   background-color: rgba(234, 231, 220, 0.5);
+   backdrop-filter: blur(8px);
+   flex-direction: column; 
+ }
+ 
+ .hamburger-content button {
+   padding: 10px 120px;
+   font-size: 18px;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: bolder;
+   color: #24305E;
+   background-color: transparent;
+   border: none;
+   cursor: pointer;
+ }
+ 
+ .hamburger-content button:hover {
+   color: #EAE7DC;
+   background-color: rgba(36, 48, 94, 0.7);
+ }
+ 
+ .hamburger-nbc:hover .hamburger-content {
+   display: flex;
+ }
+  .align{
     margin: 0;
     padding: 0; 
   }
   .loginbar{
     position: absolute;
     top: 0%;
+    left: 0%;
     bottom: 0%;
     height: 100%;
     width: 35%;
@@ -12,7 +167,7 @@
     padding: 6px 10px;
     border-radius: 0px 20px 20px 0px;
     transition: 7 ease-in-out;
-    overflow: visible; /*whb*/
+    overflow: hidden; /*whb*/
   }
   
   .loginbar i{
@@ -44,17 +199,30 @@
   .selectcont{
     background-image:linear-gradient(#ffeeda, #ffe9d0, #ffe6c9, #fcddb9) ;
     z-index: 10;
-    top: 10%;
+    top:  300px;
     bottom: 10%;
     left: 15%;
     height: 80%;
     width: 70%;
     position: fixed;
     padding: 6px 14px;
-    z-index: 10;
     box-shadow: #818181 10px 10px;
   }
-  
+  .resetcont{
+    background-image:linear-gradient(#ffeeda, #ffe9d0, #ffe6c9, #fcddb9) ;
+    z-index: 10;
+    top: 300px;
+    bottom: 10%;
+    left: 22%;
+    height: 40%;
+    width: 30%;
+    padding: 5% 10% 10% 13%;
+    box-shadow: #818181 10px 10px;
+    color: #AC3B61;
+    font-size: 130%;
+    display: block; 
+    position:fixed;
+  }
   /*already have*/
   /*already have*/
   /*already have*/
@@ -74,19 +242,20 @@
 
   .sidebar {
     left: 15%;
-    top: 10%;
+    top: 300px;
     bottom: 10%;
     height: 80%;
     position: fixed;
     z-index: -10;
     background-color:#AC3B61;
-    transition: 0.7s ease-in;
+    transition: ease-in-out 2s;
     padding: 6px 14px;
     border-radius: 0px 20px 20px 0px;
-
+    overflow: hidden;
   }
   .formtext {
     color: wheat;
+    font-size: 100%;
     display: block; 
     position:fixed;
     top:50%;
@@ -95,5 +264,13 @@
     z-index: -1;
   }
   
+  .exit {
+    color: wheat;
+    padding-left: 100%;
+    cursor: pointer;
+  }
   
-  
+  a{
+    color: white;
+    text-decoration: none;
+  }
