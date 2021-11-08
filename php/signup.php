@@ -1,10 +1,10 @@
 <?php
 
-$connect = mysqli_connect("localhost","root","","assignment","3306");
+include("conn.php");
 
-$email = mysqli_real_escape_string($connect, $_POST['email']);
-$password = mysqli_real_escape_string($connect, $_POST['password']);
-$checkpassword = mysqli_real_escape_string($connect, $_POST['checkpassword']);
+$email = mysqli_real_escape_string($con, $_POST['email']);
+$password = mysqli_real_escape_string($con, $_POST['password']);
+$checkpassword = mysqli_real_escape_string($con, $_POST['checkpassword']);
 $checkemail =  "SELECT * FROM customer WHERE email = '$email'";
 
 
@@ -26,8 +26,8 @@ if($email !== $checkemail){
     window.location.href = "login.html";
     </script>';  
 }
-if (!mysqli_query($connect,$insert)) {
-    die('Error: ' . mysqli_error($connect));
+if (!mysqli_query($con,$insert)) {
+    die('Error: ' . mysqli_error($con));
 } 
 
 else {
@@ -37,5 +37,5 @@ else {
     window.location.href = "login.html"; 
     </script>';
 }
-mysqli_close($connect);
+mysqli_close($con);
 ?>

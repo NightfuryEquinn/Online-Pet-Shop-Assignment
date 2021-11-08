@@ -1,16 +1,16 @@
 <?php
-$connect = mysqli_connect("localhost","root","","assignment","3306");
+include("conn.php");
 session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $pemail = $_POST['email'];
     $ppassword = $_POST['password'];
-    $email=mysqli_real_escape_string($connect,$pemail);
-    $password=mysqli_real_escape_string($connect,$ppassword);
+    $email=mysqli_real_escape_string($con,$pemail);
+    $password=mysqli_real_escape_string($con,$ppassword);
     $login ="SELECT * FROM customer WHERE email='$email' and 
     password='$password'";
     $username = "SELECT username FROM customer";
-        if ($result=mysqli_query($connect,$login)) {
+        if ($result=mysqli_query($con,$login)) {
             $rowcount=mysqli_num_rows($result);
             }
         if($rowcount==1) {
@@ -22,6 +22,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         else {
             $error=printf("Invalid credentials, please try again.<br/><br/>");
             }
-mysqli_close($connect);
+mysqli_close($con);
 }
 ?>
