@@ -58,6 +58,10 @@ function modify_details(){
     alert("Your personal information has been updated successfully.")
 }
 
+
+//xl//
+
+
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -114,6 +118,15 @@ function myFunction() {
   } else {
     header.classList.remove("sticky");
   }
+}
+
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+
 }
 
 //login//

@@ -1,41 +1,40 @@
 <?php
+$connect = include("conn.php");
 
-include("conn.php");
-
-$email = mysqli_real_escape_string($con, $_POST['email']);
-$password = mysqli_real_escape_string($con, $_POST['password']);
-$checkpassword = mysqli_real_escape_string($con, $_POST['checkpassword']);
+$email = mysqli_real_escape_string($connect, $_POST['email']);
+$password = mysqli_real_escape_string($connect, $_POST['password']);
+$checkpassword = mysqli_real_escape_string($connect, $_POST['checkpassword']);
 $checkemail =  "SELECT * FROM customer WHERE email = '$email'";
-
-
-$insert="INSERT INTO customer (username, name, email, password)
-VALUES
-('$_POST[username]','$_POST[name]', '$_POST[email]', '$_POST[password]');";
 
 if($password !== $checkpassword){
     echo 
     '<script>
     alert ("Please enter the same password!.")
-    window.location.href = "login.html";
     </script>';  
+    header('Location: login.html');
 }
 if($email !== $checkemail){
     echo 
     '<script>
     alert ("An account under this email already exists. Please log in instead.")
-    window.location.href = "login.html";
     </script>';  
+    header('Location: login.html');
 }
-if (!mysqli_query($con,$insert)) {
-    die('Error: ' . mysqli_error($con));
-} 
+if($password == $checkpassword){
+    if($email == $checkemail){
+        $insert="INSERT INTO customer (username, name, email, password)
+        VALUES
+        ('$_POST[username]','$_POST[name]', '$_POST[email]', '$_POST[password]');";
+         echo 
+         '<script>
+         alert("Thank you for signing up! Please login to access the other features!");
+         </script>';
+         header('Location: login.html');
+    }
+}
 
-else {
-    echo 
-    '<script>
-    alert("Thank you for signing up! Please login to access the other features!");
-    window.location.href = "login.html"; 
-    </script>';
-}
-mysqli_close($con);
+if (mysqli_query($connect,$insert)) {
+    mysqli_close($connect);
+    header('Location: login.html');
+} 
 ?>
