@@ -1,10 +1,10 @@
 <?php 
 session_start();
-$connect = mysqli_connect("localhost","root","","assignment","3306");
+include("conn.php");
 
-    $email = mysqli_real_escape_string($connect, $_POST['email']);
-    $password = mysqli_real_escape_string($connect, $_POST['password']);
-    $checkpassword = mysqli_real_escape_string($connect, $_POST['checkpassword']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+    $checkpassword = mysqli_real_escape_string($con, $_POST['checkpassword']);
     $update_pass = "UPDATE customer SET  password = '$password' WHERE email = '$email'";
 
     if($password !== $checkpassword){
@@ -15,7 +15,7 @@ $connect = mysqli_connect("localhost","root","","assignment","3306");
         </script>';  
         
 
-    if(mysqli_query($connect, $update_pass)){
+    if(mysqli_query($con, $update_pass)){
         echo 
         '<script>
         alert ("Password successfully changed. Please login again.")

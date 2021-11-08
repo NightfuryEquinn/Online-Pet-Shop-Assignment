@@ -70,8 +70,8 @@
             </div>
         </header>
 
-        <!--Cat Curved Bottom Background-->
-        <img class='cat-background' src='../art/luxury.jpg'>
+        <!--Curved Bottom Background-->
+        <img class='curve-background' src='../art/luxury.jpg'>
 
         <!--Title Quote-->
         <h1>LUXURIOUS PET LIFE</h1>
@@ -98,8 +98,8 @@
             $searchResult = mysqli_query($con, "SELECT * FROM product WHERE Product_Category='accessory' AND Product_Name LIKE '%$searchText%' ORDER BY Product_Name");
         ?>
 
-        <!--Pet Flexboxes-->
-        <div class='pet-flexbox-container'>
+        <!--Content Flexboxes-->
+        <div class='content-flexbox-container'>
 
             <?php
                 // Get and display data
@@ -107,15 +107,15 @@
                     
                     $display = '
                     
-                    <div class="pet-card">
+                    <div class="content-card">
                     
-                    <div class="pet-imagebox">
+                    <div class="content-imagebox">
                     
                     <img src="data:image/jpg;base64, '.base64_encode($row['Product_Image']).'">
 
                     </div>
 
-                    <div class="pet-descriptionbox">
+                    <div class="content-descriptionbox">
 
                     <h2>'.$row['Product_Name'].'</h2>
 

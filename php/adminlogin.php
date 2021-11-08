@@ -1,5 +1,5 @@
 <?php
-$connect = mysqli_connect("localhost","root","","assignment","3306");
+include("conn.php");
 session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
@@ -8,16 +8,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $apassword = $_POST['password'];
 
 
-    $adminid = mysqli_real_escape_string($connect, $aadminid);
-    $username=mysqli_real_escape_string($connect,$ausername);
-    $password=mysqli_real_escape_string($connect,$apassword);
+    $adminid = mysqli_real_escape_string($con, $aadminid);
+    $username=mysqli_real_escape_string($con,$ausername);
+    $password=mysqli_real_escape_string($con,$apassword);
 
     $adminlogin ="SELECT * FROM admin WHERE admin_ID = '$adminid' and username='$ausername' and 
     password='$password'";
     
 
 
-        if ($result=mysqli_query($connect,$adminlogin)) {
+        if ($result=mysqli_query($con,$adminlogin)) {
             $rowcount=mysqli_num_rows($result);
             }
         if($rowcount==1) {
@@ -29,6 +29,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         else {
             $error=printf("Legal action will be taken against unauthorized access.<br/><br/>");
             }
-mysqli_close($connect);
+mysqli_close($con);
 }
 ?>
