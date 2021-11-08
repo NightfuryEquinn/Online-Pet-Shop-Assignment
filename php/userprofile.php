@@ -31,7 +31,7 @@ $username= "Box";
 
 </head>
 
-<body style="background-image:url('../art/profile_background.jpg'); background-size: cover;">
+<body style="background:url('../art/profile_background.jpg') no-repeat center center; background-size: cover;">
 <!--Back to Top Button-->
 <button id='back2top-btn' onclick='scroll2Top()' title='Purr back 2 top!~'><i class="fas fa-arrow-alt-circle-up fa-4x"></i></button>
 
@@ -104,13 +104,51 @@ $username= "Box";
                     </div>
                 </div>
             </div>
+            <h2>Shopping Cart</h2>
+            <div class="cart-container"> 
+                <?php 
+                    include("conn.php");
+                    // find number of rows in table 
+                    $result = mysqli_query($con,"SELECT *, (sp.Quantity*p.Product_Price) AS Total, SUM(Total) AS checkout_price 
+                    FROM shoppingcart s, shopping_product sp, product p
+                    WHERE s.Shopping_ID = sp.Shopping_ID, p.Product = sp.Product, s.Customer_ID='".$_SESSION['id']."', s.Status='unpaid'");
+                    $row = mysqli_fetch_row($result);
+                ?>
+                <table class="cart-table">
+                    <tr>
+                        <th class="cart-header">Item Name</th>
+                        <th class="cart-header">Price</th>
+                        <th class="cart-header">Quantity</th>
+                        <th class="cart-header">Total</th>
+                    </tr>
+                    <?php
+                        while ($row = mysqli_fetch_array($result)) {
+                            echo"<tr>
+                            <td>".$row['Product_Name']."</td>
+                            <td>".$row['Product_Price']."</td>
+                            <form method=\"post\" action=\"updatecart.php\">
+                            <input type=\"hidden\" name=\"id\" value=".$row['Cart_ID'].">
+                            <input type=\"number\" name=\"update-qty\" required=\"required\" value=".$row['Quantity'].">
+                            </form>
+                            <td>".$row['Total']."</td>
+                            </tr>";
+                        }
+                    ?>
+                </table>
+                <div class="cart-bottom">
+                    <hr>
+                    <p>Total:<?php echo $row['checkout_price']?></p>
+                    <button onclick="window.location.href = '../payment.html';" class="cart-button">Checkout</button>
+                    <button onclick="window.location.href = 'resetcart.php';" class="cart-button">Reset</button>
+                </div>
+            </div>
 
             <h2>Personal order history</h2>
             <div class="order-history-container">
                 <?php 
                     include("conn.php");
                     // find number of rows in table 
-                    $result = mysqli_query($con,"SELECT COUNT(*) FROM ");
+                    $result = mysqli_query($con,"SELECT COUNT(*) FROM shopping cart WHERE Status = 'paid', Customer_ID = '".$_SESSION['id']."'");
                     $r = mysqli_fetch_row($result);
                     $row_num = $r[0];
 
@@ -140,9 +178,9 @@ $username= "Box";
                     // set the offset
                     $offset = ($currentpage - 1) * $limit_row;
 
-                    $result = mysqli_query($con,"SELECT o.*,sp.*,s.*,p.*, c.*(sp.Quantity * p.Product_Price) AS Total 
-                    FROM customerorder o, shopping_product sp, shoppingcart s, product p, customer c 
-                    WHERE c.Customer_ID = s.Customer_ID, sp.Shopping_ID = s.Shopping_ID, p.Product_ID = sp.Product_ID,  o.Shopping_ID = s.Shopping_ID, c.Username='".$username."'
+                    $result = mysqli_query($con,"SELECT sp.*,s.*,p.*, c.*(sp.Quantity * p.Product_Price) AS Total 
+                    FROM shopping_product sp, shoppingcart s, product p, customer c 
+                    WHERE c.Customer_ID = s.Customer_ID, sp.Shopping_ID = s.Shopping_ID, p.Product_ID = sp.Product_ID, c.Username='".$username."', s.Status= 'paid'
                     LIMIT $offset, $limit_row");
                 ?>
 
@@ -165,7 +203,7 @@ $username= "Box";
                     <?php
                         while ($row = mysqli_fetch_array($result)) {
                             echo"<tr>
-                            <td>".$row['Order_Date']."</td>
+                            <td>".$row['Checkout_Date']."</td>
                             <td>".$row['Product_Name']."</td>
                             <td>".$row['Product_Price']."</td>
                             <td>".$row['Quantity']."</td>

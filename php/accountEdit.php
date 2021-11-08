@@ -177,7 +177,7 @@
                 mysqli_close($con);
             ?>
         </div>
-        <br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <footer>
     <div class="footer-flexbox">
         <div class='footer-flexbox-item'>
