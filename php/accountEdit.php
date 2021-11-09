@@ -44,7 +44,7 @@
     <script src="../console.js"></script>
 
 </head>
-<body style="background-color: #eee2dcc7;margin:10px 50px;">
+<body style="background-color: #eee2dcc7;">
     <!--Back to Top Button-->
     <button id='back2top-btn' onclick='scroll2Top()' title='Purr back 2 top!~'><i class="fas fa-arrow-alt-circle-up fa-4x"></i></button>
     <!--Navigation Bar & Hamburger-->
@@ -76,15 +76,14 @@
                 </div>
             </div>
     </header>
+    <div class="body-content" style="margin:10px 50px;">
         <h1>Manage Account</h1>
         <hr>
         <?php
             include("conn.php");
-            //$customer_ID=intval($_SESSION['Customer_ID']);
-            $customer_ID = '1';
+            $customer_ID=intval($_SESSION['Customer_ID']);
             $result = mysqli_query($con,"SELECT * FROM customer WHERE Customer_ID='$customer_ID'");
-            while($row = mysqli_fetch_array($result))
-            {
+            $row = mysqli_fetch_array($result);
         ?>
         <div class="manage-account">
             <div class="tab-container">
@@ -177,10 +176,11 @@
                 </div>  
             </form>
             <?php
-                }
+                
                 mysqli_close($con);
             ?>
         </div>
+    </div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <footer>
     <div class="footer-flexbox">
