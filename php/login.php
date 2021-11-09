@@ -1,5 +1,6 @@
 <?php
-include("conn.php");
+include ('conn.php');
+session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $pemail = $_POST['email'];
@@ -8,26 +9,36 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $email=mysqli_real_escape_string($con,$pemail);
     $password=mysqli_real_escape_string($con,$ppassword);
 
-    $login ="SELECT * FROM customer WHERE email='$email' and password='$password'";
+    $login ="SELECT * FROM customer WHERE email='$email' and 
+    password='$password'";
 
-    $username = "SELECT username FROM customer";
+    $retrieve = "SELECT Customer_ID FROM customer WHERE email = '$pemail'";
+    $sql = mysqli_query($con, $retrieve);
+    if($sql){
+    $fetch = mysqli_fetch_assoc($sql);
+    }
+
         if ($result=mysqli_query($con,$login)) {
             $rowcount=mysqli_num_rows($result);
             }
         if($rowcount==1) {
             session_start();
-            echo '
-            <script> ("Login Succesful. Welcome back.");
-            </script>;
-            window.location.href = "homepage.html";'
-            ;}
-        else {   
-            echo 
-            '<script>
-            alert("Invalid credentials, please try again.");
+            header("location: homepage.html");
+            echo '<script>
+            alert ("Login Successful. Welcome back!")
             </script>';
-            header('Location: login.html');
+            
+            $_SESSION['Customer_ID'] = $fetch;
         }
+        else {
+            echo
+            '<script>
+            alert ("Invalid credentials, please try again.<br/><br/>")
+            window.location.href : login.html";
+            </script>';
+        } 
 mysqli_close($con);
 }
 ?>
+ 
+
