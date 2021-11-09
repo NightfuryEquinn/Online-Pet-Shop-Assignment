@@ -190,6 +190,7 @@ body {
   display: flex;
 }
 
+/*content containers*/
 .ourstory {
   background-image: url("art/ourstory.png");
   height: 450px;
@@ -296,9 +297,7 @@ img {vertical-align: middle;}
   text-align: center;
 }
 
-
-
-/* The dots/bullets/indicators */
+/*Slide number indicator*/
 .dot {
   cursor: pointer;
   height: 15px;
@@ -339,7 +338,6 @@ img {vertical-align: middle;}
   display: table;
 }
 
-
 /*contact container*/
 #contact1 {
   width:60%;
@@ -368,13 +366,6 @@ a {
   text-decoration: none;
 }
 
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
-/**/
 .aboutdesctxtcont {
   background-color: #c2e3f5;
   height: 120px;
@@ -383,7 +374,7 @@ a {
   border-radius: 15px;
   padding: 1%;
 }
-/*hover over for text *red box slide down as you hover**/
+/*hover over for text *red box slides down as you hover**/
 .hovercont {
   position: relative;
   width: 50%;
@@ -461,8 +452,6 @@ a {
 .sticky + .content {
   padding-top: 102px;
 }
-
-/*Ekay footer*/
 
 /*footer*/
 footer {

@@ -152,6 +152,7 @@ body {
  .hamburger-nbc:hover .hamburger-content {
    display: flex;
  }
+ /*Loginbar*/
   .align{
     margin: 0;
     padding: 0; 
@@ -199,7 +200,7 @@ body {
   .selectcont{
     background-image:linear-gradient(#ffeeda, #ffe9d0, #ffe6c9, #fcddb9) ;
     z-index: 10;
-    top:  300px;
+    top:  250px;
     bottom: 10%;
     left: 15%;
     height: 80%;
@@ -211,7 +212,7 @@ body {
   .resetcont{
     background-image:linear-gradient(#ffeeda, #ffe9d0, #ffe6c9, #fcddb9) ;
     z-index: 10;
-    top: 300px;
+    top: 250px;
     bottom: 10%;
     left: 22%;
     height: 40%;
@@ -223,9 +224,7 @@ body {
     display: block; 
     position:fixed;
   }
-  /*already have*/
-  /*already have*/
-  /*already have*/
+  
   .column {
     float: left;
     width: 33.33%;
@@ -236,13 +235,10 @@ body {
     clear: both;
     display: table;
   }
-  /*already have*/
-  /*already have*/
-  /*already have*/
 
   .sidebar {
     left: 15%;
-    top: 300px;
+    top: 250px;
     bottom: 10%;
     height: 80%;
     position: fixed;
@@ -281,7 +277,6 @@ body {
     padding:15px;
     position: static;
   }
-  /*EK Footer*/
 
 /*footer*/
 footer {
