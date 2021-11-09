@@ -152,6 +152,7 @@ body {
  .hamburger-nbc:hover .hamburger-content {
    display: flex;
  }
+ /*Loginbar*/
   .align{
     margin: 0;
     padding: 0; 
@@ -182,7 +183,7 @@ body {
   .loginbar i:hover {
     color: black;
     background-color: white;
-    width: 100%;
+    width: 70%;
     border-radius: 10px;
     transition: 7 ease-in;
   }
@@ -199,7 +200,7 @@ body {
   .selectcont{
     background-image:linear-gradient(#ffeeda, #ffe9d0, #ffe6c9, #fcddb9) ;
     z-index: 10;
-    top:  300px;
+    top:  250px;
     bottom: 10%;
     left: 15%;
     height: 80%;
@@ -211,7 +212,7 @@ body {
   .resetcont{
     background-image:linear-gradient(#ffeeda, #ffe9d0, #ffe6c9, #fcddb9) ;
     z-index: 10;
-    top: 300px;
+    top: 250px;
     bottom: 10%;
     left: 22%;
     height: 40%;
@@ -223,9 +224,7 @@ body {
     display: block; 
     position:fixed;
   }
-  /*already have*/
-  /*already have*/
-  /*already have*/
+  
   .column {
     float: left;
     width: 33.33%;
@@ -236,13 +235,10 @@ body {
     clear: both;
     display: table;
   }
-  /*already have*/
-  /*already have*/
-  /*already have*/
 
   .sidebar {
     left: 15%;
-    top: 300px;
+    top: 250px;
     bottom: 10%;
     height: 80%;
     position: fixed;
@@ -274,3 +270,111 @@ body {
     color: white;
     text-decoration: none;
   }
+  .container {
+    width:auto;
+    height:1000px;
+    background-color:#ce1b60;
+    padding:15px;
+    position: static;
+  }
+
+/*footer*/
+footer {
+  margin: 0px;
+  width: auto;
+  height: auto;
+  background-color:#EDC7B7;
+}
+
+.footer-flexbox {
+  margin: 25px;
+  padding: 25px;
+  height: auto;
+  width: auto;
+  display: flex;
+  align-content: space-between;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.footer-flexbox-item {
+  margin: 10px;
+  padding: 10px;
+  height: auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+}
+
+h3 {
+  font-family:'Montserrat', sans-serif;
+  font-weight:bold;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul a:visited, a:link {
+  text-decoration: none;
+}
+
+li i {
+  margin: 10px;
+  padding-right: 5px;
+}
+
+.media a {
+  margin: 10px;
+}
+
+.fa {
+  padding:20px;
+  font-size: 25px;
+  width: 25px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+.fa:hover {
+  opacity: 0.75;
+  cursor:pointer;
+}
+
+.fa-facebook {
+  background: linear-gradient(#3B5998, #2c59bb);
+  color: white;
+}
+
+.fa-instagram {
+  background: radial-gradient(at bottom left, #fccc63, #fbad50, #e95950, #e95950, #cd486b, #bc2a8d, #8a3ab9, #4c68d7);
+  color: white;
+}
+
+.fa-twitter {
+  background: linear-gradient(#55ACEE, #6db7f0);
+  color: white;
+}
+
+#copyright {
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  color: #E85A4F;
+}
+
+
+/* Screen less than 1200px width */ 
+@media screen and (max-width: 1200px) {
+  /* Shop Name */
+  .name {
+      display: block;
+  }
+}

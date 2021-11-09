@@ -62,6 +62,7 @@
         </div>
     </div>
 </header> 
+  <div class="container">
         <body style = "background-color:#b4a59dd3;">
             <center>
                     <div class="selectcont">
@@ -73,7 +74,7 @@
                         <div class="formtext">
                         <div id="loginform" class="sidebar">
                         <div id="loginform" style="float: right; padding: 17%;">
-                        <div class="exit" onclick="loginclose()">x</div>
+                        <div class="exit" onclick="loginclose()" style="font-size: 40px;">x</div>
                           <table>
                             <h2>Have an existing account?<br>Login here!</h2>
                             <form action="login.php" method="post">
@@ -95,7 +96,7 @@
                               </div>
                             </form>
                           </table>
-                          <a href="resetpassword.html">Forgot your password? Click here!</a>
+                          <a href="changepassword.html">Forgot your password? Click here!</a>
                           </div>
                         </li>
                         <li>
@@ -103,7 +104,7 @@
                             <div class="formtext">
                             <div id="signupform" class="sidebar">
                             <div id="signupform" style="float: right; padding: 17%;">
-                            <div class="exit" onclick="signupclose()">x</div>
+                            <div class="exit" onclick="signupclose()" style="font-size: 40px;">x</div>
                               <table>
                                 <h2>Wish to create an account?<br>Sign Up here!</h2>
                                 <form method="post" action="signup.php">    
@@ -149,7 +150,7 @@
                             <div class="formtext">
                               <div id="adminform" class="sidebar">
                               <div id="adminfor" style="float: right; padding: 17%;">
-                              <div class="exit" onclick="adminclose()">x</div>
+                              <div class="exit" onclick="adminclose()" style="font-size: 40px;">x</div>
                                 <table>
                                   <h2>Admin Only Access Form</h2>
                                   <form action="adminlogin.php" method="post">
@@ -182,13 +183,44 @@
                               </div>
                               </div>
                               </div>
-                      </li>                           
+                        </li>                           
                       </div>                            
                     </div>
                     </div> 
                     </div>
-                  </body>                       
-            </center>
-        </body>
-</html>
+                  </div>
+                    <footer>
+                      <div class="footer-flexbox">
+                          <div class='footer-flexbox-item'>
+                              <h3>About Us</h3>
+                              <p>Les Pet Shop is always here for you and your pets. You can find yourself a companion and high quality pet product here!</p>
+                          </div>
+                          <div class='footer-flexbox-item'>
+                              <h3>More From Us</h3>
+                              <ul>
+                              <li><i class="fas fa-paw"></i><a href="pet.html" style="color:black;" >Pets</a></li>
+                              <li><i class="fas fa-paw"></i><a href="food.html" style="color:black;">Pets Food</a></li>
+                              <li><i class="fas fa-paw"></i><a href="accessories.html" style="color:black;">Pets Accessories</a></li>
+                              </ul>
+                           </div>
+                          <div class='footer-flexbox-item'>
+                              <h3>Stay with Us</h3>
+                              <p class="media">
+                                  Find us on social media<br><br>
+                                  <a href="www.facebook.com" class="fa fa-facebook"></a>
+                                  <a href="www.twitter.com" class="fa fa-twitter"></a>
+                                  <a href="www.instagram.com" class="fa fa-instagram"></a>
+                              </p>
+                          </div>
+                          <div class='footer-flexbox-item'>
+                              <h3>Contact Us</h3>
+                              <p>2, Jalan Besar 5,<br>50000 Kuala Lumpur, <br>Malaysia</p>
+                              <p>Email: <a href="mailto:lespetshopt@gmail.com" style="color:black;">lespetshopt@gmail.com</a></p>
+                              <p>Phone no: <a href="tel:0312345678" style="color:black;">03-12345678</a></p>
+                          </div>
+                      </div>
+                      <p id="copyright"><b>&#169 2021 Les Pet Shop (Team Name)</b></p>
+                    </footer>
+                  </body>            
+      </html>
 

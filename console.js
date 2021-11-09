@@ -45,21 +45,37 @@ function modify_details(){
     alert("Your personal information has been updated successfully.")
 }
 
-//xl//
-var slideIndex = 0;
-showSlides();
 
-function showSlides() {
+//xl//
+
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+      slides[i].style.display = "none";  
   }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 2000);
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
 }
+
 
 mybutton = document.getElementById("myBtn");
 
@@ -77,7 +93,7 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
+/*delete?*/
 window.onscroll = function() {myFunction()};
 
 var header = document.getElementById("navbar");
@@ -91,36 +107,37 @@ function myFunction() {
   }
 }
 
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
 
+function off() {
+  document.getElementById("overlay").style.display = "none";
 
-
-
-
-
-
+}
 
 //login//
 function loginopen() {
     document.getElementById("loginform").style.width = "67%";
   }
   
-  function loginclose() {
+function loginclose() {
     document.getElementById("loginform").style.width = "0%";
   }
 
-  function signupopen() {
+function signupopen() {
     document.getElementById("signupform").style.width = "67%";
   }
   
-  function signupclose() {
+function signupclose() {
     document.getElementById("signupform").style.width = "0%";
   }
 
-  function adminopen() {
+function adminopen() {
     document.getElementById("adminform").style.width = "67%";
   }
   
-  function adminclose() {
+function adminclose() {
     document.getElementById("adminform").style.width = "0%";
   }
 //xl//
