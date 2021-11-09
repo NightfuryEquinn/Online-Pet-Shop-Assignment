@@ -1,24 +1,25 @@
 <?php
-$connect = include("conn.php");
+include("conn.php");
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $pemail = $_POST['email'];
     $ppassword = $_POST['password'];
 
-    $email=mysqli_real_escape_string($connect,$pemail);
-    $password=mysqli_real_escape_string($connect,$ppassword);
+    $email=mysqli_real_escape_string($con,$pemail);
+    $password=mysqli_real_escape_string($con,$ppassword);
 
     $login ="SELECT * FROM customer WHERE email='$email' and password='$password'";
 
     $username = "SELECT username FROM customer";
-        if ($result=mysqli_query($connect,$login)) {
+        if ($result=mysqli_query($con,$login)) {
             $rowcount=mysqli_num_rows($result);
             }
         if($rowcount==1) {
             session_start();
-            $_SESSION['mySession']=$username;
-            echo '"Login Succesful. Welcome back.";
-            window.location.href = "homepage.html";' 
+            echo '
+            <script> ("Login Succesful. Welcome back.");
+            </script>;
+            window.location.href = "homepage.html";'
             ;}
         else {   
             echo 
@@ -27,6 +28,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             </script>';
             header('Location: login.html');
         }
-mysqli_close($connect);
+mysqli_close($con);
 }
 ?>

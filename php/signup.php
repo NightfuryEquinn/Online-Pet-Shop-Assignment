@@ -1,9 +1,9 @@
 <?php
-$connect = include("conn.php");
+include("conn.php");
 
-$email = mysqli_real_escape_string($connect, $_POST['email']);
-$password = mysqli_real_escape_string($connect, $_POST['password']);
-$checkpassword = mysqli_real_escape_string($connect, $_POST['checkpassword']);
+$email = mysqli_real_escape_string($con, $_POST['email']);
+$password = mysqli_real_escape_string($con, $_POST['password']);
+$checkpassword = mysqli_real_escape_string($con, $_POST['checkpassword']);
 $checkemail =  "SELECT * FROM customer WHERE email = '$email'";
 
 if($password !== $checkpassword){
@@ -33,8 +33,8 @@ if($password == $checkpassword){
     }
 }
 
-if (mysqli_query($connect,$insert)) {
-    mysqli_close($connect);
+if (mysqli_query($con,$insert)) {
+    mysqli_close($con);
     header('Location: login.html');
 } 
 ?>
