@@ -1,23 +1,5 @@
-<!DOCTYPE html>
-<?php 
-//include("session.php");
-//session_start();
-?>
-
 <html>
 <head>
-    <!--How code being decoded-->
-    <meta charset = "utf-8">
-
-    <!--How page being display based on viewport-->
-    <meta name = "viewport" content = "width = device-width, initial-scale = 1 shrink-to-fit = no">
-
-    <!--Add author, web description, keywords for search engine, and copyright-->
-    <meta name = "author" content = "Yip Zi Xian | Neong Yee Kay | Wong Xie Ling">
-    <meta name = "description" content = "Browse for your fluffy or exotic companions">
-    <meta name = "keywords" content = "Les Petz Shop University Assignment, Les Petz Shop, University Assignment">
-    <meta name = "copyright" content = "Copyright 2021 Yip Zi Xian, Neong Yee Kay, Wong Xie Ling">
-
     <!--Link to Pictures file-->
     <link rel = "icon" type = image/png href = "../art/logo.png">
 
@@ -80,9 +62,10 @@
         <hr>
         <?php
             include("conn.php");
-            //$customer_ID=intval($_SESSION['Customer_ID']);
-            $customer_ID = '1';
-            $result = mysqli_query($con,"SELECT * FROM customer WHERE Customer_ID='$customer_ID'");
+            //include("session.php");
+            //$username= $_SESSION['mySession'];
+            $username="Box";
+            $result = mysqli_query($con,"SELECT * FROM customer WHERE Username='Box'");
             while($row = mysqli_fetch_array($result))
             {
         ?>
@@ -96,7 +79,8 @@
                         <a href="update_personal_info.php?pfp2=true"><img src="../art/profile_dog.jpg" alt="dog profile picture"></a>
                     </div>
                 </div>
-                <div class="tab" id="tab1">Account Information</div>
+                <div class="tab active" id="tab1" onclick="opentab(1)">Account Information</div>
+                <div class="tab" id="tab2" onclick="opentab(2)">Account Security</div>
             </div>
 
             <form class="content" style="background-image: url('../art/white_texture.png')" id="personal-info-form" action="update_personal_info.php" method="post"onsubmit="modify_details()">
@@ -175,6 +159,18 @@
                     <br><br>
                     <div><input type="submit" value="submit" name="submit"></div>
                 </div>  
+            </form>
+            
+            <form class="content" style="background-image: url('../art/white_texture.png')" id="change-password-form" action="update_password.php" method="post" onsubmit="password_change()">
+                    <h2>Change account password</h2><br><br>
+                    <div>Current password:</div>
+                    <input type="password" name="user_currentpassword" required="required">
+                    <div>New password:</div>
+                    <input type="password" name="user_newpassword" required="required">
+                    <div>Confirm your password again:</div>
+                    <input type="password" name="user_confirmpassword" required="required">
+                    <br><br><br><br>
+                    <div><input type="submit" value="submit" name="submit"></div>
             </form>
             <?php
                 }

@@ -228,7 +228,7 @@ hr{
 .cart-container{
     background-color: rgba(255, 255, 255, 0.527);
     border-radius: 30px;
-    height:600px;
+    height:2000px;
     width:80%;
     margin:0 auto;
     padding:50px;
@@ -253,7 +253,7 @@ hr{
     font-size: 30px;
 }
 
-.cart-button {
+.cart-button, #quantity-form input[type=submit] {
     background-color: #E85A4F;
     color:#EAE7DC;
     width:15%;
@@ -263,7 +263,7 @@ hr{
     cursor:pointer;
 }
 
-.cart-button:hover {
+.cart-button:hover, #quantity-form input[type=submit] {
     background-color: #EAE7DC;
     color:#E85A4F;
 }
@@ -422,10 +422,6 @@ tr:nth-child(even) {
     
 }
 
-.tab:hover{
-    background-color: #f88f8f;
-}
-
 .content{
     float:left;
     width:60%;
@@ -471,17 +467,9 @@ input[type=submit]:hover{
     opacity: 0.8;
 }
 
-/*change password form and payment form*/
-#change-password-form{
-    text-align:center;
-    height:550px;
-    padding-top:50px;
-    display:none;
-}
-
+/*payment page form*/
 #payment-form{
     width:50%;
-    background-image: url("../art/white_texture.png");
     margin:100px auto;
     padding:50px;
     border-radius:20px;

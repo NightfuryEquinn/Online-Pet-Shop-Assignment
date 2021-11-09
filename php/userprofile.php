@@ -1,11 +1,23 @@
 <?php
 //include("session.php");
-//$username=$_SESSION['mySession'];
-$username= "Box";
+//session_start();
+$customer_id=intval($_SESSION['Customer_ID']);
 ?>
 
 <html>
 <head>
+    <!--How code being decoded-->
+    <meta charset = "utf-8">
+
+    <!--How page being display based on viewport-->
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1 shrink-to-fit = no">
+
+    <!--Add author, web description, keywords for search engine, and copyright-->
+    <meta name = "author" content = "Yip Zi Xian | Neong Yee Kay | Wong Xie Ling">
+    <meta name = "description" content = "Browse for your fluffy or exotic companions">
+    <meta name = "keywords" content = "Les Petz Shop University Assignment, Les Petz Shop, University Assignment">
+    <meta name = "copyright" content = "Copyright 2021 Yip Zi Xian, Neong Yee Kay, Wong Xie Ling">
+
     <!--Link to Pictures file-->
     <link rel = "icon" type = image/png href = ../art/logo.png>
 
@@ -70,7 +82,7 @@ $username= "Box";
         <h1>Profile</h1>
         <hr>
         <?php include("conn.php");
-                $result = mysqli_query($con,"SELECT * FROM customer WHERE Username='Box'");
+                $result = mysqli_query($con,"SELECT * FROM customer WHERE Customer_ID='$customer_id'");
                 $row = mysqli_fetch_array($result);
         ?>
         <div class="profile-top" style="background-image: url('../art/profile_cover.jpg')">
@@ -111,7 +123,7 @@ $username= "Box";
                     // find number of rows in table 
                     $result = mysqli_query($con,"SELECT *, (sp.Quantity*p.Product_Price) AS Total, SUM(Total) AS checkout_price 
                     FROM shoppingcart s, shopping_product sp, product p
-                    WHERE s.Shopping_ID = sp.Shopping_ID, p.Product = sp.Product, s.Customer_ID='".$_SESSION['id']."', s.Status='unpaid'");
+                    WHERE s.Shopping_ID = sp.Shopping_ID AND p.Product = sp.Product AND s.Customer_ID='$customer_id' AND s.Status='unpaid'");
                     $row = mysqli_fetch_row($result);
                 ?>
                 <table class="cart-table">
@@ -121,25 +133,27 @@ $username= "Box";
                         <th class="cart-header">Quantity</th>
                         <th class="cart-header">Total</th>
                     </tr>
+                    <form id="quantity-form" method="post" action="updatecart.php">
                     <?php
                         while ($row = mysqli_fetch_array($result)) {
                             echo"<tr>
                             <td>".$row['Product_Name']."</td>
                             <td>".$row['Product_Price']."</td>
-                            <form method=\"post\" action=\"updatecart.php\">
-                            <input type=\"hidden\" name=\"id\" value=".$row['Cart_ID'].">
+                            <input type=\"hidden\" name=\"sid\" value=".$row['Shopping_ID'].">
+                            <input type=\"hidden\" name=\"pid\" value=".$row['Product_ID'].">
                             <input type=\"number\" name=\"update-qty\" required=\"required\" value=".$row['Quantity'].">
-                            </form>
                             <td>".$row['Total']."</td>
                             </tr>";
                         }
                     ?>
+                    </form>
                 </table>
                 <div class="cart-bottom">
                     <hr>
                     <p>Total:<?php echo $row['checkout_price']?></p>
-                    <button onclick="window.location.href = '../payment.html';" class="cart-button">Checkout</button>
-                    <button onclick="window.location.href = 'resetcart.php';" class="cart-button">Reset</button>
+                    <input type="submit" name="Update" value="Update" form="quantity-form"/>
+                    <button onclick="window.location.href = '../payment.html?id=<?php echo $row['Shopping_ID'] ?>';" class="cart-button">Checkout</button>
+                    <button onclick="window.location.href = 'resetcart.php?id=<?php echo $row['Shopping_ID'] ?>';" class="cart-button">Clear</button>
                 </div>
             </div>
 
@@ -148,7 +162,7 @@ $username= "Box";
                 <?php 
                     include("conn.php");
                     // find number of rows in table 
-                    $result = mysqli_query($con,"SELECT COUNT(*) FROM shopping cart WHERE Status = 'paid', Customer_ID = '".$_SESSION['id']."'");
+                    $result = mysqli_query($con,"SELECT COUNT(*) FROM shopping cart WHERE Status = 'paid'AND Customer_ID = '$customer_id'");
                     $r = mysqli_fetch_row($result);
                     $row_num = $r[0];
 
@@ -159,7 +173,7 @@ $username= "Box";
 
                     // get the current page or set a default as 1
                     if (isset($_GET['currentpage']) && is_numeric($_GET['currentpage'])) {
-                    // cast var as int
+                    // make currentpage var as integer
                     $currentpage = (int) $_GET['currentpage'];
                     } 
                     else {
@@ -179,8 +193,8 @@ $username= "Box";
                     $offset = ($currentpage - 1) * $limit_row;
 
                     $result = mysqli_query($con,"SELECT sp.*,s.*,p.*, c.*(sp.Quantity * p.Product_Price) AS Total 
-                    FROM shopping_product sp, shoppingcart s, product p, customer c 
-                    WHERE c.Customer_ID = s.Customer_ID, sp.Shopping_ID = s.Shopping_ID, p.Product_ID = sp.Product_ID, c.Username='".$username."', s.Status= 'paid'
+                    FROM shopping_product sp, shoppingcart s, product p
+                    WHERE sp.Shopping_ID = s.Shopping_ID AND p.Product_ID = sp.Product_ID AND s.Customer_ID='$customer_id' AND s.Status= 'paid'
                     LIMIT $offset, $limit_row");
                 ?>
 
