@@ -55,7 +55,15 @@
                     <button onclick="document.location='food.html'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
                     <button onclick="document.location='accessories.html'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
                     <button onclick="document.location='userprofile.html'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
-                    <button onclick="document.location='login.html'"><span><i class="fas fa-sign-in-alt fa-2x"></i></span>LOGIN</button>
+                    <div class="dropdown">
+                    <button onclick="document.location='login.html'"><span><i class="fas fa-sign-in-alt fa-2x"></i></span>LOGIN
+                      <div class="dropdown-content">
+                        <a href="loginform.html"><i class="fas fa-sign-in-alt">&nbsp&nbspLog In</i></a>
+                        <a href="signupform.html"><i class="fas fa-user-plus">&nbsp&nbspSign Up</i></a>
+                        <a href="adminaccess.html"><i class="fas fa-crown">&nbspAdmin Access</i></a>
+                        </div>
+                      </div>
+                    </button>
                 </div>
 
                 <div class='hamburger-nbc'>
@@ -69,8 +77,8 @@
                         <button onclick="document.location='login.html'"><i class="fas fa-sign-in-alt fa-2x"></i><br>LOGIN</button>
                     </div>
                 </div>
-            </div>
-        </header>
+              </div>
+          </header> 
 
         <!--Curved Bottom Background-->
         <img class='curve-background' src='art/luxury.jpg'>

@@ -47,25 +47,33 @@
                   <div class='name'>Les   Pet   Shop</div>
   
                   <div class='nav-btn-container'>
-                      <button onclick="document.location='homepage.html'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
-                      <button onclick="document.location='pet.html'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
-                      <button onclick="document.location='food.html'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
-                      <button onclick="document.location='accessories.html'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
-                      <button onclick="document.location='userprofile.html'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
-                      <button onclick="document.location='login.html'"><span><i class="fas fa-sign-in-alt fa-2x"></i></span>LOGIN</button>
-                  </div>
-  
-                  <div class='hamburger-nbc'>
-                      <button id='hamburger-bar'><i class='fa fa-bars fa-3x'></i></button>
-                      <div class='hamburger-content'>
-                          <button onclick="document.location='homepage.html'"><i class="fas fa-home fa-2x"></i><br>HOME</button>
-                          <button onclick="document.location='pet.html'"><i class="fas fa-paw fa-2x"></i><br>PETS</button>
-                          <button onclick="document.location='food.html'"><i class="fas fa-fish fa-2x"></i><br>FOOD</button>
-                          <button onclick="document.location='accessories.html'"><i class="fas fa-gift fa-2x"></i><br>ACCESSORIES</button>
-                          <button onclick="document.location='userprofile.html'"><i class="fas fa-user-circle fa-2x"></i><br>PROFILE</button>
-                          <button onclick="document.location='loginpage.html'"><i class="fas fa-sign-in-alt fa-2x"></i><br>LOGIN</button>
+                    <button onclick="document.location='homepage.html'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
+                    <button onclick="document.location='pet.html'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
+                    <button onclick="document.location='food.html'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
+                    <button onclick="document.location='accessories.html'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
+                    <button onclick="document.location='userprofile.html'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
+                    <div class="dropdown">
+                    <button onclick="document.location='login.html'"><span><i class="fas fa-sign-in-alt fa-2x"></i></span>LOGIN
+                      <div class="dropdown-content">
+                        <a href="loginform.html"><i class="fas fa-sign-in-alt">&nbsp&nbspLog In</i></a>
+                        <a href="signupform.html"><i class="fas fa-user-plus">&nbsp&nbspSign Up</i></a>
+                        <a href="adminaccess.html"><i class="fas fa-crown">&nbspAdmin Access</i></a>
+                        </div>
                       </div>
-                  </div>
+                    </button>
+                </div>
+
+                <div class='hamburger-nbc'>
+                    <button id='hamburger-bar'><i class='fa fa-bars fa-3x'></i></button>
+                    <div class='hamburger-content'>
+                        <button onclick="document.location='homepage.html'"><i class="fas fa-home fa-2x"></i><br>HOME</button>
+                        <button onclick="document.location='pet.html'"><i class="fas fa-paw fa-2x"></i><br>PETS</button>
+                        <button onclick="document.location='food.html'"><i class="fas fa-fish fa-2x"></i><br>FOOD</button>
+                        <button onclick="document.location='accessories.html'"><i class="fas fa-gift fa-2x"></i><br>ACCESSORIES</button>
+                        <button onclick="document.location='userprofile.html'"><i class="fas fa-user-circle fa-2x"></i><br>PROFILE</button>
+                        <button onclick="document.location='login.html'"><i class="fas fa-sign-in-alt fa-2x"></i><br>LOGIN</button>
+                    </div>
+                </div>
               </div>
           </header> 
           <body style = "background-image: linear-gradient(#f9e7df, #eed5c8, #ddbdad, #d5b3a4)">
@@ -166,7 +174,7 @@
               </center>
               <br>
               <div class="descbg">
-                <div class="slideshow-container">
+                <div class="slides">
 
                   <div class="mySlides fade">
                     <img src="art/petaccessories.jpg" style="height: 400px; width: 1000px;">
@@ -182,7 +190,7 @@
                 
                 
                   
-                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="back" onclick="plusSlides(-1)">&#10094;</a>
                   <a class="next" onclick="plusSlides(1)">&#10095;</a>
                   
                   </div>
@@ -211,7 +219,7 @@
                         <div class="hovercont">
                             <img src="art/slide1.png" class="image" style="width: 350px; height: 350px;" > 
                                 <div class="hoverlay">
-                                    <div class="overlaytext">
+                                    <div class="overlaytext"  onclick="document.location='food.html'";>
                                         Check out the wide variety of treats we offer here!
                                     </div>                                   
                                 </div>
@@ -221,7 +229,7 @@
                             <div class="hovercont">
                                 <img src="art/slide2.png" class="image" style="width: 350px; height: 350px;">
                                     <div class="hoverlay">
-                                        <div class="overlaytext">
+                                        <div class="overlaytext"  onclick="document.location='pet.html'";>
                                             Take this bundle of joy home with you today!
                                         </div>
                                     </div>
@@ -231,7 +239,7 @@
                                 <div class="hovercont">
                                     <img src="art/slide3.png" class="image" style="width: 350px; height: 350px;">
                                         <div class="hoverlay">
-                                            <div class="overlaytext">
+                                            <div class="overlaytext"  onclick="document.location='accessories.html'";>
                                                 Made with the best materials for your beloved companion!
                                             </div>
                                         </div>

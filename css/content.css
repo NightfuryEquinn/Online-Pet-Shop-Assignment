@@ -265,7 +265,26 @@ h1 {
         background-color: #A8D0E6;
     }
 }
-
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: inherit;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(167, 37, 37, 0.2);
+    padding: 12px 16px;
+    top: 225px;
+    z-index: 1;
+  
+  }
+  .dropdown:hover .dropdown-content {
+    font-size: 20=px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    text-align: center;
+    right: 0px;
+  
+  }
 /* Content Flexboxes */
 .content-flexbox-container {
     margin: 50px;
