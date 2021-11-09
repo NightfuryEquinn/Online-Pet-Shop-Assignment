@@ -1,40 +1,46 @@
 <?php
-include("conn.php");
+
+include('conn.php');
 
 $email = mysqli_real_escape_string($con, $_POST['email']);
 $password = mysqli_real_escape_string($con, $_POST['password']);
 $checkpassword = mysqli_real_escape_string($con, $_POST['checkpassword']);
 $checkemail =  "SELECT * FROM customer WHERE email = '$email'";
+$validate = mysqli_query($con, $checkemail);
+$insert="INSERT INTO customer (username, name, email, password)
+            VALUES
+        ('$_POST[username]','$_POST[name]', '$_POST[email]', '$_POST[password]');";
 
 if($password !== $checkpassword){
     echo 
     '<script>
-    alert ("Please enter the same password!.")
-    </script>';  
-    header('Location: login.html');
+    alert ("Please enter the same password!")
+    window.location.href = "login.html";
+    </script>';
 }
-if($email !== $checkemail){
+
+if(mysqli_num_rows($validate) > 0){
     echo 
     '<script>
     alert ("An account under this email already exists. Please log in instead.")
-    </script>';  
-    header('Location: login.html');
-}
-if($password == $checkpassword){
-    if($email == $checkemail){
-        $insert="INSERT INTO customer (username, name, email, password)
-        VALUES
-        ('$_POST[username]','$_POST[name]', '$_POST[email]', '$_POST[password]');";
-         echo 
-         '<script>
-         alert("Thank you for signing up! Please login to access the other features!");
-         </script>';
-         header('Location: login.html');
-    }
+    window.location.href = "login.html";
+    </script>';
 }
 
 if (mysqli_query($con,$insert)) {
-    mysqli_close($con);
-    header('Location: login.html');
+    echo 
+    '<script>
+    alert("Thank you for signing up! Please login to access the other features!");
+    window.location.href = "login.html"; 
+    </script>';
 } 
+
+else {
+    echo 
+    '<script>
+    alert("Sign up failed. Please try again.");
+    window.location.href = "login.html"; 
+    </script>';
+}
+mysqli_close($con);
 ?>
