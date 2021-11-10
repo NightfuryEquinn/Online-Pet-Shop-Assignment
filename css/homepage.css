@@ -38,7 +38,7 @@ body {
 }
 
 .logocontainer {
-  background-image: url("art/banner.jpg");
+  background-image: url("/art/banner.jpg");
   height: 500px;
   width: 100%;
   background-size: cover;
@@ -192,13 +192,13 @@ body {
 
 /*content containers*/
 .ourstory {
-  background-image: url("art/ourstory.png");
+  background-image: url("/art/ourstory.png");
   height: 450px;
   width: 100%;
   border-radius: 25px;
 }
 .whatwedo {
-  background-image: url("art/banner2.png");
+  background-image: url("/art/banner2.png");
   height: fit-content;
   width: 100%;
 }
@@ -248,54 +248,35 @@ body {
   text-align: center;
 }
 * {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
-.mySlides {display: none}
 img {vertical-align: middle;}
 
 /* Slideshow container */
-.slideshow-container {
+.slides {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.back, .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
   padding: 16px;
   margin-top: -22px;
-  color: white;
+  color: rgb(75, 67, 67);
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
-
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
 
 /*Slide number indicator*/
 .dot {
@@ -416,6 +397,7 @@ a {
   left: 40%;
   text-align: center;
   padding-right: 50px;
+  cursor: pointer;
 }
 
 /*submit overlay*/
@@ -451,6 +433,27 @@ a {
 
 .sticky + .content {
   padding-top: 102px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: inherit;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(167, 37, 37, 0.2);
+  padding: 12px 16px;
+  top: 225px;
+  z-index: 1;
+
+}
+.dropdown:hover .dropdown-content {
+  font-size: 20=px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  text-align: center;
+  right: 0px;
+
 }
 
 /*footer*/

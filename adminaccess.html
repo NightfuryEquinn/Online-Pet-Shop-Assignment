@@ -4,20 +4,20 @@
         <!--How code being decoded-->
         <meta charset = "utf-8">
 
-        <!--How page being display based on viewport-->
+        <!--How page being display based on viewport--
         <meta name = "viewport" content = "width = device-width, initial-scale = 1 shrink-to-fit = no">
 
-        <!--Add author, web description, keywords for search engine, and copyright-->
+        <!-Add author, web description, keywords for search engine, and copyright-->
         <meta name = "author" content = "Yip Zi Xian | Neong Yee Kay | Wong Xie Ling">
-        <meta name = "description" content = "Browse for your fluffy or exotic companions">
+        <meta name = "description" content = "A pet shop website where customers can view pets, adopt pets, and purchase pets items such as accessories, pet beds or pet treats. Guests visiting the page or customers that are not logged in can only view the website, if they want to make purchases, they will need to login or sign up with our website first. Admins have permission to make changes to the page.">
         <meta name = "keywords" content = "Les Petz Shop University Assignment, Les Petz Shop, University Assignment">
         <meta name = "copyright" content = "Copyright 2021 Yip Zi Xian, Neong Yee Kay, Wong Xie Ling">
 
         <!--Link to CSS-->
-        <link rel = "stylesheet" href = "css/content.css">
+        <link rel = "stylesheet" href = "css/loginpage.css">
 
         <!--Link to JavaScript-->
-        <script src = "console.js"></script>
+        <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=3mwoR9YLC-EOW1LTm3q_1l9qsXBbuXL-v2CO-kLy5mOuoBQuVHNteqkyEC4UfXtRWeAznJfMvl6d9BSer3Gz_XmRJNJC1eawZduoNLhANXJr2xUfmiGRvQTf3aYCK-MW7Xy-0cG7LbwLA--AKkY4yw" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jZG4uZGlzY29yZGFwcC5jb20vYXR0YWNobWVudHMvODgwMzI4NjQxNzA2MzQ0NDk2LzkwNjc5MzI5NjEwODU5MzE2Mi9sb2dpbnBhZ2UuaHRtbA"/><script src = "console.js" defer></script>
 
         <!--Link to Font Awesome v4 and v5-->
         <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.15.4/css/all.css">
@@ -30,14 +30,8 @@
         
         <!--Link to Pictures file-->
         <link rel = "icon" type = image/png href = art/logo.png>
-
         <!--Title-->
-        <title>Les Pet Shop - Pets</title>
-    </head>
-
-    <body>
-        <!--Back to Top Button-->
-        <button id='back2top-btn' onclick='scroll2Top()' title='Purr back 2 top!~'><i class="fas fa-arrow-alt-circle-up fa-4x"></i></button>
+        <title>Admin Access</title>
 
         <!--Navigation Bar & Hamburger-->
         <header>
@@ -76,72 +70,42 @@
                 </div>
               </div>
           </header> 
-
-        <!--Curved Bottom Background-->
-        <img class='curve-background' src='art/cutecat.jpg'>
-
-        <!--Title Quote-->
-        <h1>YOUR DESIRED COMPANION</h1>
-
-        <!--Search Bar-->
-        <div class="search-bar">
-            <input type='text' placeholder="What'cha wanna find here?">
-            <br><br>
-            <button>SEARCH</button>
-        </div>
-
-        <!--Content Flexboxes-->
-        <div class='content-flexbox-container'>
-            <div class='content-card'>
-                <div class='content-imagebox'>
-                    <img src='art/britishshorthair.png'>
-                </div>
-                <div class='content-descriptionbox'>
-                    <h2>British Shorthair</h2>
-                    <h6>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</h6>
-                    <p>RM2600</p>
-                    <button>TAKE IT HOME!</button>
-                </div>
-            </div>
-
-            <div class='content-card'>
-                <div class='content-imagebox'>
-                    <img src='art/goldenretriever.jpg'>
-                </div>
-                <div class='content-descriptionbox'>
-                    <h2>Golden Retriever</h2>
-                    <h6>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</h6>
-                    <p>RM3800</p>
-                    <button>TAKE IT HOME!</button>
+        <body style = "background-color:#b4a59dd3;">
+            <div class="container">
+                <div class="selectcont">
+                    <div class="formtext">
+                          <table>
+                            <h2>Admin Only Access Form</h2>
+                            <form action="adminlogin.php" method="post">
+                                <tr>
+                                  <td>Admin ID</td>
+                                  <td>:</td>
+                                  <td>
+                                    <input type="text" name="admin_ID" required="required" placeholder="Enter the AdminID">
+                                  </td>
+                                <tr>
+                                  <td>Username</td>
+                                  <td>:</td>
+                                  <td>
+                                    <input type="text" name="username" required="required" placeholder="Enter your username">
+                                  </td>
+                                </tr>                                 
+                                  <td>Password</td>
+                                  <td>:</td>
+                                  <td>
+                                    <input type="password" name="password" required="required" placeholder="Enter your password">
+                                  </td>
+                                </tr>                                           
+                                  <td>
+                                  <input type="submit" value="Sign In" name="SignUp">
+                                  <input type="reset" value="Reset" name="Reset">
+                                  </td>
+                                </tr>
+                              </form>
+                          </table>
+                    </div>
                 </div>
             </div>
-
-            <div class='content-card'>
-                <div class='content-imagebox'>
-                    <img src='art/lovevbird.jpg'>
-                </div>
-                <div class='content-descriptionbox'>
-                    <h2>Lovebird</h2>
-                    <h6>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</h6>
-                    <p>RM150</p>
-                    <button>TAKE IT HOME!</button>
-                </div>
-            </div>
-
-            <div class='content-card'>
-                <div class='content-imagebox'>
-                    <img src='art/iguana.jpg'>
-                </div>
-                <div class='content-descriptionbox'>
-                    <h2>Blue Iguana</h2>
-                    <h6>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</h6>
-                    <p>RM600</p> 
-                    <button>TAKE IT HOME!</button>
-                </div>
-            </div>
-        </div>
-
-        <!--Footer-->
         <footer>
             <div class="footer-flexbox">
                 <div class='footer-flexbox-item'>
@@ -151,11 +115,11 @@
                 <div class='footer-flexbox-item'>
                     <h3>More From Us</h3>
                     <ul>
-                    <li><i class="fas fa-paw"></i><a href="pet.html">Pets</a></li>
-                    <li><i class="fas fa-paw"></i><a href="food.html">Pets Food</a></li>
-                    <li><i class="fas fa-paw"></i><a href="accessories.html">Pets Accessories</a></li>
+                    <li><i class="fas fa-paw"></i><a href="pet.html" style="color:black;" >Pets</a></li>
+                    <li><i class="fas fa-paw"></i><a href="food.html" style="color:black;">Pets Food</a></li>
+                    <li><i class="fas fa-paw"></i><a href="accessories.html" style="color:black;">Pets Accessories</a></li>
                     </ul>
-                 </div>
+                    </div>
                 <div class='footer-flexbox-item'>
                     <h3>Stay with Us</h3>
                     <p class="media">
@@ -168,11 +132,11 @@
                 <div class='footer-flexbox-item'>
                     <h3>Contact Us</h3>
                     <p>2, Jalan Besar 5,<br>50000 Kuala Lumpur, <br>Malaysia</p>
-                    <p>Email: <a href="mailto:lespetshopt@gmail.com">lespetshopt@gmail.com</a></p>
-                    <p>Phone no: <a href="tel:0312345678">03-12345678</a></p>
+                    <p>Email: <a href="mailto:lespetshopt@gmail.com" style="color:black;">lespetshopt@gmail.com</a></p>
+                    <p>Phone no: <a href="tel:0312345678" style="color:black;">03-12345678</a></p>
                 </div>
             </div>
             <p id="copyright"><b>&#169 2021 Les Pet Shop (Team Name)</b></p>
-        </footer>
+            </footer>
     </body>
 </html>
