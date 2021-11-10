@@ -13,7 +13,7 @@
             $sql="UPDATE shopping_product SET 
             Quantity='$qty'
             WHERE Shopping_ID='$sid' AND Product_ID='$pid'"; 
-            if (mysqli_query($con, $sql)){
+            if (!mysqli_query($con, $sql)){
                 $flag = FALSE;
             }
         }
