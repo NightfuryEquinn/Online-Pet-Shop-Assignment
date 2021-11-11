@@ -82,7 +82,7 @@ $customer_id=intval($_SESSION['Customer_ID']);
         <h1>Profile</h1>
         <hr>
         <?php include("conn.php");
-                $result = mysqli_query($con,"SELECT * FROM customer WHERE Customer_ID='$customer_id'");
+                $result = mysqli_query($con,"SELECT * FROM customer WHERE Customer_ID=$customer_id");
                 $row = mysqli_fetch_array($result);
         ?>
         <div class="profile-top" style="background-image: url('../art/profile_cover.jpg')">
@@ -123,7 +123,9 @@ $customer_id=intval($_SESSION['Customer_ID']);
                     // find number of rows in table 
                     $result = mysqli_query($con,"SELECT *, (sp.Quantity*p.Product_Price) AS Total, SUM(Total) AS checkout_price 
                     FROM shoppingcart s, shopping_product sp, product p
-                    WHERE s.Shopping_ID = sp.Shopping_ID AND p.Product = sp.Product AND s.Customer_ID='$customer_id' AND s.Status='unpaid'");
+                    WHERE s.Shopping_ID = sp.Shopping_ID AND p.Product = sp.Product AND s.Customer_ID=$customer_id AND s.Status='unpaid'");
+                    $SID = $row['Shopping_ID'];
+                    $_SESSION['Cart_ID'] = $SID;
                     $row = mysqli_fetch_row($result);
                 ?>
                 <table class="cart-table">
@@ -152,7 +154,7 @@ $customer_id=intval($_SESSION['Customer_ID']);
                     <hr>
                     <p>Total:<?php echo $row['checkout_price']?></p>
                     <input type="submit" name="Update" value="Update" form="quantity-form"/>
-                    <button onclick="window.location.href = '../payment.html?id=<?php echo $row['Shopping_ID'] ?>';" class="cart-button">Checkout</button>
+                    <button onclick="window.location.href = '../payment.html>';" class="cart-button">Checkout</button>
                     <button onclick="window.location.href = 'resetcart.php?id=<?php echo $row['Shopping_ID'] ?>';" class="cart-button">Clear</button>
                 </div>
             </div>
@@ -162,7 +164,7 @@ $customer_id=intval($_SESSION['Customer_ID']);
                 <?php 
                     include("conn.php");
                     // find number of rows in table 
-                    $result = mysqli_query($con,"SELECT COUNT(*) FROM shopping cart WHERE Status = 'paid'AND Customer_ID = '$customer_id'");
+                    $result = mysqli_query($con,"SELECT COUNT(*) FROM shopping cart WHERE Status = 'paid'AND Customer_ID = $customer_id");
                     $r = mysqli_fetch_row($result);
                     $row_num = $r[0];
 
@@ -194,7 +196,7 @@ $customer_id=intval($_SESSION['Customer_ID']);
 
                     $result = mysqli_query($con,"SELECT sp.*,s.*,p.*, c.*(sp.Quantity * p.Product_Price) AS Total 
                     FROM shopping_product sp, shoppingcart s, product p
-                    WHERE sp.Shopping_ID = s.Shopping_ID AND p.Product_ID = sp.Product_ID AND s.Customer_ID='$customer_id' AND s.Status= 'paid'
+                    WHERE sp.Shopping_ID = s.Shopping_ID AND p.Product_ID = sp.Product_ID AND s.Customer_ID=$customer_id AND s.Status= 'paid'
                     LIMIT $offset, $limit_row");
                 ?>
 

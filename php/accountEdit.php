@@ -82,7 +82,7 @@
         <?php
             include("conn.php");
             $customer_ID=intval($_SESSION['Customer_ID']);
-            $result = mysqli_query($con,"SELECT * FROM customer WHERE Customer_ID='$customer_ID'");
+            $result = mysqli_query($con,"SELECT * FROM customer WHERE Customer_ID=$customer_ID");
             $row = mysqli_fetch_array($result);
         ?>
         <div class="manage-account">

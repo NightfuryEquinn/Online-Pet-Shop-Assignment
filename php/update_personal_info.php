@@ -13,7 +13,7 @@ Address='$_POST[user_address]',
 City='$_POST[user_city]', 
 Postal_code='$_POST[user_postcode]' 
 State='$_POST[user_state]' 
-WHERE Customer_ID='$customer_id'";
+WHERE Customer_ID=$customer_id";
 
 if (mysqli_query($con, $sql)) {
     mysqli_close($con);
@@ -27,7 +27,7 @@ function update_profile_pic($img){
     $image = file_get_contents($img);
     $sql="UPDATE customer SET
     Profile_pic=?
-    WHERE Customer_ID='$customer_id'";
+    WHERE Customer_ID=$customer_id";
     $stmt = mysqli_prepare($con,$sql);
     mysqli_stmt_bind_param($stmt,"s",$image);
     mysqli_stmt_execute($stmt);
