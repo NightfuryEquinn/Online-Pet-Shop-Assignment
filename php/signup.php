@@ -15,23 +15,23 @@ if($password !== $checkpassword){
     echo 
     '<script>
     alert ("Please enter the same password!")
-    window.location.href = "login.html";
+    window.location.href = "../loginform.html";
     </script>';
-}
+};
 
 if(mysqli_num_rows($validate) > 0){
     echo 
     '<script>
     alert ("An account under this email already exists. Please log in instead.")
-    window.location.href = "login.html";
+    window.location.href = "../loginform.html";
     </script>';
-}
+};
 
 if (mysqli_query($con,$insert)) {
     echo 
     '<script>
     alert("Thank you for signing up! Please login to access the other features!");
-    window.location.href = "login.html"; 
+    window.location.href = "../loginform.html"; 
     </script>';
 } 
 
@@ -39,8 +39,9 @@ else {
     echo 
     '<script>
     alert("Sign up failed. Please try again.");
-    window.location.href = "login.html"; 
+    window.location.href = "../loginform.html"; 
     </script>';
-}
+};
+
 mysqli_close($con);
 ?>

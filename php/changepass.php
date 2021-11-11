@@ -10,7 +10,7 @@ include ("conn.php");
         echo
         '<script>
         alert ("Please enter matching passwords.")
-        window.location.href = "resetpassword.html";
+        window.location.href = "../resetpassword.html";
         </script>';
     }else{
 
@@ -20,14 +20,14 @@ include ("conn.php");
             echo 
             '<script>
             alert ("Password successfully changed. Please login again.")
-            window.location.href = "login.html";
+            window.location.href = "../loginform.html";
             </script>'; 
         }
         else{
             echo
             '<script>
             alert ("Failed to change password. Please try again.")
-            window.location.href = "resetpassword.html";
+            window.location.href = "../resetpassword.html";
             </script>';
        }
     }

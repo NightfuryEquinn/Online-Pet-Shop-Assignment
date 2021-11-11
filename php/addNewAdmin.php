@@ -26,7 +26,9 @@ if($check == 1) {
     </script>';
 
 } else {
-    echo 'Upload failed';
+    echo '<script> alert ("Upload failed.");
+    window.location.href= "../homepage.html";
+    </script>';
 }
 
 mysqli_close($con);

@@ -49,22 +49,36 @@
 
                 <div class='nav-btn-container'>
                     <button onclick="document.location='../homepage.html'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
-                    <button onclick="document.location='../pet.html'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
-                    <button onclick="document.location='../food.html'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
-                    <button onclick="document.location='../accessories.html'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
-                    <button onclick="document.location='../userprofile.html'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
-                    <button onclick="document.location='../login.html'"><span><i class="fas fa-sign-in-alt fa-2x"></i></span>LOGIN</button>
+                    <button onclick="document.location='pet.php'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
+                    <button onclick="document.location='food.php'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
+                    <button onclick="document.location='accessories.php'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
+                    <button onclick="document.location='userprofile.php'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
+                    <div class="dropdown">
+                        <button onclick="document.location='../loginform.html'"><span><i class="fas fa-sign-in-alt fa-2x"></i></span>LOGIN</button>
+                        <div class="dropdown-content">
+                            <a href="../loginform.html"><i class="fas fa-sign-in-alt">&nbsp&nbspLog In</i></a>
+                            <a href="../signupform.html"><i class="fas fa-user-plus">&nbsp&nbspSign Up</i></a>
+                            <a href="../adminaccess.html"><i class="fas fa-crown">&nbspAdmin Access</i></a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class='hamburger-nbc'>
                     <button id='hamburger-bar'><i class='fa fa-bars fa-3x'></i></button>
                     <div class='hamburger-content'>
                         <button onclick="document.location='../homepage.html'"><i class="fas fa-home fa-2x"></i><br>HOME</button>
-                        <button onclick="document.location='../pet.html'"><i class="fas fa-paw fa-2x"></i><br>PETS</button>
-                        <button onclick="document.location='../food.html'"><i class="fas fa-fish fa-2x"></i><br>FOOD</button>
-                        <button onclick="document.location='../accessories.html'"><i class="fas fa-gift fa-2x"></i><br>ACCESSORIES</button>
-                        <button onclick="document.location='../userprofile.html'"><i class="fas fa-user-circle fa-2x"></i><br>PROFILE</button>
-                        <button onclick="document.location='../login.html'"><i class="fas fa-sign-in-alt fa-2x"></i><br>LOGIN</button>
+                        <button onclick="document.location='pet.php'"><i class="fas fa-paw fa-2x"></i><br>PETS</button>
+                        <button onclick="document.location='food.php'"><i class="fas fa-fish fa-2x"></i><br>FOOD</button>
+                        <button onclick="document.location='accessories.php'"><i class="fas fa-gift fa-2x"></i><br>ACCESSORIES</button>
+                        <button onclick="document.location='userprofile.php'"><i class="fas fa-user-circle fa-2x"></i><br>PROFILE</button>
+                        <div class="dropdown">
+                            <button onclick="document.location='../loginform.html'"><i class="fas fa-sign-in-alt fa-2x"></i><br>LOGIN</button>
+                            <div class="dropdown-content">
+                                <a href="../loginform.html"><i class="fas fa-sign-in-alt">&nbsp&nbspLog In</i></a>
+                                <a href="../signupform.html"><i class="fas fa-user-plus">&nbsp&nbspSign Up</i></a>
+                                <a href="../adminaccess.html"><i class="fas fa-crown">&nbspAdmin Access</i></a>
+                            </div>
+                        </div>      
                     </div>
                 </div>
             </div>
@@ -117,13 +131,15 @@
 
                     <div class="content-descriptionbox">
 
+                    <h1>'.$row['Product_ID'].'</h1>
+
                     <h2>'.$row['Product_Name'].'</h2>
 
                     <h6>'.$row['Product_Description'].'</h6>
 
                     <p>'.$row['Product_Price'].'</p>
 
-                    <button>TAKE IT HOME!</button>
+                    <a href=\'accessoriesToCart.php?Product_ID='.$row['Product_ID'].'\' onclick="return confirm(\'Add '.$row['Product_Name'].' to your cart?\');"><button>TAKE IT HOME!</button></a>
 
                     </div>
 
@@ -146,9 +162,9 @@
                 </div>
                 <div class="footer-content"><h3>Our services</h3>
                     <ul>
-                        <li><i class="fas fa-paw"></i><a href="../pet.html">Pets</a></li>
-                        <li><i class="fas fa-paw"></i><a href="../food.html">Pets Food</a></li>
-                        <li><i class="fas fa-paw"></i><a href="../accessories.html">Pets Accessories</a></li>
+                        <li><i class="fas fa-paw"></i><a href="pet.php">Pets</a></li>
+                        <li><i class="fas fa-paw"></i><a href="food.php">Pets Food</a></li>
+                        <li><i class="fas fa-paw"></i><a href="accessories.php">Pets Accessories</a></li>
                     </ul>
                 </div>
                 <div class="footer-content"><h3>Social media</h3>

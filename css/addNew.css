@@ -176,6 +176,27 @@ body {
     z-index: 1;
 }
 
+/* Dropdown Login Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: inherit;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(167, 37, 37, 0.2);
+    padding: 12px 16px;
+    top: 225px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    font-size: 20=px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    text-align: center;
+    right: 0px;
+}
+
 /* Admin Edit Form */
 .main-container {
     margin: 50px;
@@ -307,23 +328,3 @@ body {
         display: block;
     }
 }
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: inherit;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(167, 37, 37, 0.2);
-    padding: 12px 16px;
-    top: 225px;
-    z-index: 1;
-  
-  }
-  .dropdown:hover .dropdown-content {
-    font-size: 20=px;
-    display: flex;
-    flex-direction: column;
-    align-content: flex-end;
-    text-align: center;
-    right: 0px;
-  
-  }

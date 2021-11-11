@@ -1,125 +1,149 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <!--How code being decoded-->
+        <meta charset = "utf-8">
 
-<head>
-    <!--How code being decoded-->
-    <meta charset = "utf-8">
+        <!--How page being display based on viewport-->
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1 shrink-to-fit = no">
 
-    <!--How page being display based on viewport-->
-    <meta name = "viewport" content = "width = device-width, initial-scale = 1 shrink-to-fit = no">
+        <!--Add author, web description, keywords for search engine, and copyright-->
+        <meta name = "author" content = "Yip Zi Xian | Neong Yee Kay | Wong Xie Ling">
+        <meta name = "description" content = "Browse for your fluffy or exotic companions">
+        <meta name = "keywords" content = "Les Petz Shop University Assignment, Les Petz Shop, University Assignment">
+        <meta name = "copyright" content = "Copyright 2021 Yip Zi Xian, Neong Yee Kay, Wong Xie Ling">
 
-    <!--Add author, web description, keywords for search engine, and copyright-->
-    <meta name = "author" content = "Yip Zi Xian | Neong Yee Kay | Wong Xie Ling">
-    <meta name = "description" content = "Browse for your fluffy or exotic companions">
-    <meta name = "keywords" content = "Les Petz Shop University Assignment, Les Petz Shop, University Assignment">
-    <meta name = "copyright" content = "Copyright 2021 Yip Zi Xian, Neong Yee Kay, Wong Xie Ling">
+        <!--Link to Pictures file-->
+        <link rel = "icon" type = image/png href = art/logo.png>
 
-    <!--Link to Pictures file-->
-    <link rel = "icon" type = image/png href = art/logo.png>
+        <!--Title-->
+        <title>Les Pet Shop - Payment</title>
 
-    <!--Title-->
-    <title>Les Pet Shop</title>
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/c8bccee41a.js" crossorigin="anonymous"></script>
+        <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+        <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.15.4/css/v4-shims.css">
 
-    <!-- Add icon library -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/c8bccee41a.js" crossorigin="anonymous"></script>
-    <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.15.4/css/v4-shims.css">
+        <!--Add font library-->
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rubik:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!--Add font library-->
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rubik:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--link css-->
+        <link href="css/profile.css" rel="stylesheet">
 
-    <!--link css-->
-    <link href="css/profile.css" rel="stylesheet">
+        <!--Add JS script-->
+        <script src="console.js"></script>
+    </head>
 
-    <!--Add JS script-->
-    <script src="console.js"></script>
-</head>
+    <!--Body-->
+    <body style="background-color: #eee2dcc7;">
 
-<body style="background-color: #eee2dcc7;">
-    <!--Back to Top Button-->
-<button id='back2top-btn' onclick='scroll2Top()' title='Purr back 2 top!~'><i class="fas fa-arrow-alt-circle-up fa-4x"></i></button>
-    <!--Navigation Bar & Hamburger-->
-<header>
-    <div class='nav-bar'>
-        <img class='logo' src='art/logo.png'>
+        <!--Back to Top Button-->
+        <button id='back2top-btn' onclick='scroll2Top()' title='Purr back 2 top!~'><i class="fas fa-arrow-alt-circle-up fa-4x"></i></button>
+        
+        <!--Navigation Bar & Hamburger-->
+        <header>
+            <div class='nav-bar'>
+                <img class='logo' src='art/logo.png'>
 
-        <div class='name'>Les   Pet   Shop</div>
+                <div class='name'>Les   Pet   Shop</div>
 
-        <div class='nav-btn-container'>
-            <button onclick="document.location='homepage.html'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
-            <button onclick="document.location='pet.html'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
-            <button onclick="document.location='food.html'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
-            <button onclick="document.location='accessories.html'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
-            <button onclick="document.location='userprofile.html'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
-            <div class="dropdown">
-            <button onclick="document.location='login.html'"><span><i class="fas fa-sign-in-alt fa-2x"></i></span>LOGIN
-              <div class="dropdown-content">
-                <a href="loginform.html"><i class="fas fa-sign-in-alt">&nbsp&nbspLog In</i></a>
-                <a href="signupform.html"><i class="fas fa-user-plus">&nbsp&nbspSign Up</i></a>
-                <a href="adminaccess.html"><i class="fas fa-crown">&nbspAdmin Access</i></a>
+                <div class='nav-btn-container'>
+                    <button onclick="document.location='homepage.html'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
+                    <button onclick="document.location='php/pet.php'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
+                    <button onclick="document.location='php/food.php'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
+                    <button onclick="document.location='php/accessories.php'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
+                    <button onclick="document.location='php/userprofile.php'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
+                    <div class="dropdown">
+                        <button onclick="document.location='loginform.html'"><span><i class="fas fa-sign-in-alt fa-2x"></i></span>LOGIN</button>
+                        <div class="dropdown-content">
+                            <a href="loginform.html"><i class="fas fa-sign-in-alt">&nbsp&nbspLog In</i></a>
+                            <a href="signupform.html"><i class="fas fa-user-plus">&nbsp&nbspSign Up</i></a>
+                            <a href="adminaccess.html"><i class="fas fa-crown">&nbspAdmin Access</i></a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </button>
-        </div>
 
-        <div class='hamburger-nbc'>
-            <button id='hamburger-bar'><i class='fa fa-bars fa-3x'></i></button>
-            <div class='hamburger-content'>
-                <button onclick="document.location='homepage.html'"><i class="fas fa-home fa-2x"></i><br>HOME</button>
-                <button onclick="document.location='pet.html'"><i class="fas fa-paw fa-2x"></i><br>PETS</button>
-                <button onclick="document.location='food.html'"><i class="fas fa-fish fa-2x"></i><br>FOOD</button>
-                <button onclick="document.location='accessories.html'"><i class="fas fa-gift fa-2x"></i><br>ACCESSORIES</button>
-                <button onclick="document.location='userprofile.html'"><i class="fas fa-user-circle fa-2x"></i><br>PROFILE</button>
-                <button onclick="document.location='login.html'"><i class="fas fa-sign-in-alt fa-2x"></i><br>LOGIN</button>
+                <div class='hamburger-nbc'>
+                    <button id='hamburger-bar'><i class='fa fa-bars fa-3x'></i></button>
+                    <div class='hamburger-content'>
+                        <button onclick="document.location='homepage.html'"><i class="fas fa-home fa-2x"></i><br>HOME</button>
+                        <button onclick="document.location='php/pet.php'"><i class="fas fa-paw fa-2x"></i><br>PETS</button>
+                        <button onclick="document.location='php/food.php'"><i class="fas fa-fish fa-2x"></i><br>FOOD</button>
+                        <button onclick="document.location='php/accessories.php'"><i class="fas fa-gift fa-2x"></i><br>ACCESSORIES</button>
+                        <button onclick="document.location='php/userprofile.php'"><i class="fas fa-user-circle fa-2x"></i><br>PROFILE</button>
+                        <div class="dropdown">
+                            <button onclick="document.location='loginform.html'"><i class="fas fa-sign-in-alt fa-2x"></i><br>LOGIN</button>
+                            <div class="dropdown-content">
+                                <a href="loginform.html"><i class="fas fa-sign-in-alt">&nbsp&nbspLog In</i></a>
+                                <a href="signupform.html"><i class="fas fa-user-plus">&nbsp&nbspSign Up</i></a>
+                                <a href="adminaccess.html"><i class="fas fa-crown">&nbspAdmin Access</i></a>
+                            </div>
+                        </div>      
+                    </div>
+                </div>
             </div>
-        </div>
-      </div>
-  </header> 
+        </header> 
 
-    <form id="payment-form" style="background-image: url('../art/white_texture.png');" method="post" action="payment.php" onsubmit="payment_done()">
-        <h2>Payment</h2>
-        <img id="card-img" src="art/card.png" alt="accepted credit cards">
-        <div>Name on card:</div>
-        <input type="text" name="card_name" required="required">
-        <div>Card number:</div>
-        <input type="text" name="card_number" required="required"  placeholder="Format: 0000 0000 0000 0000" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}">
-        <div>Expiry Date:</div>
-        <input type="text" name="card_expirydate" required="required" placeholder="Format: MM/YY" pattern="[0-1][0-9]/[0-1][0-9]">
-        <div>CVV:</div>
-        <input type="text" name="card_CVV" required="required" placeholder="Format: 000" pattern="[0-9]{3}">
-        <div>Billing address:</div>
-        <textarea name="card_address" form="payment-form" required="required" rows="5" cols="40"></textarea>
-        <p><b>Your card details are protected.</b><br>Les Pet Shop will not access to your card information <br>and we will keep it secure from third parties.</p>
-        <input type="submit" value="Pay" name="pay">
-    </form>
+        <!--Payment Form-->
+        <form id="payment-form" style="background-image: url('../art/white_texture.png');" method="post" action="php/payment.php" onsubmit="payment_done()">
+            <h2>Payment</h2>
+            <img id="card-img" src="art/card.png" alt="accepted credit cards">
 
-<footer class="footer">
-    <div class="footer-flex-container">
-        <div class="footer-content"><h3>Home</h3>
-            <p>Les Pet Shop is always here for you and your pets. You can find yourself a companion and high quality pet product here!</p>
-        </div>
-        <div class="footer-content"><h3>Our services</h3>
-            <ul>
-                <li><i class="fas fa-paw"></i><a href="pet.html">Pets</a></li>
-                <li><i class="fas fa-paw"></i><a href="food.html">Pets Food</a></li>
-                <li><i class="fas fa-paw"></i><a href="accessories.html">Pets Accessories</a></li>
-            </ul>
-        </div>
-        <div class="footer-content"><h3>Social media</h3>
-            <p>Find us on social media<br><br>
-            <a href="www.facebook.com" class="fa fa-facebook"></a>
-            <a href="www.twitter.com" class="fa fa-twitter"></a>
-            <a href="www.instagram.com" class="fa fa-instagram"></a></p>
-        </div>
-        <div class="footer-content contact"><h3>Contact us</h3>
-            <p>2, Jalan Besar 5,<br>50000 Kuala Lumpur, <br>Malaysia</p>
-            <p>Email: <a href="mailto:lespetshopt@gmail.com">lespetshopt@gmail.com</a></p>
-            <p>Phone no: <a href="tel:0312345678">03-12345678</a></p>
-        </div>
-    </div>
-    <p id="copyright"><b>&#169 2021 Les Pet Shop (Team Name)</b></p>
-    </footer>
-</body>
+            <div>Name on card:</div>
+            <input type="text" name="card_name" required="required">
+
+            <div>Card number:</div>
+            <input type="text" name="card_number" required="required"  placeholder="Format: 0000 0000 0000 0000" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}">
+            
+            <div>Expiry Date:</div>
+            <input type="text" name="card_expirydate" required="required" placeholder="Format: MM/YY" pattern="[0-1][0-9]/[0-1][0-9]">
+            
+            <div>CVV:</div>
+            <input type="text" name="card_CVV" required="required" placeholder="Format: 000" pattern="[0-9]{3}">
+            
+            <div>Billing address:</div>
+            <textarea name="card_address" form="payment-form" required="required" rows="5" cols="40"></textarea>
+            
+            <p><b>Your card details are protected.</b><br>Les Pet Shop will not access to your card information <br>and we will keep it secure from third parties.</p>
+            <input type="submit" value="Pay" name="pay">
+        </form>
+
+        <!--Footer-->
+        <footer>
+            <div class="footer-flexbox">
+                <div class='footer-flexbox-item'>
+                    <h3>About Us</h3>
+                    <p>Les Pet Shop is always here for you and your pets. You can find yourself a companion and high quality pet product here!</p>
+                </div>
+                <div class='footer-flexbox-item'>
+                    <h3>More From Us</h3>
+                    <ul>
+                    <li><i class="fas fa-paw"></i><a href="php/pet.php">Pets</a></li>
+                    <li><i class="fas fa-paw"></i><a href="php/food.php">Pets Food</a></li>
+                    <li><i class="fas fa-paw"></i><a href="php/accessories.php">Pets Accessories</a></li>
+                    </ul>
+                </div>
+                <div class='footer-flexbox-item'>
+                    <h3>Stay with Us</h3>
+                    <p class="media">
+                        Find us on social media<br><br>
+                        <a href="www.facebook.com" class="fa fa-facebook"></a>
+                        <a href="www.twitter.com" class="fa fa-twitter"></a>
+                        <a href="www.instagram.com" class="fa fa-instagram"></a>
+                    </p>
+                </div>
+                <div class='footer-flexbox-item'>
+                    <h3>Contact Us</h3>
+                    <p>2, Jalan Besar 5,<br>50000 Kuala Lumpur, <br>Malaysia</p>
+                    <p>Email: <a href="mailto:lespetshopt@gmail.com">lespetshopt@gmail.com</a></p>
+                    <p>Phone no: <a href="tel:0312345678">03-12345678</a></p>
+                </div>
+            </div>
+            <p id="copyright"><b>&#169 2021 Les Pet Shop (Team Name)</b></p>
+        </footer>
+    </body>
+</html>

@@ -30,25 +30,22 @@ function scroll2Top() {
     document.documentElement.scrollTop = 0;
 }
 
-//payment completion alert and redirect back to previous page
+// Payment completion alert and redirect back to previous page
 function payment_done() {
     alert("Payment is done successfully.")
     window.location.replace("homepage.html")
 }
-//password changed alert
+// Password changed alert
 function password_change(){
     alert("Password changed successfully.")
 }
 
-//personal information changed alert
+// Personal information changed alert
 function modify_details(){
     alert("Your personal information has been updated successfully.")
 }
 
-
-//xl//
-
-
+// Slideshow
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -76,7 +73,6 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
-
 mybutton = document.getElementById("myBtn");
 
 window.onscroll = function() {scrollFunction()};
@@ -94,13 +90,11 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-
 function on() {
   document.getElementById("overlay").style.display = "block";
 }
 
 function off() {
   document.getElementById("overlay").style.display = "none";
-
 }
 

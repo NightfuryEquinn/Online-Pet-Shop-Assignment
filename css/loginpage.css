@@ -22,6 +22,7 @@ Vibrant and Elegant
 #374785
 #24305E
 */
+
 html {
   margin: 0;
   padding: 0;
@@ -152,96 +153,8 @@ body {
  .hamburger-nbc:hover .hamburger-content {
    display: flex;
  }
- /*Loginbar*/
-  .align{
-    margin: 0;
-    padding: 0; 
-  }
-  .loginbar{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    bottom: 0%;
-    height: 100%;
-    width: 35%;
-    background: #11101D;
-    padding: 6px 10px;
-    border-radius: 0px 20px 20px 0px;
-    transition: 7 ease-in-out;
-    overflow: hidden; /*whb*/
-  }
-  
-  .loginbar i{
-    color: #fff;
-    font-size: 20px;
-    text-align: center;
-    line-height: 60px;
-    word-spacing: 5px;
-    cursor: pointer;
-    position: static;
-  }
-  .loginbar i:hover {
-    color: black;
-    background-color: white;
-    width: 70%;
-    border-radius: 10px;
-    transition: 7 ease-in;
-  }
-  .loginbar .nav-list{
-    margin-top: 20px;
-    height: 100%;
-  }
-  .loginbar li{
-    position: relative;
-    margin: 8px 0;
-    list-style: none;
-  }
-  
-  .selectcont{
-    background-image:linear-gradient(#ffeeda, #ffe9d0, #ffe6c9, #fcddb9) ;
-    z-index: 10;
-    top:  325px;
-    bottom: 10%;
-    left: 25%;
-    height: 600px;
-    width: 50%;
-    position: absolute;
-    padding: 6px 14px;
-    box-shadow: #818181 10px 10px;
-  }
-  
-  .column {
-    float: left;
-    width: 33.33%;
-    padding: 5px;
-  }
-  .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
 
-
-  .formtext {
-    color: rgb(121, 90, 90);
-    font-size: 120%; 
-    position:absolute;
-    padding: 15%;
-    padding-top: 15%;
-    padding-bottom: 50%;
-    padding-left: 25%;
-    text-align: center;
-  }
-  a{
-    color: rgb(36, 34, 34);
-    text-decoration: none;
-  }
-  
-.container {
-  width: 100%;
-  height: 800px;
-}
-
+ /* Dropdown Login Menu */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -251,8 +164,8 @@ body {
   padding: 12px 16px;
   top: 225px;
   z-index: 1;
-
 }
+
 .dropdown:hover .dropdown-content {
   font-size: 20=px;
   display: flex;
@@ -260,9 +173,104 @@ body {
   align-content: flex-end;
   text-align: center;
   right: 0px;
-
 }
-/*footer*/
+
+ /* Login Bar */
+.align {
+  margin: 0;
+  padding: 0; 
+}
+
+.loginbar {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  bottom: 0%;
+  height: 100%;
+  width: 35%;
+  background: #11101D;
+  padding: 6px 10px;
+  border-radius: 0px 20px 20px 0px;
+  transition: 7 ease-in-out;
+  overflow: hidden;
+}
+
+.loginbar i {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  line-height: 60px;
+  word-spacing: 5px;
+  cursor: pointer;
+  position: static;
+}
+
+.loginbar i:hover {
+  color: black;
+  background-color: white;
+  width: 70%;
+  border-radius: 10px;
+  transition: 7 ease-in;
+}
+
+.loginbar .nav-list {
+  margin-top: 20px;
+  height: 100%;
+}
+
+.loginbar li {
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+
+.selectcont {
+  background-image:linear-gradient(#ffeeda, #ffe9d0, #ffe6c9, #fcddb9) ;
+  z-index: 10;
+  top:  325px;
+  bottom: 10%;
+  left: 25%;
+  height: 600px;
+  width: 50%;
+  position: absolute;
+  padding: 6px 14px;
+  box-shadow: #818181 10px 10px;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.formtext {
+  color: rgb(121, 90, 90);
+  font-size: 120%; 
+  position:absolute;
+  padding: 15%;
+  padding-top: 15%;
+  padding-bottom: 50%;
+  padding-left: 25%;
+  text-align: center;
+}
+
+a {
+  color: rgb(36, 34, 34);
+  text-decoration: none;
+}
+  
+.container {
+  width: 100%;
+  height: 800px;
+}
+
+/* Footer */
 footer {
   margin: 0px;
   width: auto;
@@ -353,7 +361,6 @@ li i {
   text-align: center;
   color: #E85A4F;
 }
-
 
 /* Screen less than 1200px width */ 
 @media screen and (max-width: 1200px) {

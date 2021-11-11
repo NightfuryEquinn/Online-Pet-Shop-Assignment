@@ -20,14 +20,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         if($rowcount==1) {
             session_start();
             echo "Login Succesful. Welcome back".$ausername;
-            header("location: homepage.html");
+            header("location: ../homepage.html");
             }
         else {
             echo 
             '<script>
             alert("Legal action will be taken against unauthorized access.");
             </script>';
-            header('Location: login.html');
+            header('Location: ../loginform.html');
             }
 mysqli_close($con);
 }

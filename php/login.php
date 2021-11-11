@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             }
         if($rowcount==1) {
             session_start();
-            header("location: homepage.html");
+            header("location: ../homepage.html");
             echo '<script>
             alert ("Login Successful. Welcome back!")
             </script>';
@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             echo
             '<script>
             alert ("Invalid credentials, please try again.<br/><br/>")
-            window.location.href : login.html";
+            window.location.href: ../loginform.html";
             </script>';
         } 
 mysqli_close($con);
