@@ -1,10 +1,10 @@
-<!DOCTYPE html>
 <?php
-//include("session.php");
-//session_start();
-$customer_id=intval($_SESSION['Customer_ID']);
+include("session.php");
+session_start();
+$customer_id = intval($_SESSION['Customer_ID']);
 ?>
 
+<!DOCTYPE html>
 <html>
     <head>
         <!--How code being decoded-->
@@ -60,14 +60,7 @@ $customer_id=intval($_SESSION['Customer_ID']);
                     <button onclick="document.location='food.php'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
                     <button onclick="document.location='accessories.php'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
                     <button onclick="document.location='userprofile.php'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
-                    <div class="dropdown">
-                        <button onclick="document.location='../loginform.html'"><span><i class="fas fa-sign-in-alt fa-2x"></i></span>LOGIN</button>
-                        <div class="dropdown-content">
-                            <a href="../loginform.html"><i class="fas fa-sign-in-alt">&nbsp&nbspLog In</i></a>
-                            <a href="../signupform.html"><i class="fas fa-user-plus">&nbsp&nbspSign Up</i></a>
-                            <a href="../adminaccess.html"><i class="fas fa-crown">&nbspAdmin Access</i></a>
-                        </div>
-                    </div>
+                    <button onclick="document.location='logout.php'"><i class="fas fa-sign-out-alt fa-2x"></i><br>LOGOUT</button> 
                 </div>
 
                 <div class='hamburger-nbc'>
@@ -78,14 +71,7 @@ $customer_id=intval($_SESSION['Customer_ID']);
                         <button onclick="document.location='food.php'"><i class="fas fa-fish fa-2x"></i><br>FOOD</button>
                         <button onclick="document.location='accessories.php'"><i class="fas fa-gift fa-2x"></i><br>ACCESSORIES</button>
                         <button onclick="document.location='userprofile.php'"><i class="fas fa-user-circle fa-2x"></i><br>PROFILE</button>
-                        <div class="dropdown">
-                            <button onclick="document.location='../loginform.html'"><i class="fas fa-sign-in-alt fa-2x"></i><br>LOGIN</button>
-                            <div class="dropdown-content">
-                                <a href="../loginform.html"><i class="fas fa-sign-in-alt">&nbsp&nbspLog In</i></a>
-                                <a href="../signupform.html"><i class="fas fa-user-plus">&nbsp&nbspSign Up</i></a>
-                                <a href="../adminaccess.html"><i class="fas fa-crown">&nbspAdmin Access</i></a>
-                            </div>
-                        </div>      
+                        <button onclick="document.location='logout.php'"><i class="fas fa-sign-out-alt fa-2x"></i><br>LOGOUT</button>     
                     </div>
                 </div>
             </div>

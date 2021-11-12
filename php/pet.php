@@ -1,3 +1,8 @@
+<?php
+include("session.php");
+session_start();
+?>
+
 <!--Retrieve data to display-->
 <!DOCTYPE html>
 <html>

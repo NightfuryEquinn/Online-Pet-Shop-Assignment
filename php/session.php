@@ -1,7 +1,8 @@
 <?php
     session_start();
-        if (!isset($_SESSION['mySession']))
+        if (!isset($_SESSION['Customer_ID']))
     {
-        header("location: login.php");
+        header("location: ../loginform.html");
     }
 ?>
+

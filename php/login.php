@@ -21,22 +21,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         if ($result=mysqli_query($con,$login)) {
             $rowcount=mysqli_num_rows($result);
             }
-        if($rowcount==1) {
-            session_start();
-            header("location: ../homepage.html");
-            echo '<script>
-            alert ("Login Successful. Welcome back!")
-            </script>';
-            
-            $_SESSION['Customer_ID'] = $fetch;
-        }
-        else {
-            echo
-            '<script>
-            alert ("Invalid credentials, please try again.<br/><br/>")
-            window.location.href: ../loginform.html";
-            </script>';
-        } 
+            if($rowcount==1) {
+                session_start();
+                $_SESSION['Customer_ID'] = $fetch;
+                header("location: homepage.php");
+                echo '<script>
+                alert ("Login Successful. Welcome back!")
+                </script>';
+            }
+            else {
+                echo
+                '<script>
+                alert ("Invalid credentials, please try again.<br/><br/>")
+                window.location.href: ../loginform.html";
+                </script>';
+            };
 mysqli_close($con);
 }
 ?>

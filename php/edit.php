@@ -1,3 +1,8 @@
+<?php
+include("adminsession.php");
+session_start();
+?>
+
 <!--Same structure like addNewAdmin.html--> 
 <!--Access after admin select "Edit"-->
 

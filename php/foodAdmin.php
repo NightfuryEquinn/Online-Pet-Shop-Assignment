@@ -1,3 +1,8 @@
+<?php
+include("adminsession.php");
+session_start();
+?>
+
 <!--Retrieve data to display and edit-->
 <!DOCTYPE html>
 <html>

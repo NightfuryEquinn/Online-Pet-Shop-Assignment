@@ -1,5 +1,4 @@
 <?php
-
 include('conn.php');
 
 $email = mysqli_real_escape_string($con, $_POST['email']);

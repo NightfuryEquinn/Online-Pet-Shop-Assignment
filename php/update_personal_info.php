@@ -1,6 +1,5 @@
 <?php
-//include("session.php");
-//session_start();
+session_start();
 $customer_id = intval($_SESSION['Customer_ID']);
 
 include("conn.php");

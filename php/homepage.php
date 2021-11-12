@@ -1,0 +1,329 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--How code being decoded-->
+    <meta charset = "utf-8">
+
+    <!--How page being display based on viewport-->
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1 shrink-to-fit = no">
+
+    <!--Add author, web description, keywords for search engine, and copyright-->
+    <meta name = "author" content = "Yip Zi Xian | Neong Yee Kay | Wong Xie Ling">
+    <meta name = "description" content = "A pet shop website where customers can view pets, adopt pets, and purchase pets items such as accessories, pet beds or pet treats. Guests visiting the page or customers that are not logged in can only view the website, if they want to make purchases, they will need to login or sign up with our website first. Admins have permission to make changes to the page.">
+    <meta name = "keywords" content = "Les Petz Shop University Assignment, Les Petz Shop, University Assignment">
+    <meta name = "copyright" content = "Copyright 2021 Yip Zi Xian, Neong Yee Kay, Wong Xie Ling">
+
+    <!--Link to CSS-->
+    <link rel = "stylesheet" href = "../css/homepage.css">
+
+    <!--Link to JavaScript-->
+    <script src = "../console.js" defer></script>
+
+    <!--Link to Font Awesome v4 and v5-->
+    <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.15.4/css/v4-shims.css">
+
+    <!--Link to Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Rubik:wght@300&display=swap" rel="stylesheet">
+    
+    <!--Link to Pictures file-->
+    <link rel = "icon" type = image/png href = art/logo.png>
+      
+    <!--Title-->
+    <title>Les Pet Shop - Homepage</title>
+  </head>
+  
+  <!--Body-->
+  <body style = "background-image: linear-gradient(#f9e7df, #eed5c8, #ddbdad, #d5b3a4)">
+
+    <!--Back to Top Button-->
+    <button id='back2top-btn' onclick='scroll2Top()' title='Purr back 2 top!~'><i class="fas fa-arrow-alt-circle-up fa-4x"></i></button>
+  
+    <!--Navigation Bar & Hamburger-->
+    <header>
+      <div class='nav-bar'>
+        <img class='logo' src='art/logo.png' style="height: 200px; width: 312px;">
+
+        <div class='name'>Les   Pet   Shop</div>
+        
+        <div class='nav-btn-container'>
+          <button onclick="document.location='../homepage.html'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
+          <button onclick="document.location='pet.php'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
+          <button onclick="document.location='food.php'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
+          <button onclick="document.location='accessories.php'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
+          <button onclick="document.location='userprofile.php'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
+          <button onclick="document.location='logout.php'"><i class="fas fa-sign-out-alt fa-2x"></i><br>LOGOUT</button> 
+        </div>
+        
+        <div class='hamburger-nbc'>
+          <button id='hamburger-bar'><i class='fa fa-bars fa-3x'></i></button>
+          <div class='hamburger-content'>
+            <button onclick="document.location='../homepage.html'"><i class="fas fa-home fa-2x"></i><br>HOME</button>
+            <button onclick="document.location='pet.php'"><i class="fas fa-paw fa-2x"></i><br>PETS</button>
+            <button onclick="document.location='food.php'"><i class="fas fa-fish fa-2x"></i><br>FOOD</button>
+            <button onclick="document.location='accessories.php'"><i class="fas fa-gift fa-2x"></i><br>ACCESSORIES</button>
+            <button onclick="document.location='userprofile.php'"><i class="fas fa-user-circle fa-2x"></i><br>PROFILE</button>
+            <button onclick="document.location='logout.php'"><i class="fas fa-sign-out-alt fa-2x"></i><br>LOGOUT</button> 
+          </div>
+        </div>
+      </div>
+    </header>
+      
+    <div class="logocontainer"></div>
+    <div class="bodycontent">
+      <div class="ourstory">
+        <section id="Our Story">
+          <center>
+            <br><br>
+
+            <div class="aboutus" style="color: #EEE2DC;"><b>Our Story</b></div>
+              <p style="color: #EEE2DC;">
+                The founders of Les Pet Shop wanted to provide the most decadent treats, luxurious accessories and most comfortable beds so owners everywhere can spoil their beloved companions. 
+                On top of that, we here at Les Pets Shop sources our wide selection of animals, that ranges from cats, dogs to sugar gliders and iguanas from ethical breeders, so soon-to-be pet owners
+                can rest easy knowing their pets did not come from breeding mills.
+              </p>
+            <br>
+
+            <div class="aboutus" style="color: #EEE2DC;"><b>Why Us?</b></div>
+              <p style="color: #EEE2DC;">
+                As mentioned earlier, we source our pets from ethical breeders and not breeding mills. This means that the code of ethics were closely followed when handling these animals. Supply sourcing
+                also comes from high quality production companies that tailor to your pet's best interest. 
+              </p>
+          </center>
+        </section>
+      </div>
+    </div>   
+    <br><br><br><br>
+              
+    <div class="whatwedo">
+      <section id="About us">
+        <center>
+          <div class="aboutus" style="color: #ffffff;" ><b>What do we do?</b></div>
+        </center>
+        <br>
+
+        <div class="row">
+          <div class="column">
+            <p>
+              <div class="iconformat"><i class="fas fa-dog"></i></div>
+            </p>
+            <div class="aboutdesctxtcont">
+              <p>
+                <div class="abouttextformat">
+                  Care for Animals
+                </div>
+              </p>
+              <p>
+                <div class="aboutdescformat">
+                  Here at Les Pet Shop we provide the best love and care for the animals we sell here, ensuring the best care and treatment possible.
+                </div>
+              </p>
+            </div>
+          </div>
+        
+          <div class="column">
+            <p>
+              <div class="iconformat"><i class="fas fa-hand-holding-heart"></i></div>
+            </p>
+            <div class="aboutdesctxtcont">
+              <p>
+                <div class="abouttextformat">
+                  Ensure ethical treatment of animals
+                </div>
+              </p>
+              <p>
+                <div class="aboutdescformat">
+                  Pets here are well loved and bred ethically, so customers can rest easy knowing that the adopted pets were not from illegal mills.
+                </div>
+              </p>
+            </div>
+          </div>
+                
+          <div class="column">
+            <p>
+              <div class="iconformat"><i class="fas fa-handshake"></i></div>
+            </p>
+            <div class="aboutdesctxtcont">
+              <p>
+                <div class="abouttextformat">
+                  Provide the best resources
+                </div>
+              </p>
+              <p>
+                <div class="aboutdescformat">
+                  We try our best to source the best of the best products for every animal. We even offer customized pet food so even pets with different dietary constraints can eat well.
+                </div>
+              </p>
+            </div>
+          </div>
+          <br>
+        </div> 
+      </section>
+    </div>
+    <br><br><br><br>
+
+    <!--Popular and recc-->
+    <section id="Popular and Recommended">
+      <center>
+        <p style="color:#474641; font-size: 25px; letter-spacing: 2px; text-decoration: underline; ">Popular and Recommended</p>
+      </center>
+      <br>
+
+      <div class="descbg">
+        <div class="slides">
+          <div class="mySlides fade">
+            <img src="art/petaccessories.jpg" style="height: 400px; width: 1000px;">
+          </div>
+              
+          <div class="mySlides fade imgstyling">
+            <img src="art/petfood.jpg" style="height: 400px; width: 1000px;">
+          </div>
+              
+          <div class="mySlides fade imgstyling">
+            <img src="art/adoptpet.jpg" style="height: 400px; width: 1000px;">
+          </div>
+          <a class="back" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+              
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+        <br><br>
+      </div>  
+    </section>
+    <br><br><br><br>
+        
+    <!--Service-->
+    <section id="Our Services">
+      <center>
+        <div id="sectiontitle" style="font-weight: bold; color: white; letter-spacing: 2px;">Our Services</div>
+        <br>
+        <div class="descbg">
+          <div class="row">
+            <div class="column">
+              <div class="hovercont">
+                <img src="art/slide1.png" class="image" style="width: 350px; height: 350px;" > 
+                <div class="hoverlay">
+                  <div class="overlaytext"  onclick="document.location='php/food.php'";>
+                    Check out the wide variety of treats we offer here!
+                  </div>                                   
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="hovercont">
+                <img src="art/slide2.png" class="image" style="width: 350px; height: 350px;">
+                <div class="hoverlay">
+                  <div class="overlaytext"  onclick="document.location='php/pet.php'";>
+                    Take this bundle of joy home with you today!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="hovercont">
+                <img src="art/slide3.png" class="image" style="width: 350px; height: 350px;">
+                <div class="hoverlay">
+                  <div class="overlaytext"  onclick="document.location='php/accessories.php'";>
+                    Made with the best materials for your beloved companion!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>   
+      </center>
+    </section>
+    <br><br><br><br><br>
+          
+    <!--Contacts-->
+    <section id="Contacts">
+      <center>
+        <div id="sectiontitle"><b>Contacts</b></div>
+      </center>
+      <br>
+
+      <div id="contact1" style="text-align: center; color: #EEE2DC;">
+        <h2>Any questions? Send us a message!</h2>
+        <div class="contactalign">
+          <form action="mailto:lespetshop@mail.com" method="post" enctype="text/plain">
+            Name:<br>
+            <input type="text" name="name" size="50" placeholder="Enter your name" style="height: 35px; width: 250px;"><br><br>
+            E-mail:<br>
+            <input type="text" name="email_address" size="50" placeholder="Enter your email" style="height: 35px; width: 250px;"><br><br>
+            Comment:<br>
+            <input type="text" name="comment" size="500" placeholder="Enter a message in 500 words or less." style="height: 150px; width: 400px;"><br><br>
+            <input type="submit" value="Submit" onclick="on()">  <input type="reset" value="Reset">
+            <div class="sticky">
+              <div id="overlay"> 
+                <div class="exitcontactform" onclick="off()"> x </div>
+                  <div class="contactformtext"> 
+                    <center>
+                      Email successfully sent! <br> We will get back at you as soon as possible!
+                    </center>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>  
+
+      <div id="contact2" style="text-align: center; color: #EEE2DC;">
+        <h2>Connect with us!</h2>
+        <a href="+60125887969"><i class="fas fa-phone-alt">&nbsp&nbsp</i>+60125887969</a> <br><br>
+        <a href="www.instagram.com"><i class="fab fa-instagram">&nbsp&nbsp</i>Chat with us on instagram!</a><br><br>
+        <a href="#"><i class="fas fa-map-marker-alt">&nbsp&nbsp</i>Pay us a visit!</a><br><br>
+        <a href="www.facebook.com"><i class="fab fa-facebook-square">&nbsp&nbsp</i>Check our facebook page out!</a><br><br>
+        <a href="www.gmail.com"><i class="fas fa-envelope">&nbsp&nbsp</i>Drop us an email!</a><br>
+      </div>  
+      <br>
+    </section>
+
+    <!--Footer-->
+    <footer>
+      <div class="footer-flexbox">
+        <div class='footer-flexbox-item'>
+          <h3>About Us</h3>
+          <p>Les Pet Shop is always here for you and your pets. You can find yourself a companion and high quality pet product here!</p>
+        </div>
+        <div class='footer-flexbox-item'>
+          <h3>More From Us</h3>
+            <ul>
+              <li><i class="fas fa-paw"></i><a href="pet.php" style="color:black;" >Pets</a></li>
+              <li><i class="fas fa-paw"></i><a href="food.php" style="color:black;">Pets Food</a></li>
+              <li><i class="fas fa-paw"></i><a href="accessories.php" style="color:black;">Pets Accessories</a></li>
+            </ul>
+        </div>
+        <div class='footer-flexbox-item'>
+          <h3>Stay with Us</h3>
+          <p class="media">
+            Find us on social media<br><br>
+            <a href="www.facebook.com" class="fa fa-facebook"></a>
+            <a href="www.twitter.com" class="fa fa-twitter"></a>
+            <a href="www.instagram.com" class="fa fa-instagram"></a>
+          </p>
+        </div>
+        <div class='footer-flexbox-item'>
+          <h3>Contact Us</h3>
+          <p>2, Jalan Besar 5,<br>50000 Kuala Lumpur, <br>Malaysia</p>
+          <p>Email: <a href="mailto:lespetshopt@gmail.com" style="color:black;">lespetshopt@gmail.com</a></p>
+          <p>Phone no: <a href="tel:0312345678" style="color:black;">03-12345678</a></p>
+        </div>
+      </div>
+      <p id="copyright"><b>&#169 2021 Les Pet Shop (Team Name)</b></p>
+    </footer>
+  </body>
+</html>
