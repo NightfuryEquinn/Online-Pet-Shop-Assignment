@@ -1,3 +1,96 @@
+/* Footer */
+footer {
+    margin: 0px;
+    width: auto;
+    height: auto;
+    background-color:#EDC7B7;
+}
+
+.footer-flexbox {
+    margin: 25px;
+    padding: 25px;
+    height: auto;
+    width: auto;
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.footer-flexbox-item {
+    margin: 10px;
+    padding: 10px;
+    height: auto;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+}
+
+h3 {
+    font-family:'Montserrat', sans-serif;
+    font-weight:bold;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul a:visited, a:link {
+    text-decoration: none;
+}
+
+li i {
+    margin: 10px;
+    padding-right: 5px;
+}
+
+.media a {
+    margin: 10px;
+}
+
+.fa {
+    padding:20px;
+    font-size: 25px;
+    width: 25px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.75;
+    cursor:pointer;
+}
+
+.fa-facebook {
+    background: linear-gradient(#3B5998, #2c59bb);
+    color: white;
+}
+
+.fa-instagram {
+    background: radial-gradient(at bottom left, #fccc63, #fbad50, #e95950, #e95950, #cd486b, #bc2a8d, #8a3ab9, #4c68d7);
+    color: white;
+}
+
+.fa-twitter {
+    background: linear-gradient(#55ACEE, #6db7f0);
+    color: white;
+}
+
+#copyright {
+    margin-bottom: 0;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #E85A4F;
+}
+
 /*
 Color Palettes
 
@@ -280,31 +373,15 @@ hr {
 .order-history-container {
     background-color: rgba(255, 255, 255, 0.527);
     border-radius: 30px;
-    height:400px;
+    height:auto;
     width:80%;
     margin:0 auto;
     padding:50px;
-    display: flex;
-    flex-direction: row;   
-    align-items:center;
 }
 
-.order-history-container > div {
+/*.order-history-container > div {
     width:100%;
-}
-
-.arrow {
-    font-size:50px;
-    cursor:pointer;
-    align-self: center;
-    margin-left:20px;
-    margin-right:20px;
-    color: #E85A4F;
-}
-
-.arrow:hover {
-    opacity:0.6;
-}
+}*/
 
 .cart-table, .order-history-table {
     width:100%; 
@@ -338,7 +415,7 @@ th.price, th.total, th.quantity {
 }
 
 tr {
-    height: 40px;
+    height: 50px;
     white-space: nowrap;
     text-align:left;
 }

@@ -114,7 +114,7 @@ $customer_id = intval($_SESSION['Customer_ID']);
                     <div class="cart-container"> 
                         <?php 
                             include("conn.php");
-                            // find number of rows in table 
+
                             $result = mysqli_query($con,"SELECT *, sp.Shopping_ID AS \"Cart_ID\", sp.Product_ID AS \"Item_ID\", (sp.Quantity*p.Product_Price) AS \"Total\"
                             FROM shoppingcart s, shopping_product sp, product p
                             WHERE s.Shopping_ID = sp.Shopping_ID AND p.Product_ID = sp.Product_ID AND s.Customer_ID=$customer_id AND s.Status='unpaid'
@@ -167,44 +167,76 @@ $customer_id = intval($_SESSION['Customer_ID']);
                             $result = mysqli_query($con,"SELECT sp.*, s.*, p.*, (sp.Quantity * p.Product_Price) AS \"Total\"
                             FROM shopping_product sp, shoppingcart s, product p
                             WHERE sp.Shopping_ID = s.Shopping_ID AND p.Product_ID = sp.Product_ID AND s.Customer_ID=$customer_id AND s.Status= 'paid'
-                            GROUP BY sp.Product_ID");
-                            
-                            //table
-                            echo'<table class="order-history-table">
-                                <tr>
-                                    <th class="date">Date</th>
-                                    <th class="item-name">Item name</th>
-                                    <th class="price">Price</th>
-                                    <th class="quantity">Quantity</th>
-                                    <th class="total">Total</th>
-                                </tr>';
+                            GROUP BY sp.Product_ID");   
+                        ?>
 
-                            while ($row = mysqli_fetch_array($result)) {
-                                echo
-                                "<tr>
-                                <td>".$row['Checkout_date']."</td>
-                                <td>".$row['Product_Name']."</td>
-                                <td>RM ".$row['Product_Price']."</td>
-                                <td>".$row['Quantity']."</td>
-                                <td>".$row['Total']."</td>
-                                </tr>";
+                        <table class="order-history-table">
+                            <tr>
+                                <th class="date">Date</th>
+                                <th class="item-name">Item name</th>
+                                <th class="price">Price</th>
+                                <th class="quantity">Quantity</th>
+                                <th class="total">Total</th>
+                            </tr>
+
+                        <?php while ($row = mysqli_fetch_array($result)) {
+                            echo
+                            "<tr>
+                            <td>".$row['Checkout_date']."</td>
+                            <td>".$row['Product_Name']."</td>
+                            <td>RM ".$row['Product_Price']."</td>
+                            <td>".$row['Quantity']."</td>
+                            <td>".$row['Total']."</td>
+                            </tr>";
                             }
 
                             //reserve an empty row
                             echo
-                            "<tr style='color:#E85A4F;>
+                            "<tr style='color:#E85A4F;'>
                             <td>Happy</td>
                             <td>Pet</td>
                             <td>Shopping</td>
                             <td>!!</td>
                             <td>:)</td>
-                            </tr>";              
-                    ?>
-                        
+                            </tr>";
+                        ?>
+                        </table>    
                     </div>
                 </div>
             </div>
         </div>
-
+        <!--Footer-->
+        <footer>
+            <div class="footer-flexbox">
+                <div class='footer-flexbox-item'>
+                    <h3>About Us</h3>
+                    <p>Les Pet Shop is always here for you and your pets. You can find yourself a companion and high quality pet product here!</p>
+                </div>
+                <div class='footer-flexbox-item'>
+                    <h3>More From Us</h3>
+                    <ul>
+                    <li><i class="fas fa-paw"></i><a href="php/pet.php">Pets</a></li>
+                    <li><i class="fas fa-paw"></i><a href="php/food.php">Pets Food</a></li>
+                    <li><i class="fas fa-paw"></i><a href="php/accessories.php">Pets Accessories</a></li>
+                    </ul>
+                 </div>
+                <div class='footer-flexbox-item'>
+                    <h3>Stay with Us</h3>
+                    <p class="media">
+                        Find us on social media<br><br>
+                        <a href="www.facebook.com" class="fa fa-facebook"></a>
+                        <a href="www.twitter.com" class="fa fa-twitter"></a>
+                        <a href="www.instagram.com" class="fa fa-instagram"></a>
+                    </p>
+                </div>
+                <div class='footer-flexbox-item'>
+                    <h3>Contact Us</h3>
+                    <p>2, Jalan Besar 5,<br>50000 Kuala Lumpur, <br>Malaysia</p>
+                    <p>Email: <a href="mailto:lespetshopt@gmail.com">lespetshopt@gmail.com</a></p>
+                    <p>Phone no: <a href="tel:0312345678">03-12345678</a></p>
+                </div>
+            </div>
+            <p id="copyright"><b>&#169 2021 Les Pet Shop (Team Name)</b></p>
+        </footer>
     </body>
 </html>
