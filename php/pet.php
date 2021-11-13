@@ -114,7 +114,11 @@ $customer_id=$_SESSION['Customer_ID'];
 
                     <p>RM '.$row['Product_Price'].'</p>
 
-                    <a href=\'petToCart.php?Product_ID='.$row['Product_ID'].'\' onclick="return confirm(\'Add '.$row['Product_Name'].' to your cart?\');"><button>TAKE IT HOME!</button></a>
+                    <form method="post" action="petToCart.php">
+                    <input type ="hidden" name="Product_ID" value='.$row['Product_ID'].'>
+                    <input type ="number" name="Quantity" value=1>
+                    <input type ="submit" name="submit" value="Take it home">
+                    </form>
 
                     </div>
 

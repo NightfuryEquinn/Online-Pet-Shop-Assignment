@@ -4,7 +4,8 @@ include("conn.php");
 
 $customer_id=intval($_SESSION['Customer_ID']);
 
-$cartItem = $_GET['Product_ID'];
+$cartItem = $_POST['Product_ID'];
+$quantity =$_POST['Quantity'];
 
 $check = mysqli_query($con, "SELECT COUNT(*) FROM shoppingcart WHERE Customer_ID = $customer_id AND Status = 'unpaid';");
 
@@ -20,7 +21,7 @@ $find_cartid = mysqli_query($con, "SELECT Shopping_ID FROM shoppingcart WHERE Cu
 $row = mysqli_fetch_array($find_cartid);
 $cartid = $row['Shopping_ID'];
 
-$addQuery2 = mysqli_query($con, "INSERT INTO shopping_product (Product_ID, Shopping_ID) VALUES ($cartItem, $cartid);");
+$addQuery2 = mysqli_query($con, "INSERT INTO shopping_product (Product_ID, Shopping_ID, Quantity) VALUES ($cartItem, $cartid, $quantity);");
 
 if ($addQuery2) {
     echo '<script>

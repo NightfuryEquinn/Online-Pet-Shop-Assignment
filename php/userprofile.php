@@ -132,17 +132,12 @@ $customer_id = intval($_SESSION['Customer_ID']);
                             <?php
                                 $checkout_price = 0;
                                 while ($row = mysqli_fetch_array($result)) {
-                                    echo"<form id='quantity-form' method='post' action='updatecart.php?Product_ID=".$row['Item_ID']."'>";
                                     echo"<tr>
                                     <td>".$row['Product_Name']."</td>
                                     <td>RM ".$row['Product_Price']."</td>
-                                    <input type='hidden' name='sid' value=".$row['Cart_ID'].">
-                                    <input type='hidden' name='pid' value=".$row['Item_ID'].">
-                                    <td><input type='number' id='update-qty' name='update-qty' required='required' value=".$row['Quantity']."></td>
+                                    <td>".$row['Quantity']."</td>
                                     <td>RM ".$row['Total']."</td>
-                                    <td><input type='submit' name='Update' value='Update' id='small-button' form='quantity-form'/></td>
                                     </tr>";
-                                    echo"</form>";
                                     $checkout_price = $checkout_price + $row['Total'];
                                 }
                                 //reserve an empty row
@@ -168,50 +163,11 @@ $customer_id = intval($_SESSION['Customer_ID']);
                     <div class="order-history-container">
                         <?php 
                             include("conn.php");
-                            // find number of rows in table 
-                            $result = mysqli_query($con,"SELECT COUNT(*) FROM shoppingcart WHERE Status = 'paid' AND Customer_ID = $customer_id");
-
-                            $r = mysqli_fetch_row($result);
-                            $row_num = $r[0];
-
-                            // number of rows to show per page
-                            $limit_row = 6;
-                            // get total pages
-                            $totalpages = ceil($row_num / $limit_row);
-
-                            // get the current page or set a default as 1
-                            if (isset($_GET['currentpage']) && is_numeric($_GET['currentpage'])) {
-                            // make currentpage var as integer
-                            $currentpage = (int) $_GET['currentpage'];
-                            } 
-                            else {
-                            $currentpage = 1;
-                            }
-
-                            //set current page to last page if it is greater than total pages
-                            if ($currentpage > $totalpages) {
-                            $currentpage = $totalpages;
-                            } 
-                            //set current page to first page if it is greater than total pages
-                            if ($currentpage < 1) {
-                            $currentpage = 1;
-                            }
-
-                            // set the offset
-                            $offset = ($currentpage - 1) * $limit_row;
-                        
 
                             $result = mysqli_query($con,"SELECT sp.*, s.*, p.*, (sp.Quantity * p.Product_Price) AS \"Total\"
                             FROM shopping_product sp, shoppingcart s, product p
                             WHERE sp.Shopping_ID = s.Shopping_ID AND p.Product_ID = sp.Product_ID AND s.Customer_ID=$customer_id AND s.Status= 'paid'
-                            GROUP BY sp.Product_ID
-                            LIMIT $offset, $limit_row");
-
-                            //Show back button if it is not page 1
-                            if ($currentpage > 1) {
-                            $prevpage = $currentpage - 1;
-                            echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$prevpage'><i class=\"fas fa-caret-left arrow\"></i></a>";
-                            }
+                            GROUP BY sp.Product_ID");
                             
                             //table
                             echo'<table class="order-history-table">
@@ -222,7 +178,6 @@ $customer_id = intval($_SESSION['Customer_ID']);
                                     <th class="quantity">Quantity</th>
                                     <th class="total">Total</th>
                                 </tr>';
-
 
                             while ($row = mysqli_fetch_array($result)) {
                                 echo
@@ -243,20 +198,13 @@ $customer_id = intval($_SESSION['Customer_ID']);
                             <td>Shopping</td>
                             <td>!!</td>
                             <td>:)</td>
-                            </tr>";
-
-                            //show forward button if not on last page
-                            if ($currentpage != $totalpages) {
-                                // get next page
-                                $nextpage = $currentpage + 1;
-                                // forward button linked to next page
-                                echo "<a href='{$_SERVER['PHP_SELF']}?currentpage=$nextpage'><i class=\"fas fa-caret-right arrow\"></i></a>";
-                            }                
+                            </tr>";              
                     ?>
                         
                     </div>
                 </div>
             </div>
         </div>
+
     </body>
 </html>
