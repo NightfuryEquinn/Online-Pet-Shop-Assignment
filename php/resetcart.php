@@ -1,10 +1,10 @@
 <?php
     session_start();
     include("conn.php");
-    // Get the cart id
+
     $customer_id = $_SESSION['Customer_ID'];
 
-    $delete1 = mysqli_query($con,"DELETE FROM shopping_product WHERE EXISTS (SELECT Customer_ID, Status FROM shoppingcart WHERE Customer_ID = $customer_id AND Status = 'unpaid')");
+    $delete1 = mysqli_query($con,"DELETE FROM shopping_product WHERE Shopping_ID=(SELECT Shopping_ID FROM shoppingcart WHERE Customer_ID = $customer_id AND Status ='unpaid')");
 
     if ($delete1) {
         $delete2 = mysqli_query($con, "DELETE FROM shoppingcart WHERE Customer_ID = $customer_id AND Status = 'unpaid'");

@@ -143,10 +143,10 @@ $customer_id = intval($_SESSION['Customer_ID']);
                                 //reserve an empty row
                                 echo
                                 "<tr style='color:#E85A4F;'>
-                                <td>Happy</td>
-                                <td>Pet</td>
-                                <td>Shopping</td>
-                                <td>!!</td>
+                                <td>--Happy--</td>
+                                <td>--Pet--</td>
+                                <td>--Shopping--</td>
+                                <td>--!!--</td>
                                 </tr>";
                             ?>
                             
@@ -193,11 +193,11 @@ $customer_id = intval($_SESSION['Customer_ID']);
                             //reserve an empty row
                             echo
                             "<tr style='color:#E85A4F;'>
-                            <td>Happy</td>
-                            <td>Pet</td>
-                            <td>Shopping</td>
-                            <td>!!</td>
-                            <td>:)</td>
+                            <td>--Happy--</td>
+                            <td>--Pet--</td>
+                            <td>--Shopping--</td>
+                            <td>--!!--</td>
+                            <td>------</td>
                             </tr>";
                         ?>
                         </table>    
