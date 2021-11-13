@@ -1,6 +1,5 @@
 <?php
 include("adminsession.php");
-session_start();
 ?>
 
 <!DOCTYPE html>
@@ -51,24 +50,12 @@ session_start();
                 <div class='name'>Les   Pet   Shop</div>
 
                 <div class='nav-btn-container'>
-                    <button onclick="document.location='homepage.html'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
+                    <button onclick="document.location='adminhomepage.php'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
                     <button onclick="document.location='petAdmin.php'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
                     <button onclick="document.location='foodAdmin.php'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
                     <button onclick="document.location='accessoriesAdmin.php'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
                     <button onclick="document.location='userprofile.php'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
-                    <button onclick="document.location='logout.php'"><i class="fas fa-sign-out-alt fa-2x"></i><br>LOGOUT</button> 
-                </div>
-        
-                <div class='hamburger-nbc'>
-                    <button id='hamburger-bar'><i class='fa fa-bars fa-3x'></i></button>
-                    <div class='hamburger-content'>
-                        <button onclick="document.location='homepage.html'"><i class="fas fa-home fa-2x"></i><br>HOME</button>
-                        <button onclick="document.location='petAdmin.php'"><i class="fas fa-paw fa-2x"></i><br>PETS</button>
-                        <button onclick="document.location='foodAdmin.php'"><i class="fas fa-fish fa-2x"></i><br>FOOD</button>
-                        <button onclick="document.location='accessoriesAdmin.php'"><i class="fas fa-gift fa-2x"></i><br>ACCESSORIES</button>
-                        <button onclick="document.location='userprofile.php'"><i class="fas fa-user-circle fa-2x"></i><br>PROFILE</button>
-                        <button onclick="document.location='logout.php'"><i class="fas fa-sign-out-alt fa-2x"></i><br>LOGOUT</button>     
-                    </div>
+                    <button onclick="document.location='logout.php'"><span><i class="fas fa-sign-out-alt fa-2x"></i></span>LOGOUT</button> 
                 </div>
             </div>
         </header>

@@ -1,3 +1,7 @@
+<?php
+include("adminsession.php");
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,10 +18,10 @@
     <meta name = "copyright" content = "Copyright 2021 Yip Zi Xian, Neong Yee Kay, Wong Xie Ling">
 
     <!--Link to CSS-->
-    <link rel = "stylesheet" href = "css/homepage.css">
+    <link rel = "stylesheet" href = "../css/homepage.css">
 
     <!--Link to JavaScript-->
-    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=lcqYY_Vl-zhE_0QAXO2vNw0ddlTgZxGRJEum3jHqnP1A4XQsM_U3FQtk9BVAtwyrrI3O1JttuN1cLCRwfP7BMlTnXuQrAuC5G_wpQBruShd_Qh60sva4koxTowStE4Xbre3TwBxRr7RQjejXcY66sw" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jZG4uZGlzY29yZGFwcC5jb20vYXR0YWNobWVudHMvODgwMzI4NjQxNzA2MzQ0NDkzLzkwNzk3NDY1ODMwMzg2MDczNi9ob21lcGFnZS5odG1s"/><script src = "console.js" defer></script>
+    <script src = "../console.js" defer></script>
 
     <!--Link to Font Awesome v4 and v5-->
     <link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.15.4/css/all.css">
@@ -29,7 +33,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Rubik:wght@300&display=swap" rel="stylesheet">
     
     <!--Link to Pictures file-->
-    <link rel = "icon" type = image/png href = art/logo.png>
+    <link rel = "icon" type = image/png href = ../art/logo.png>
       
     <!--Title-->
     <title>Les Pet Shop - Homepage</title>
@@ -44,26 +48,17 @@
     <!--Navigation Bar & Hamburger-->
     <header>
       <div class='nav-bar'>
-        <img class='logo' src='art/logo.png' style="height: 200px; width: 312px;">
+        <img class='logo' src='../art/logo.png' style="height: 200px; width: 312px;">
 
         <div class='name'>Les   Pet   Shop</div>
         
         <div class='nav-btn-container'>
-          <button onclick="document.location='homepage.html'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
-          <button onclick="document.location='php/pet.php'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
-          <button onclick="document.location='php/food.php'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
-          <button onclick="document.location='php/accessories.php'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
-          <button onclick="document.location='php/userprofile.php'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
-          <div class="dropdown">
-            <button onclick="document.location='loginform.html'"><span><i class="fas fa-sign-in-alt fa-2x"></i></span>LOGIN</button>
-            <div class="dropdown-content">
-              <a href="loginform.html"><i class="fas fa-sign-in-alt">&nbsp&nbspLog In</i></a>
-              <a href="signupform.html"><i class="fas fa-user-plus">&nbsp&nbspSign Up</i></a>
-              <a href="adminaccess.html"><i class="fas fa-crown">&nbspAdmin Access</i></a>
-            </div>
-          </div>
+          <button onclick="document.location='adminhomepage.php'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
+          <button onclick="document.location='petAdmin.php'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
+          <button onclick="document.location='foodAdmin.php'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
+          <button onclick="document.location='accessoriesAdmin.php'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
+          <button onclick="document.location='logout.php'"><span><i class="fas fa-sign-out-alt fa-2x"></i></span>LOGOUT</button> 
         </div>
-       
       </div>
     </header>
       
@@ -121,7 +116,7 @@
         
           <div class="column">
             <p>
-              <div class="iconformat"><i class="fas fa-hand-holding-heart"></i></div>
+              <div class="iconformat"><i class="fas fa-hand-holding-he../art"></i></div>
             </p>
             <div class="aboutdesctxtcont">
               <p>
@@ -169,18 +164,18 @@
 
       <div class="descbg">
         <div class="slides">
-          <div class="bannerslides fade">
-            <img src="art/petaccessories.jpg" style="height: 400px; width: 1000px;">
+          <div class="mySlides fade">
+            <img src="../art/petaccessories.jpg" style="height: 400px; width: 1000px;">
           </div>
               
-          <div class="bannerslides fade imgstyling">
-            <img src="art/petfood.jpg" style="height: 400px; width: 1000px;">
+          <div class="mySlides fade imgstyling">
+            <img src="../art/petfood.jpg" style="height: 400px; width: 1000px;">
           </div>
               
-          <div class="bannerslides fade imgstyling">
-            <img src="art/adoptpet.jpg" style="height: 400px; width: 1000px;">
+          <div class="mySlides fade imgstyling">
+            <img src="../art/adoptpet.jpg" style="height: 400px; width: 1000px;">
           </div>
-          <a class="prev" onclick="plus(-1)">&#10094;</a>
+          <a class="back" onclick="plus(-1)">&#10094;</a>
           <a class="next" onclick="plus(1)">&#10095;</a>
         </div>
         <br>
@@ -204,9 +199,9 @@
           <div class="row">
             <div class="column">
               <div class="hovercont">
-                <img src="art/slide1.png" class="image" style="width: 350px; height: 350px;" > 
+                <img src="../art/slide1.png" class="image" style="width: 350px; height: 350px;" > 
                 <div class="hoverlay">
-                  <div class="overlaytext"  onclick="document.location='php/food.php'";>
+                  <div class="overlaytext"  onclick="document.location='php/foodAdmin.php'";>
                     Check out the wide variety of treats we offer here!
                   </div>                                   
                 </div>
@@ -215,9 +210,10 @@
 
             <div class="column">
               <div class="hovercont">
-                <img src="art/slide2.png" class="image" style="width: 350px; height: 350px;">
+                <img src="../art/slide2.png" class="image" style="width: 350px; height: 350px;">
+                
                 <div class="hoverlay">
-                  <div class="overlaytext"  onclick="document.location='php/pet.php'";>
+                  <div class="overlaytext"  onclick="document.location='php/petAdmin.php'";>
                     Take this bundle of joy home with you today!
                   </div>
                 </div>
@@ -226,9 +222,9 @@
 
             <div class="column">
               <div class="hovercont">
-                <img src="art/slide3.png" class="image" style="width: 350px; height: 350px;">
+                <img src="../art/slide3.png" class="image" style="width: 350px; height: 350px;">
                 <div class="hoverlay">
-                  <div class="overlaytext"  onclick="document.location='php/accessories.php'";>
+                  <div class="overlaytext"  onclick="document.location='php/accessoriesAdmin.php'";>
                     Made with the best materials for your beloved companion!
                   </div>
                 </div>
@@ -294,9 +290,9 @@
         <div class='footer-flexbox-item'>
           <h3>More From Us</h3>
             <ul>
-              <li><i class="fas fa-paw"></i><a href="php/pet.php" style="color:black;" >Pets</a></li>
-              <li><i class="fas fa-paw"></i><a href="php/food.php" style="color:black;">Pets Food</a></li>
-              <li><i class="fas fa-paw"></i><a href="php/accessories.php" style="color:black;">Pets Accessories</a></li>
+              <li><i class="fas fa-paw"></i><a href="petAdmin.php" style="color:black;" >Pets</a></li>
+              <li><i class="fas fa-paw"></i><a href="foodAdmin.php" style="color:black;">Pets Food</a></li>
+              <li><i class="fas fa-paw"></i><a href="accessoriesAdmin.php" style="color:black;">Pets Accessories</a></li>
             </ul>
         </div>
         <div class='footer-flexbox-item'>

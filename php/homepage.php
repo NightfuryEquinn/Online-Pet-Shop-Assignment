@@ -1,5 +1,5 @@
 <?php
-session_start();
+include("session.php");
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +33,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Rubik:wght@300&display=swap" rel="stylesheet">
     
     <!--Link to Pictures file-->
-    <link rel = "icon" type = image/png href = art/logo.png>
+    <link rel = "icon" type = image/png href = ../art/logo.png>
       
     <!--Title-->
     <title>Les Pet Shop - Homepage</title>
@@ -48,29 +48,17 @@ session_start();
     <!--Navigation Bar & Hamburger-->
     <header>
       <div class='nav-bar'>
-        <img class='logo' src='art/logo.png' style="height: 200px; width: 312px;">
+        <img class='logo' src='../art/logo.png' style="height: 200px; width: 312px;">
 
         <div class='name'>Les   Pet   Shop</div>
         
         <div class='nav-btn-container'>
-          <button onclick="document.location='../homepage.html'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
+          <button onclick="document.location='../homepage.php'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
           <button onclick="document.location='pet.php'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
           <button onclick="document.location='food.php'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
           <button onclick="document.location='accessories.php'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
           <button onclick="document.location='userprofile.php'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
-          <button onclick="document.location='logout.php'"><i class="fas fa-sign-out-alt fa-2x"></i><br>LOGOUT</button> 
-        </div>
-        
-        <div class='hamburger-nbc'>
-          <button id='hamburger-bar'><i class='fa fa-bars fa-3x'></i></button>
-          <div class='hamburger-content'>
-            <button onclick="document.location='../homepage.html'"><i class="fas fa-home fa-2x"></i><br>HOME</button>
-            <button onclick="document.location='pet.php'"><i class="fas fa-paw fa-2x"></i><br>PETS</button>
-            <button onclick="document.location='food.php'"><i class="fas fa-fish fa-2x"></i><br>FOOD</button>
-            <button onclick="document.location='accessories.php'"><i class="fas fa-gift fa-2x"></i><br>ACCESSORIES</button>
-            <button onclick="document.location='userprofile.php'"><i class="fas fa-user-circle fa-2x"></i><br>PROFILE</button>
-            <button onclick="document.location='logout.php'"><i class="fas fa-sign-out-alt fa-2x"></i><br>LOGOUT</button> 
-          </div>
+          <button onclick="document.location='logout.php'"><span><i class="fas fa-sign-out-alt fa-2x"></i></span>LOGOUT</button> 
         </div>
       </div>
     </header>
@@ -129,7 +117,7 @@ session_start();
         
           <div class="column">
             <p>
-              <div class="iconformat"><i class="fas fa-hand-holding-heart"></i></div>
+              <div class="iconformat"><i class="fas fa-hand-holding-he../art"></i></div>
             </p>
             <div class="aboutdesctxtcont">
               <p>
@@ -178,25 +166,25 @@ session_start();
       <div class="descbg">
         <div class="slides">
           <div class="mySlides fade">
-            <img src="art/petaccessories.jpg" style="height: 400px; width: 1000px;">
+            <img src="../art/petaccessories.jpg" style="height: 400px; width: 1000px;">
           </div>
               
           <div class="mySlides fade imgstyling">
-            <img src="art/petfood.jpg" style="height: 400px; width: 1000px;">
+            <img src="../art/petfood.jpg" style="height: 400px; width: 1000px;">
           </div>
               
           <div class="mySlides fade imgstyling">
-            <img src="art/adoptpet.jpg" style="height: 400px; width: 1000px;">
+            <img src="../art/adoptpet.jpg" style="height: 400px; width: 1000px;">
           </div>
-          <a class="back" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          <a class="back" onclick="plus(-1)">&#10094;</a>
+          <a class="next" onclick="plus(1)">&#10095;</a>
         </div>
         <br>
               
         <div style="text-align:center">
-          <span class="dot" onclick="currentSlide(1)"></span> 
-          <span class="dot" onclick="currentSlide(2)"></span> 
-          <span class="dot" onclick="currentSlide(3)"></span> 
+          <span class="dot" onclick="current(1)"></span> 
+          <span class="dot" onclick="current(2)"></span> 
+          <span class="dot" onclick="current(3)"></span> 
         </div>
         <br><br>
       </div>  
@@ -212,7 +200,7 @@ session_start();
           <div class="row">
             <div class="column">
               <div class="hovercont">
-                <img src="art/slide1.png" class="image" style="width: 350px; height: 350px;" > 
+                <img src="../art/slide1.png" class="image" style="width: 350px; height: 350px;" > 
                 <div class="hoverlay">
                   <div class="overlaytext"  onclick="document.location='php/food.php'";>
                     Check out the wide variety of treats we offer here!
@@ -223,7 +211,7 @@ session_start();
 
             <div class="column">
               <div class="hovercont">
-                <img src="art/slide2.png" class="image" style="width: 350px; height: 350px;">
+                <img src="../art/slide2.png" class="image" style="width: 350px; height: 350px;">
                 <div class="hoverlay">
                   <div class="overlaytext"  onclick="document.location='php/pet.php'";>
                     Take this bundle of joy home with you today!
@@ -234,7 +222,7 @@ session_start();
 
             <div class="column">
               <div class="hovercont">
-                <img src="art/slide3.png" class="image" style="width: 350px; height: 350px;">
+                <img src="../art/slide3.png" class="image" style="width: 350px; height: 350px;">
                 <div class="hoverlay">
                   <div class="overlaytext"  onclick="document.location='php/accessories.php'";>
                     Made with the best materials for your beloved companion!

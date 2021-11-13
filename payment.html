@@ -52,44 +52,19 @@
                 <div class='name'>Les   Pet   Shop</div>
 
                 <div class='nav-btn-container'>
-                    <button onclick="document.location='homepage.html'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
-                    <button onclick="document.location='php/pet.php'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
-                    <button onclick="document.location='php/food.php'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
-                    <button onclick="document.location='php/accessories.php'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
-                    <button onclick="document.location='php/userprofile.php'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
-                    <div class="dropdown">
-                        <button onclick="document.location='loginform.html'"><span><i class="fas fa-sign-in-alt fa-2x"></i></span>LOGIN</button>
-                        <div class="dropdown-content">
-                            <a href="loginform.html"><i class="fas fa-sign-in-alt">&nbsp&nbspLog In</i></a>
-                            <a href="signupform.html"><i class="fas fa-user-plus">&nbsp&nbspSign Up</i></a>
-                            <a href="adminaccess.html"><i class="fas fa-crown">&nbspAdmin Access</i></a>
-                        </div>
-                    </div>
+                    <button onclick="document.location='../homepage.html'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
+                    <button onclick="document.location='pet.php'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
+                    <button onclick="document.location='food.php'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
+                    <button onclick="document.location='accessories.php'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
+                    <button onclick="document.location='userprofile.php'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
+                    <button onclick="document.location='logout.php'"><span><i class="fas fa-sign-out-alt fa-2x"></i></span>LOGOUT</button> 
                 </div>
-
-                <div class='hamburger-nbc'>
-                    <button id='hamburger-bar'><i class='fa fa-bars fa-3x'></i></button>
-                    <div class='hamburger-content'>
-                        <button onclick="document.location='homepage.html'"><i class="fas fa-home fa-2x"></i><br>HOME</button>
-                        <button onclick="document.location='php/pet.php'"><i class="fas fa-paw fa-2x"></i><br>PETS</button>
-                        <button onclick="document.location='php/food.php'"><i class="fas fa-fish fa-2x"></i><br>FOOD</button>
-                        <button onclick="document.location='php/accessories.php'"><i class="fas fa-gift fa-2x"></i><br>ACCESSORIES</button>
-                        <button onclick="document.location='php/userprofile.php'"><i class="fas fa-user-circle fa-2x"></i><br>PROFILE</button>
-                        <div class="dropdown">
-                            <button onclick="document.location='loginform.html'"><i class="fas fa-sign-in-alt fa-2x"></i><br>LOGIN</button>
-                            <div class="dropdown-content">
-                                <a href="loginform.html"><i class="fas fa-sign-in-alt">&nbsp&nbspLog In</i></a>
-                                <a href="signupform.html"><i class="fas fa-user-plus">&nbsp&nbspSign Up</i></a>
-                                <a href="adminaccess.html"><i class="fas fa-crown">&nbspAdmin Access</i></a>
-                            </div>
-                        </div>      
-                    </div>
-                </div>
+                
             </div>
         </header> 
 
         <!--Payment Form-->
-        <form id="payment-form" style="background-image: url('../art/white_texture.png');" method="post" action="php/payment.php" onsubmit="payment_done()">
+        <form id="payment-form" style="background-image: url('art/white_texture.png');" method="post" action="php/payment.php">
             <h2>Payment</h2>
             <img id="card-img" src="art/card.png" alt="accepted credit cards">
 
@@ -100,7 +75,7 @@
             <input type="text" name="card_number" required="required"  placeholder="Format: 0000 0000 0000 0000" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}">
             
             <div>Expiry Date:</div>
-            <input type="text" name="card_expirydate" required="required" placeholder="Format: MM/YY" pattern="[0-1][0-9]/[0-1][0-9]">
+            <input type="text" name="card_expirydate" required="required" placeholder="Format: MM/YY" pattern="[0-1][0-9]/[0-2][0-9]">
             
             <div>CVV:</div>
             <input type="text" name="card_CVV" required="required" placeholder="Format: 000" pattern="[0-9]{3}">

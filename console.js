@@ -1,19 +1,3 @@
-// Hamburger NBC 
-window.addEventListener("resize", function() {changeFunction()});
-
-function changeFunction() {
-    var x = window.innerWidth;
-    var a = document.getElementsByClassName('nav-btn-container');
-    var b = document.getElementsByClassName('hamburger-nbc');
-    if (x < 1200) {
-        a[0].style.display = 'none';
-        b[0].style.display = 'block';
-    } else if (x > 1200) {
-        a[0].style.display = 'flex';
-        b[0].style.display = 'none';
-    }
-}
-
 // Back to Top Button
 window.onscroll = function() {back2topFunction()};
 
@@ -30,36 +14,21 @@ function scroll2Top() {
     document.documentElement.scrollTop = 0;
 }
 
-// Payment completion alert and redirect back to previous page
-function payment_done() {
-    alert("Payment is done successfully.")
-    window.location.replace("homepage.html")
-}
-// Password changed alert
-function password_change(){
-    alert("Password changed successfully.")
-}
-
-// Personal information changed alert
-function modify_details(){
-    alert("Your personal information has been updated successfully.")
-}
-
 // Slideshow
 var slideIndex = 1;
 showSlides(slideIndex);
 
-function plusSlides(n) {
+function plus(n) {
   showSlides(slideIndex += n);
 }
 
-function currentSlide(n) {
+function current(n) {
   showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
+  var slides = document.getElementsByClassName("banerslides");
   var dots = document.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1}    
   if (n < 1) {slideIndex = slides.length}

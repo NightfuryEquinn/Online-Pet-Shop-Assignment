@@ -1,6 +1,6 @@
 <?php
 include("session.php");
-session_start();
+$customer_id=$_SESSION['Customer_ID'];
 ?>
 
 <!--Retrieve data to display-->
@@ -53,38 +53,12 @@ session_start();
                 <div class='name'>Les   Pet   Shop</div>
 
                 <div class='nav-btn-container'>
-                    <button onclick="document.location='../homepage.html'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
+                    <button onclick="document.location='homepage.php'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
                     <button onclick="document.location='pet.php'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
                     <button onclick="document.location='food.php'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
                     <button onclick="document.location='accessories.php'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
                     <button onclick="document.location='userprofile.php'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
-                    <div class="dropdown">
-                        <button onclick="document.location='../loginform.html'"><span><i class="fas fa-sign-in-alt fa-2x"></i></span>LOGIN</button>
-                        <div class="dropdown-content">
-                            <a href="../loginform.html"><i class="fas fa-sign-in-alt">&nbsp&nbspLog In</i></a>
-                            <a href="../signupform.html"><i class="fas fa-user-plus">&nbsp&nbspSign Up</i></a>
-                            <a href="../adminaccess.html"><i class="fas fa-crown">&nbspAdmin Access</i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class='hamburger-nbc'>
-                    <button id='hamburger-bar'><i class='fa fa-bars fa-3x'></i></button>
-                    <div class='hamburger-content'>
-                        <button onclick="document.location='../homepage.html'"><i class="fas fa-home fa-2x"></i><br>HOME</button>
-                        <button onclick="document.location='pet.php'"><i class="fas fa-paw fa-2x"></i><br>PETS</button>
-                        <button onclick="document.location='food.php'"><i class="fas fa-fish fa-2x"></i><br>FOOD</button>
-                        <button onclick="document.location='accessories.php'"><i class="fas fa-gift fa-2x"></i><br>ACCESSORIES</button>
-                        <button onclick="document.location='userprofile.php'"><i class="fas fa-user-circle fa-2x"></i><br>PROFILE</button>
-                        <div class="dropdown">
-                            <button onclick="document.location='../loginform.html'"><i class="fas fa-sign-in-alt fa-2x"></i><br>LOGIN</button>
-                            <div class="dropdown-content">
-                                <a href="../loginform.html"><i class="fas fa-sign-in-alt">&nbsp&nbspLog In</i></a>
-                                <a href="../signupform.html"><i class="fas fa-user-plus">&nbsp&nbspSign Up</i></a>
-                                <a href="../adminaccess.html"><i class="fas fa-crown">&nbspAdmin Access</i></a>
-                            </div>
-                        </div>      
-                    </div>
+                    <button onclick="document.location='logout.php'"><span><i class="fas fa-sign-out-alt fa-2x"></i></span>LOGOUT</button> 
                 </div>
             </div>
         </header>
@@ -111,7 +85,7 @@ session_start();
             $searchText = "";
 
             if(isset($_POST["search"])) {
-                $searchText = $_POST['search'];
+                $searchText = $_POST['searchText'];
             }
 
             $searchResult = mysqli_query($con, "SELECT * FROM product WHERE Product_Category='food' AND Product_Name LIKE '%$searchText%' ORDER BY Product_Name");
@@ -140,7 +114,7 @@ session_start();
 
                     <h6>'.$row['Product_Description'].'</h6>
 
-                    <p>'.$row['Product_Price'].'</p>
+                    <p>RM '.$row['Product_Price'].'</p>
 
                     <a href=\'foodToCart.php?Product_ID='.$row['Product_ID'].'\' onclick="return confirm(\'Add '.$row['Product_Name'].' to your cart?\');"><button>TAKE IT HOME!</button></a>
 
@@ -156,27 +130,34 @@ session_start();
                 // Close connection to database
                 mysqli_close($con); 
             ?>
+        </div>
 
         <!--Footer-->
-        <footer class="footer">
-            <div class="footer-flex-container">
-                <div class="footer-content"><h3>Home</h3>
+        <footer>
+            <div class="footer-flexbox">
+                <div class='footer-flexbox-item'>
+                    <h3>About Us</h3>
                     <p>Les Pet Shop is always here for you and your pets. You can find yourself a companion and high quality pet product here!</p>
                 </div>
-                <div class="footer-content"><h3>Our services</h3>
+                <div class='footer-flexbox-item'>
+                    <h3>More From Us</h3>
                     <ul>
-                        <li><i class="fas fa-paw"></i><a href="pet.php">Pets</a></li>
-                        <li><i class="fas fa-paw"></i><a href="food.php">Pets Food</a></li>
-                        <li><i class="fas fa-paw"></i><a href="accessories.php">Pets Accessories</a></li>
+                    <li><i class="fas fa-paw"></i><a href="php/pet.php">Pets</a></li>
+                    <li><i class="fas fa-paw"></i><a href="php/food.php">Pets Food</a></li>
+                    <li><i class="fas fa-paw"></i><a href="php/accessories.php">Pets Accessories</a></li>
                     </ul>
+                 </div>
+                <div class='footer-flexbox-item'>
+                    <h3>Stay with Us</h3>
+                    <p class="media">
+                        Find us on social media<br><br>
+                        <a href="www.facebook.com" class="fa fa-facebook"></a>
+                        <a href="www.twitter.com" class="fa fa-twitter"></a>
+                        <a href="www.instagram.com" class="fa fa-instagram"></a>
+                    </p>
                 </div>
-                <div class="footer-content"><h3>Social media</h3>
-                    <p>Find us on social media<br><br>
-                    <a href="www.facebook.com" class="fa fa-facebook"></a>
-                    <a href="www.twitter.com" class="fa fa-twitter"></a>
-                    <a href="www.instagram.com" class="fa fa-instagram"></a></p>
-                </div>
-                <div class="footer-content contact"><h3>Contact us</h3>
+                <div class='footer-flexbox-item'>
+                    <h3>Contact Us</h3>
                     <p>2, Jalan Besar 5,<br>50000 Kuala Lumpur, <br>Malaysia</p>
                     <p>Email: <a href="mailto:lespetshopt@gmail.com">lespetshopt@gmail.com</a></p>
                     <p>Phone no: <a href="tel:0312345678">03-12345678</a></p>

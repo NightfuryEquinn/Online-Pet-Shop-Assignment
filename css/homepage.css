@@ -154,49 +154,6 @@ img {
   }
 }
 
-/* Hamburger NBC */
-.hamburger-nbc {
-  margin-right: 50px;
-  padding: 0px;
-  display: none;
-}
-
-#hamburger-bar {
-  border: none;
-  cursor: pointer;
-  color: #24305E;
-  background-color: transparent;
-  display: block;
-}
-
-.hamburger-content {
-  margin-top: 652px;
-  display: none;
-  background-color: rgba(234, 231, 220, 0.5);
-  backdrop-filter: blur(8px);
-  flex-direction: column; 
-}
-
-.hamburger-content button {
-  padding: 10px 120px;
-  font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bolder;
-  color: #24305E;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.hamburger-content button:hover {
-  color: #EAE7DC;
-  background-color: rgba(36, 48, 94, 0.7);
-}
-
-.hamburger-nbc:hover .hamburger-content {
-  display: flex;
-}
-
 /* Dropdown Login Menu */
 .dropdown-content {
   display: none;
@@ -287,8 +244,8 @@ img {
   margin: auto;
 }
 
-/* Next & Previous Buttons */
-.back, .next {
+/* to see the next and last slides */
+.prev, .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -296,35 +253,30 @@ img {
   padding: 16px;
   margin-top: -22px;
   color: rgb(75, 67, 67);
-  font-weight: bold;
   font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
   user-select: none;
 }
 
 .next {
   right: 0;
-  border-radius: 3px 0 0 3px;
 }
 
-/* Slide Number Indicator */
+/* dot indicator */
 .dot {
   cursor: pointer;
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: rgb(133, 80, 80);
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+  background-color: #b36f6f;
 }
 
-/* Fading Animation */
+/* slide fade */
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
@@ -564,12 +516,4 @@ li i {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   color: #E85A4F;
-}
-
-/* Screen less than 1200px width */ 
-@media screen and (max-width: 1200px) {
-  /* Shop Name */
-  .name {
-      display: block;
-  }
 }

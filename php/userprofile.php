@@ -1,6 +1,5 @@
 <?php
 include("session.php");
-session_start();
 $customer_id = intval($_SESSION['Customer_ID']);
 ?>
 
@@ -55,24 +54,12 @@ $customer_id = intval($_SESSION['Customer_ID']);
                 <div class='name'>Les   Pet   Shop</div>
 
                 <div class='nav-btn-container'>
-                    <button onclick="document.location='../homepage.html'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
+                    <button onclick="document.location='homepage.php'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
                     <button onclick="document.location='pet.php'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
                     <button onclick="document.location='food.php'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
                     <button onclick="document.location='accessories.php'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
                     <button onclick="document.location='userprofile.php'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
-                    <button onclick="document.location='logout.php'"><i class="fas fa-sign-out-alt fa-2x"></i><br>LOGOUT</button> 
-                </div>
-
-                <div class='hamburger-nbc'>
-                    <button id='hamburger-bar'><i class='fa fa-bars fa-3x'></i></button>
-                    <div class='hamburger-content'>
-                        <button onclick="document.location='../homepage.html'"><i class="fas fa-home fa-2x"></i><br>HOME</button>
-                        <button onclick="document.location='pet.php'"><i class="fas fa-paw fa-2x"></i><br>PETS</button>
-                        <button onclick="document.location='food.php'"><i class="fas fa-fish fa-2x"></i><br>FOOD</button>
-                        <button onclick="document.location='accessories.php'"><i class="fas fa-gift fa-2x"></i><br>ACCESSORIES</button>
-                        <button onclick="document.location='userprofile.php'"><i class="fas fa-user-circle fa-2x"></i><br>PROFILE</button>
-                        <button onclick="document.location='logout.php'"><i class="fas fa-sign-out-alt fa-2x"></i><br>LOGOUT</button>     
-                    </div>
+                    <button onclick="document.location='logout.php'"><span><i class="fas fa-sign-out-alt fa-2x"></i></span>LOGOUT</button> 
                 </div>
             </div>
         </header>
@@ -81,12 +68,11 @@ $customer_id = intval($_SESSION['Customer_ID']);
             <div class="profile">
                 <h1>Profile</h1>
                 <hr>
-                <?php include("conn.php");
+                <div class="profile-top" style="background-image: url('../art/profile_cover.jpg')">
+                     <img src="../art/profile_cat" alt="profile picture" id ="profile-picture">
+                     <?php include("conn.php");
                         $result = mysqli_query($con,"SELECT * FROM customer WHERE Customer_ID=$customer_id");
                         $row = mysqli_fetch_array($result);
-                ?>
-                <div class="profile-top" style="background-image: url('../art/profile_cover.jpg')">
-                    <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($row['Profile_pic']).'" id ="profile-picture"/>';
                         echo "<h2>".$row['Username']."</h2>";?>
                 </div>
                 <div class="profile-mid">
@@ -99,7 +85,12 @@ $customer_id = intval($_SESSION['Customer_ID']);
                                 <label>Name:</label>
                                 <?php echo "<p>".$row['Name']."</p>";?>
                                 <label>Contact number:</label>
-                                <?php echo "<p>".$row['Contact_No']."</p>";?>
+                                <?php if ($row['Contact_No']=='NULL'){
+                                    echo "<br><br>";
+                                    }
+                                else{
+                                    echo "<p>".$row['Contact_No']."</p>";
+                                }?>
                                 <label>E-mail:</label>
                                 <?php echo "<p>".$row['Email']."</p>";?>
                                 
@@ -108,9 +99,12 @@ $customer_id = intval($_SESSION['Customer_ID']);
                                 <label>Password:</label>
                                 <p>********</p>
                                 <label>Address:</label>
-                                <?php 
-                                echo "<p>".$row['Address']."<br>".$row['City']." ".$row['Postal_code']."<br>".$row['State']."</p>"; 
-                                ?>
+                                <?php if ($row['Address']=='NULL'){
+                                    echo "<br><br><br>";
+                                    ;}
+                                else{
+                                    echo "<p>".$row['Address']."<br>".$row['City']." ".$row['Postal_code']."<br>".$row['State']."</p>";
+                                }?>
                                 <br><br>
                                 <a href="accountEdit.php" target="_blank" id="modify-button"><i class="material-icons">edit</i>Modify your personal information</a>
                             </div>
@@ -121,12 +115,10 @@ $customer_id = intval($_SESSION['Customer_ID']);
                         <?php 
                             include("conn.php");
                             // find number of rows in table 
-                            $result = mysqli_query($con,"SELECT *, (sp.Quantity*p.Product_Price) AS Total, SUM(Total) AS checkout_price 
+                            $result = mysqli_query($con,"SELECT *, sp.Shopping_ID AS \"Cart_ID\", sp.Product_ID AS \"Item_ID\", (sp.Quantity*p.Product_Price) AS \"Total\"
                             FROM shoppingcart s, shopping_product sp, product p
-                            WHERE s.Shopping_ID = sp.Shopping_ID AND p.Product = sp.Product AND s.Customer_ID=$customer_id AND s.Status='unpaid'");
-                            $SID = $row['Shopping_ID'];
-                            $_SESSION['Cart_ID'] = $SID;
-                            $row = mysqli_fetch_row($result);
+                            WHERE s.Shopping_ID = sp.Shopping_ID AND p.Product_ID = sp.Product_ID AND s.Customer_ID=$customer_id AND s.Status='unpaid'
+                            GROUP BY sp.Product_ID");     
                         ?>
                         <table class="cart-table">
                             <tr>
@@ -135,27 +127,40 @@ $customer_id = intval($_SESSION['Customer_ID']);
                                 <th class="cart-header">Quantity</th>
                                 <th class="cart-header">Total</th>
                             </tr>
-                            <form id="quantity-form" method="post" action="updatecart.php">
+
+                            
                             <?php
+                                $checkout_price = 0;
                                 while ($row = mysqli_fetch_array($result)) {
+                                    echo"<form id='quantity-form' method='post' action='updatecart.php?Product_ID=".$row['Item_ID']."'>";
                                     echo"<tr>
                                     <td>".$row['Product_Name']."</td>
-                                    <td>".$row['Product_Price']."</td>
-                                    <input type=\"hidden\" name=\"sid\" value=".$row['Shopping_ID'].">
-                                    <input type=\"hidden\" name=\"pid\" value=".$row['Product_ID'].">
-                                    <input type=\"number\" name=\"update-qty\" required=\"required\" value=".$row['Quantity'].">
-                                    <td>".$row['Total']."</td>
+                                    <td>RM ".$row['Product_Price']."</td>
+                                    <input type='hidden' name='sid' value=".$row['Cart_ID'].">
+                                    <input type='hidden' name='pid' value=".$row['Item_ID'].">
+                                    <td><input type='number' id='update-qty' name='update-qty' required='required' value=".$row['Quantity']."></td>
+                                    <td>RM ".$row['Total']."</td>
+                                    <td><input type='submit' name='Update' value='Update' id='small-button' form='quantity-form'/></td>
                                     </tr>";
+                                    echo"</form>";
+                                    $checkout_price = $checkout_price + $row['Total'];
                                 }
+                                //reserve an empty row
+                                echo
+                                "<tr style='color:#E85A4F;'>
+                                <td>Happy</td>
+                                <td>Pet</td>
+                                <td>Shopping</td>
+                                <td>!!</td>
+                                </tr>";
                             ?>
-                            </form>
+                            
                         </table>
                         <div class="cart-bottom">
                             <hr>
-                            <p>Total:<?php echo $row['checkout_price']?></p>
-                            <input type="submit" name="Update" value="Update" form="quantity-form"/>
-                            <button onclick="window.location.href = '../payment.html>';" class="cart-button">Checkout</button>
-                            <button onclick="window.location.href = 'resetcart.php?id=<?php echo $row['Shopping_ID'] ?>';" class="cart-button">Clear</button>
+                            <p>Total: RM <?php echo $checkout_price ?></p>
+                            <button onclick="document.location = '../payment.html';" class="cart-button">Checkout</button>
+                            <button onclick="document.location = 'resetcart.php';" class="cart-button">Clear</button>
                         </div>
                     </div>
 
@@ -164,7 +169,8 @@ $customer_id = intval($_SESSION['Customer_ID']);
                         <?php 
                             include("conn.php");
                             // find number of rows in table 
-                            $result = mysqli_query($con,"SELECT COUNT(*) FROM shopping cart WHERE Status = 'paid'AND Customer_ID = $customer_id");
+                            $result = mysqli_query($con,"SELECT COUNT(*) FROM shoppingcart WHERE Status = 'paid' AND Customer_ID = $customer_id");
+
                             $r = mysqli_fetch_row($result);
                             $row_num = $r[0];
 
@@ -193,90 +199,64 @@ $customer_id = intval($_SESSION['Customer_ID']);
 
                             // set the offset
                             $offset = ($currentpage - 1) * $limit_row;
+                        
 
-                            $result = mysqli_query($con,"SELECT sp.*,s.*,p.*, c.*(sp.Quantity * p.Product_Price) AS Total 
+                            $result = mysqli_query($con,"SELECT sp.*, s.*, p.*, (sp.Quantity * p.Product_Price) AS \"Total\"
                             FROM shopping_product sp, shoppingcart s, product p
                             WHERE sp.Shopping_ID = s.Shopping_ID AND p.Product_ID = sp.Product_ID AND s.Customer_ID=$customer_id AND s.Status= 'paid'
+                            GROUP BY sp.Product_ID
                             LIMIT $offset, $limit_row");
-                        ?>
 
-                        <?php 
                             //Show back button if it is not page 1
                             if ($currentpage > 1) {
                             $prevpage = $currentpage - 1;
                             echo " <a href='{$_SERVER['PHP_SELF']}?currentpage=$prevpage'><i class=\"fas fa-caret-left arrow\"></i></a>";
                             }
-                        ?>
+                            
+                            //table
+                            echo'<table class="order-history-table">
+                                <tr>
+                                    <th class="date">Date</th>
+                                    <th class="item-name">Item name</th>
+                                    <th class="price">Price</th>
+                                    <th class="quantity">Quantity</th>
+                                    <th class="total">Total</th>
+                                </tr>';
 
-                        <table class="order-history-table">
-                            <tr>
-                                <th class="date">Date</th>
-                                <th class="item-name">Item name</th>
-                                <th class="price">Price</th>
-                                <th class="quantity">Quantity</th>
-                                <th class="total">Total</th>
-                            </tr>
-                            <?php
-                                while ($row = mysqli_fetch_array($result)) {
-                                    echo"<tr>
-                                    <td>".$row['Checkout_Date']."</td>
-                                    <td>".$row['Product_Name']."</td>
-                                    <td>".$row['Product_Price']."</td>
-                                    <td>".$row['Quantity']."</td>
-                                    <td>".$row['Total']."</td>
-                                    </tr>";
-                                }
-                            ?>
-                        </table>
 
-                        <?php
+                            while ($row = mysqli_fetch_array($result)) {
+                                echo
+                                "<tr>
+                                <td>".$row['Checkout_date']."</td>
+                                <td>".$row['Product_Name']."</td>
+                                <td>RM ".$row['Product_Price']."</td>
+                                <td>".$row['Quantity']."</td>
+                                <td>".$row['Total']."</td>
+                                </tr>";
+                            }
+
+                            //reserve an empty row
+                            echo
+                            "<tr style='color:#E85A4F;>
+                            <td>Happy</td>
+                            <td>Pet</td>
+                            <td>Shopping</td>
+                            <td>!!</td>
+                            <td>:)</td>
+                            </tr>";
+
                             //show forward button if not on last page
                             if ($currentpage != $totalpages) {
                                 // get next page
                                 $nextpage = $currentpage + 1;
                                 // forward button linked to next page
                                 echo "<a href='{$_SERVER['PHP_SELF']}?currentpage=$nextpage'><i class=\"fas fa-caret-right arrow\"></i></a>";
-                            }
-                        ?>
+                            }                
+                    ?>
                         
                     </div>
-                    <br><br><br><br><br><br><br><br><br><br>
                 </div>
-
             </div>
         </div>
-
-        <footer>
-            <div class="footer-flexbox">
-                <div class='footer-flexbox-item'>
-                    <h3>About Us</h3>
-                    <p>Les Pet Shop is always here for you and your pets. You can find yourself a companion and high quality pet product here!</p>
-                </div>
-                <div class='footer-flexbox-item'>
-                    <h3>More From Us</h3>
-                    <ul>
-                    <li><i class="fas fa-paw"></i><a href="pet.php">Pets</a></li>
-                    <li><i class="fas fa-paw"></i><a href="food.php">Pets Food</a></li>
-                    <li><i class="fas fa-paw"></i><a href="accessories.php">Pets Accessories</a></li>
-                    </ul>
-                    </div>
-                <div class='footer-flexbox-item'>
-                    <h3>Stay with Us</h3>
-                    <p class="media">
-                        Find us on social media<br><br>
-                        <a href="www.facebook.com" class="fa fa-facebook"></a>
-                        <a href="www.twitter.com" class="fa fa-twitter"></a>
-                        <a href="www.instagram.com" class="fa fa-instagram"></a>
-                    </p>
-                </div>
-                <div class='footer-flexbox-item'>
-                    <h3>Contact Us</h3>
-                    <p>2, Jalan Besar 5,<br>50000 Kuala Lumpur, <br>Malaysia</p>
-                    <p>Email: <a href="mailto:lespetshopt@gmail.com">lespetshopt@gmail.com</a></p>
-                    <p>Phone no: <a href="tel:0312345678">03-12345678</a></p>
-                </div>
-            </div>
-            <p id="copyright"><b>&#169 2021 Les Pet Shop (Team Name)</b></p>
-        </footer>
     </body>
 </html>

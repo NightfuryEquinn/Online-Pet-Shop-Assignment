@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             }
             if($rowcount==1) {
                 session_start();
-                $_SESSION['Customer_ID'] = $fetch;
+                $_SESSION['Customer_ID'] = $fetch['Customer_ID'];
                 header("location: homepage.php");
                 echo '<script>
                 alert ("Login Successful. Welcome back!")

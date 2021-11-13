@@ -131,51 +131,6 @@ body {
     }
 }
 
-/* Hamburger NBC */
-.hamburger-nbc {
-    margin-right: 50px;
-    padding: 0px;
-    display: none;
-}
-
-#hamburger-bar {
-    border: none;
-    cursor: pointer;
-    color: #24305E;
-    background-color: transparent;
-    display: block;
-}
-
-.hamburger-content {
-    margin-top: 652px;
-    display: none;
-    background-color: rgba(234, 231, 220, 0.5);
-    backdrop-filter: blur(8px);
-    flex-direction: column; 
-}
-
-.hamburger-content button {
-    padding: 10px 120px;
-    font-size: 18px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bolder;
-    color: #24305E;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.hamburger-content button:hover {
-    color: #EAE7DC;
-    background-color: rgba(36, 48, 94, 0.7);
-}
-
-.hamburger-nbc:hover .hamburger-content {
-    display: flex;
-    position: relative;
-    z-index: 1;
-}
-
 /* Dropdown Login Menu */
 .dropdown-content {
     display: none;
@@ -321,10 +276,3 @@ body {
     }
 }
 
-/* Screen less than 1200px width */ 
-@media screen and (max-width: 1200px) {
-    /* Shop Name */
-    .name {
-        display: block;
-    }
-}

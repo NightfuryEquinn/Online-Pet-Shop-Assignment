@@ -47,112 +47,69 @@ body {
   justify-content: space-between;
   align-items: center;
  }
- 
- .logo {
-   margin: 12.5px;
-   padding-left: 100px;
-   height: 200px;
-   width: 212.5px;
- }
- 
- .name {
-   font-size: 45px;
-   font-weight: 1000;
-   font-family: 'Montserrat', sans-serif;
-   letter-spacing: 10px;
-   color: #24305E;
-   display: none;
- }
- 
- .nav-btn-container {
-   padding-right: 50px;
-   height: 225px;
-   width: 850px;
-   overflow: hidden;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
- }
- 
- .nav-btn-container button {
-   padding: 99px 20px;
-   font-size: 22px;
-   font-weight: bolder;
-   font-family: 'Montserrat', sans-serif;
-   letter-spacing: 2px;
-   color: #24305E;
-   background-color: transparent;
-   border: none;
-   cursor: pointer;
- }
- 
- .nav-btn-container span {
-   display: none;
- }
- 
- .nav-btn-container button:hover {
-   animation-name: color-change-navbar;
-   animation-duration: 0.5s;
-   animation-fill-mode: forwards;
- }
- 
- .nav-btn-container button:hover span {
-   display: block;
- }
- 
- @keyframes color-change-navbar {
-   from {
-       color: #24305E;
-       background-color: #EAE7DC;
-   }
-   to {
-       color: #EAE7DC;
-       background-color: #24305E;
-   }
- }
- 
- /* Hamburger NBC */
- .hamburger-nbc {
-   margin-right: 50px;
-   padding: 0px;
-   display: none;
- }
- 
- #hamburger-bar {
-   border: none;
-   cursor: pointer;
-   color: #24305E;
-   background-color: transparent;
-   display: block;
- }
- 
- .hamburger-content {
-   margin-top: 652px;
-   display: none;
-   background-color: rgba(234, 231, 220, 0.5);
-   backdrop-filter: blur(8px);
-   flex-direction: column; 
- }
- 
- .hamburger-content button {
-   padding: 10px 120px;
-   font-size: 18px;
-   font-family: 'Montserrat', sans-serif;
-   font-weight: bolder;
-   color: #24305E;
-   background-color: transparent;
-   border: none;
-   cursor: pointer;
- }
- 
- .hamburger-content button:hover {
-   color: #EAE7DC;
-   background-color: rgba(36, 48, 94, 0.7);
- }
- 
- .hamburger-nbc:hover .hamburger-content {
-   display: flex;
- }
+
+.logo {
+  margin: 12.5px;
+  padding-left: 100px;
+  height: 200px;
+  width: 212.5px;
+}
+
+.name {
+  font-size: 45px;
+  font-weight: 1000;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 10px;
+  color: #24305E;
+  display: none;
+}
+
+.nav-btn-container {
+  padding-right: 50px;
+  height: 225px;
+  width: 850px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-btn-container button {
+  padding: 99px 20px;
+  font-size: 22px;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  color: #24305E;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-btn-container span {
+  display: none;
+}
+
+.nav-btn-container button:hover {
+  animation-name: color-change-navbar;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.nav-btn-container button:hover span {
+  display: block;
+}
+
+@keyframes color-change-navbar {
+  from {
+      color: #24305E;
+      background-color: #EAE7DC;
+  }
+  to {
+      color: #EAE7DC;
+      background-color: #24305E;
+  }
+}
 
  /* Dropdown Login Menu */
 .dropdown-content {
@@ -356,16 +313,9 @@ li i {
 }
 
 #copyright {
+  margin-bottom: 0;
   padding: 10px;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   color: #E85A4F;
-}
-
-/* Screen less than 1200px width */ 
-@media screen and (max-width: 1200px) {
-  /* Shop Name */
-  .name {
-      display: block;
-  }
 }
