@@ -317,7 +317,8 @@ h1 {
     letter-spacing: 1px;
 }
 
-.content-descriptionbox button {
+.content-descriptionbox form input[type=submit] {
+    margin-top: 15px;
     padding: 10px;
     font-size: 20px;
     font-weight: bolder;
@@ -345,6 +346,27 @@ h1 {
 
 .content-card:hover .content-descriptionbox {
     display: flex;
+}
+
+.content-descriptionbox form input[type=number] {
+    padding: 10px;
+    font-size: 20px;
+}
+
+.content-descriptionbox form input[type=number]:focus {
+    animation-name: color-fill;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    background-color: transparent;
+}
+
+@keyframes color-fill {
+    from {
+        background-color: #ffffff;
+    }
+    to {
+        background-color: #A8D0E6;
+    }
 }
 
 /* Footer */
