@@ -242,13 +242,17 @@ img {
   max-width: 1000px;
   position: relative;
   margin: auto;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
 /* Buttons to navigate between slides */
-.prev, .next {
+.prev {
   cursor: pointer;
   position: absolute;
   top: 50%;
+  left: 0;
   width: auto;
   padding: 16px;
   margin-top: -22px;
@@ -261,9 +265,21 @@ img {
 }
 
 .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
   right: 0;
-  border-radius: 3px 0 0 3px;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: rgb(75, 67, 67);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
 }
+
 
 /* Slide Number Indicator */
 .dot {
@@ -274,7 +290,7 @@ img {
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
+  transition: 0.6s ease;
 }
 
 .active, .dot:hover {

@@ -317,25 +317,7 @@ h1 {
     letter-spacing: 1px;
 }
 
-.content-descriptionbox a {
-    margin-top: 15px;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: bolder;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 0.5px;
-    color: #EAE7DC;
-    background-color: #24305E;
-    border: none;
-    cursor: pointer;
-    animation-name: color-change-pdbb;
-    animation-duration: 2.5s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-direction: alternate-reverse;
-}
-
-.content-descriptionbox form input[type=submit] {
+.content-descriptionbox form input[type=submit], a button {
     margin-top: 15px;
     padding: 10px;
     font-size: 20px;
