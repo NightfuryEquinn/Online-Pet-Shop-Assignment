@@ -164,10 +164,10 @@ $customer_id = intval($_SESSION['Customer_ID']);
                         <?php 
                             include("conn.php");
 
-                            $result = mysqli_query($con,"SELECT sp.*, s.*, p.*, (sp.Quantity * p.Product_Price) AS \"Total\"
-                            FROM shopping_product sp, shoppingcart s, product p
-                            WHERE sp.Shopping_ID = s.Shopping_ID AND p.Product_ID = sp.Product_ID AND s.Customer_ID=$customer_id AND s.Status= 'paid'
-                            GROUP BY sp.Product_ID");   
+                            $result = mysqli_query($con,"SELECT sp.*, s.*, p.*, (sp.Quantity * p.Product_Price) AS \"Total\" 
+                            FROM shopping_product sp, shoppingcart s, product p 
+                            WHERE sp.Shopping_ID = s.Shopping_ID AND p.Product_ID = sp.Product_ID AND s.Customer_ID=$customer_id AND s.Status= 'paid' 
+                            GROUP BY sp.Product_ID, sp.Shopping_ID ORDER BY s.Checkout_date DESC");   
                         ?>
 
                         <table class="order-history-table">
