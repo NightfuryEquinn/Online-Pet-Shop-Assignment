@@ -14,50 +14,32 @@ function scroll2Top() {
     document.documentElement.scrollTop = 0;
 }
 
-// Slideshow
+// Slideshow for display banners//
 var slideIndex = 1;
-showSlides(slideIndex);
+slides(slideIndex);
 
-function plus(n) {
-  showSlides(slideIndex += n);
+function nextslide(n) {
+  slides(slideIndex += n);
 }
 
-function current(n) {
-  showSlides(slideIndex = n);
+function bannerslide(n) {
+  slides(slideIndex = n);
 }
 
-function showSlides(n) {
+function slides(n) {
   var i;
-  var slides = document.getElementsByClassName("banerslides");
+  var slides = document.getElementsByClassName("hpbannerslides");
   var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
+  if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
+      slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";  
+  slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
-}
-
-mybutton = document.getElementById("myBtn");
-
-window.onscroll = function() {scrollFunction()};
-
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
 }
 
 function on() {

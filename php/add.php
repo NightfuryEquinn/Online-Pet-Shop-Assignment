@@ -54,7 +54,6 @@ include("adminsession.php");
                     <button onclick="document.location='petAdmin.php'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
                     <button onclick="document.location='foodAdmin.php'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
                     <button onclick="document.location='accessoriesAdmin.php'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
-                    <button onclick="document.location='userprofile.php'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
                     <button onclick="document.location='logout.php'"><span><i class="fas fa-sign-out-alt fa-2x"></i></span>LOGOUT</button> 
                 </div>
             </div>

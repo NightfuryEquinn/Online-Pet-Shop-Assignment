@@ -53,11 +53,10 @@ include("adminsession.php");
                 <div class='name'>Les   Pet   Shop</div>
 
                 <div class='nav-btn-container'>
-                    <button onclick="document.location='../homepage.html'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
+                    <button onclick="document.location='adminhomepage.php'"><span><i class="fas fa-home fa-2x"></i></span>HOME</button>
                     <button onclick="document.location='petAdmin.php'"><span><i class="fas fa-paw fa-2x"></i></span>PETS</button>
                     <button onclick="document.location='foodAdmin.php'"><span><i class="fas fa-fish fa-2x"></i></span>FOOD</button>
                     <button onclick="document.location='accessoriesAdmin.php'"><span><i class="fas fa-gift fa-2x"></i></span>ACCESSORIES</button>
-                    <button onclick="document.location='userprofile.php'"><span><i class="fas fa-user-circle fa-2x"></i></span>PROFILE</button>
                     <button onclick="document.location='logout.php'"><span><i class="fas fa-sign-out-alt fa-2x"></i></span>LOGOUT</button> 
                 </div>
             </div>
@@ -75,7 +74,7 @@ include("adminsession.php");
                 ?>
 
                 <form id='addForm' action="update.php" method="post" enctype="multipart/form-data">
-                    <h1>WHAT DO YOU WANT TO ADD?</h1>
+                    <h1>WHERE DO YOU WANT TO EDIT?</h1>
 
                     <input type="hidden" name="id" value="<?php echo $displayEdit['Product_ID']?>">
                     
@@ -110,7 +109,7 @@ include("adminsession.php");
                         <hr>
                         <label>Name: </label><input type='text' name='name' value="<?php echo $displayEdit['Product_Name']?>" required>
                         <hr>
-                        <label>Description: </label><textarea name="description" rows="10" cols="10" value="<?php echo $displayEdit['Product_Description']?>" required></textarea>
+                        <label>Description: </label><textarea name="description" rows="10" cols="10" required><?php echo $displayEdit['Product_Description']?></textarea>
                         <hr>
                         <label>Price Tag: </label><input type="number" name="price" min="0" value="<?php echo $displayEdit['Product_Price']?>" required>
                         <hr>

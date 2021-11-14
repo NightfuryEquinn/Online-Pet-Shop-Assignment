@@ -237,14 +237,14 @@ img {
   text-align: center;
 }
 
-/* Slideshow Container */
-.slides {
+/* Container for slides */
+.bannerslides {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
 
-/* to see the next and last slides */
+/* Buttons to navigate between slides */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -253,44 +253,50 @@ img {
   padding: 16px;
   margin-top: -22px;
   color: rgb(75, 67, 67);
+  font-weight: bold;
   font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
   user-select: none;
 }
 
 .next {
   right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
-/* dot indicator */
+/* Slide Number Indicator */
 .dot {
   cursor: pointer;
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: rgb(133, 80, 80);
+  background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
+  transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-  background-color: #b36f6f;
+  background-color: #717171;
 }
 
-/* slide fade */
+/* Fade animation for slides*/
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
   animation-name: fade;
   animation-duration: 1.5s;
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
 }
 
-/* Screen size smaller than 300px */
+/* How page will scale when screen size iw smaller than 300px */
 @media only screen and (max-width: 300px) {
-  .prev, .next, .text {
+  .back, .next, .text {
     font-size: 11px;
   }
 }
 
+/*To align some text side by side*/
 .column {
   float: left;
   width: 33.33%;
