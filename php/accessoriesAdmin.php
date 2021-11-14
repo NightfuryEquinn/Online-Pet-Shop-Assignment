@@ -45,7 +45,7 @@ include("adminsession.php");
         <button id='back2top-btn' onclick='scroll2Top()' title='Purr back 2 top!~'><i class="fas fa-arrow-alt-circle-up fa-4x"></i></button>
 
         <!--Add New Button-->
-        <button id='add-new-btn' onclick="document.location='../addNewAdmin.html'" title='Add new stuffs!~'><i class="fas fa-plus-circle fa-4x"></i></button>
+        <button id='add-new-btn' onclick="document.location='add.php'" title='Add new stuffs!~'><i class="fas fa-plus-circle fa-4x"></i></button>
 
         <!--Navigation Bar & Hamburger-->
         <header>
